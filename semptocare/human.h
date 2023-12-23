@@ -69,6 +69,7 @@ class user {
 private:
 	string name;
 	int age;
+	int tc;
 	string gender;
 	float weight;
 	float height;
