@@ -9,59 +9,71 @@ class human {
 private:
 	string bodyPart;
 
-	struct head {
+public:
+	string getBodyPart() {
+		cout << "What's your problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
+};
 
-		struct eye {
-			
-		};
+class head : public human {
 
-		struct mouth {
+};
 
-		};
+class eye : public head, public human {
+public:
+	void arda() {
+		cout << "arda";
+	}
+};
 
-		struct brain{
-			
-		};
-	};
+class mouth : public head, public human {
 
-	struct body {
+};
 
-		struct chest {
+class brain : public head, public human {
 
-		};
+};
 
-		struct heart {
+class body : public human {
 
-		};
+};
 
-		struct abdomen {
+class chest : public body, public human {
 
-		};
-	};
+};
 
-	struct limb {
-		struct arms {
+class heart : public body, public human {
 
-			struct hands {
+};
 
-			};
+class abdomen : public body, public human {
 
-			struct shoulders {
+};
 
-			};
-		};
+class limb : public human {
 
-		struct legs {
+};
 
-			struct foot {
+class arms : public limb, public human {
 
-			};
+};
 
-			struct calf {
+class hands : public limb, public human {
 
-			};
-		};
-	};
+};
+
+class shoulders : public limb, public human {
+
+};
+
+class foot : public limb, public human {
+
+};
+
+class legs : public limb, public human {
+
 };
 
 class user {
@@ -136,13 +148,12 @@ public:
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cout << "Invalid input. Please enter a valid weight" << endl;
 		}
-
+		
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 		while (true) {
-			cout << "Are you a smoker? (yes/no)" << endl;
-			getline(cin, habit);
-
+			cout << "Are you a smoker? (yes/no): ";
+			getline(cin,habit);
 			if (habit == "yes" || habit == "no") {
 				smoking = (habit == "yes");
 				break;
@@ -152,12 +163,9 @@ public:
 			}
 		}
 
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
 		while (true) {
-			cout << "Do you drink occasionally? (yes/no)" << endl;
-			getline(cin, habit);
-
+			cout << "Do you drink occasionally? (yes/no): ";
+			getline(cin,habit);
 			if (habit == "yes" || habit == "no") {
 				drinking = (habit == "yes");
 				break;
@@ -167,12 +175,9 @@ public:
 			}
 		}
 
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
 		while (true) {
-			cout << "Are you an allergic person? (yes/no)" << endl;
-			getline(cin, habit);
-
+			cout << "Are you an allergic person? (yes/no): ";
+			getline(cin,habit);
 			if (habit == "yes" || habit == "no") {
 				allergic = (habit == "yes");
 				break;
@@ -181,13 +186,10 @@ public:
 				cout << "Invalid input. Please enter 'yes' or 'no'." << endl;
 			}
 		}
-		
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 		while (true) {
-			cout << "Are you taking any medications (yes/no)" << endl;
-			getline(cin, habit);
-
+			cout << "Are you taking any medications (yes/no): ";
+			getline(cin,habit);
 			if (habit == "yes" || habit == "no") {
 				medication = (habit == "yes");
 				break;
