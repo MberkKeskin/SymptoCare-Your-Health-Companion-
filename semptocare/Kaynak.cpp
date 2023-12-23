@@ -8,20 +8,20 @@ int main() {
 	setlocale(LC_ALL, "Turkish");
 
 	int choiceForMenu=0;
-	bool choiceForEmengrcy;
+	bool choiceForEmergency;
 	
-	cout<< " Welcome to Semptocare!"<<endl;
+	cout<< " Welcome to SymptoCare!"<<endl;
 	
-	cout<< " Do you have emengcy stitions"<<endl;
-	cin>>choiceForEmengrcy;
+	cout<< " Do you have an emergency situation?"<<endl;
+	cin>>choiceForEmergency;
 	
-	if(choiceForEmengrcy){
+	if(choiceForEmergency){
 		//ACIL DURUM ICIN DIREK YONLENDIRME YAPALIM
 	}
 	else {
 		while(choiceForMenu!=2){
 		
-		cout<< " 1.Enter Patient infirmation"<<endl;
+		cout<< " 1.Enter Patient information"<<endl;
 		cout<< " 2.Exit"<<endl;
 		
 		cout<< " Enter what do you want"<<endl;
@@ -36,7 +36,7 @@ int main() {
 		
 	}
 
-	cout<<" BIZI TERCIH ETTIGINIZ ICIN TESEKKURLER"<<endl;
+	cout<<" Bizi tercih ettiğiniz için teşekkürler."<<endl;
 	
 	
 		
