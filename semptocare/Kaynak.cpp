@@ -40,17 +40,15 @@ void findBodyParts(string part) {
     }
 
     else if (part == "brain") {
-        string semptom1, semptom2, sempton3, sempton4, sempton5, sempton6, semptom7;
+        string semptom1, semptom2, sempton3, sempton4, sempton5;
         brain* myBrain = new brain;
         semptom1 = myBrain->headacheSymptom();
-        semptom2 = myBrain->nauseaSymptom();
-        semptom3 = myBrain->seizuresSymptom();
-        semptom4 = myBrain->shakingSymptom();
-        semptom5 = myBrain->memoryLossSymptom();
-        semptom6 = myBrain->panicAttackSymptom();
-        semptom7 = myBrain->nothingSymptom();
+        semptom2 = myBrain->seizuresSymptom();
+        semptom3 = myBrain->memoryLossSymptom();
+        semptom4 = myBrain->panicAttackSymptom();
+        semptom5 = myBrain->nothingSymptom();
         
-        myBrain->findBrainDisaster(semptom1, semptom2, sempton3, sempton4, sempton5, sempton6, semptom7);
+        myBrain->findBrainDisaster(semptom1, semptom2, sempton3, sempton4, sempton5);
         delete myBrain;
 
     }
@@ -86,10 +84,10 @@ void findBodyParts(string part) {
     else if (part == "abdomen") {
         string semptom1, semptom2, sempton3, sempton4, sempton5;
         abdomen* myAbdomen = new abdomen;
-        semptom1 = myAbdomen->chestPpain();
-        semptom2 = myAbdomen->shortnessOfBbreath();
-        semptom3 = myAbdomen->palpitations();
-        semptom4 = myAbdomen->fatigue();
+        semptom1 = myAbdomen->abdominalPain();
+        semptom2 = myAbdomen->nausea();
+        semptom3 = myAbdomen->vomiting();
+        semptom4 = myAbdomen->bloating();
         semptom5 = myAbdomen->nothingSymptom();
         
         myAbdomen->findAbdominalCondition(semptom1, semptom2, sempton3, sempton4, sempton5);
@@ -137,15 +135,35 @@ void findBodyParts(string part) {
         semptom5 = myShoulders->nothingSymptom();
         
         myShoulders->findShoulderCondition(semptom1, semptom2, sempton3, sempton4, sempton5);
-        delete myHands;
+        delete myShoulders;
 
     }
 
     else if (part == "foot") {
+        string semptom1, semptom2, sempton3, sempton4, sempton5;
+        foot* myFoot = new foot;
+        semptom1 = myFoot->footPain();
+        semptom2 = myFoot->footSwelling();
+        semptom3 = myFoot->footWeakness();
+        semptom4 = myFoot->footNumbness();
+        semptom5 = myFoot->nothingSymptom();
+        
+        myFoot->findFootCondition(semptom1, semptom2, sempton3, sempton4, sempton5);
+        delete myFoot;
 
     }
 
     else if (part == "legs") {
+        string semptom1, semptom2, sempton3, sempton4, sempton5;
+        legs* myLegs = new legs;
+        semptom1 = myLegs->legPain();
+        semptom2 = myLegs->legSwelling();
+        semptom3 = myLegs->legWeakness();
+        semptom4 = myLegs->legNumbness();
+        semptom5 = myLegs->nothingSymptom();
+        
+        myLegs->findLegCondition(semptom1, semptom2, sempton3, sempton4, sempton5);
+        delete myLegs;
 
     }
 
