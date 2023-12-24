@@ -265,7 +265,26 @@ public:
     			cout << "Mild respiratory irritation. Monitor symptoms and seek medical advice if they persist." << endl;
 		}
 
+		else if ((headache == "no") && (seizures == "no") && ( memoryLoss == "yes") && (panicAttack == "yes") ) {
+			cout << "Panic attacks and memory loss can be associated with anxiety disorders." << endl;
+		}
+		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "yes") && (panicAttack == "no") ) {
+			cout << "Memory loss may indicate Alzheimer's disease, dementia, or other memory disorders." << endl;
+		}
+		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "no") && (panicAttack == "yes")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
 
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
+		else {
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
+		}
 	}
 };
 
