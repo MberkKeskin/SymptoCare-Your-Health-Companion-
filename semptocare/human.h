@@ -344,24 +344,7 @@ public:
 	}
 
 	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom,string symptom) {
-		if (chestPainSymptom == "yes" && breathSymptom == "yes" && coughSymptom == "yes" && feverSymptom == "yes") {
-			cout << "You may have severe pneumonia. Seek immediate medical attention." << endl;
-		}
-		else if ((chestPainSymptom == "yes") && breathSymptom == "yes" && coughSymptom == "no" && feverSymptom == "yes") {
-			cout << "Possible heart-related issue. Consult a cardiologist." << endl;
-		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && coughSymptom == "yes" && feverSymptom == "no") {
-			cout << "Probable respiratory infection. Consult a doctor for further evaluation." << endl;
-		}
-		else if (chestPainSymptom == "no" && breathSymptom == "no" && coughSymptom == "yes" && feverSymptom == "yes") {
-			cout << "Likely influenza. Rest and stay hydrated." << endl;
-		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && coughSymptom == "no" && feverSymptom == "no") {
-			cout << "Mild respiratory irritation. Monitor symptoms and seek medical advice if they persist." << endl;
-		}
-		else if (chestPainSymptom == "yes" && breathSymptom == "no" && coughSymptom == "no" && feverSymptom == "no") {
-			cout << "Possible musculoskeletal chest pain. Consult a healthcare professional for evaluation." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -414,24 +397,7 @@ public:
 	}
 
 	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom,string symptom) {
-		if (chestPainSymptom == "yes" && breathSymptom == "yes" && palpitationsSymptom == "yes" && fatigueSymptom == "yes") {
-			cout << "You may have a serious heart condition. Seek immediate medical attention." << endl;
-		}
-		else if (chestPainSymptom == "yes" && breathSymptom == "yes" && palpitationsSymptom == "no" && fatigueSymptom == "yes") {
-			cout << "Possible angina. Consult a cardiologist." << endl;
-		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && palpitationsSymptom == "yes" && fatigueSymptom == "no") {
-			cout << "Probable arrhythmia. Consult a doctor for further evaluation." << endl;
-		}
-		else if (chestPainSymptom == "no" && breathSymptom == "no" && palpitationsSymptom == "yes" && fatigueSymptom == "yes") {
-			cout << "Likely heart palpitations. Monitor symptoms and seek medical advice if they persist." << endl;
-		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && palpitationsSymptom == "no" && fatigueSymptom == "no") {
-			cout << "Mild shortness of breath. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (chestPainSymptom == "yes" && breathSymptom == "no" && palpitationsSymptom == "no" && fatigueSymptom == "no") {
-			cout << "Possible musculoskeletal chest pain. Consult a healthcare professional for evaluation." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -483,24 +449,7 @@ public:
 	}
 
 	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom,string symptom) {
-		if (abdominalPainSymptom == "yes" && nauseaSymptom == "yes" && vomitingSymptom == "yes" && bloatingSymptom == "yes") {
-			cout << "You may have a severe gastrointestinal issue. Seek immediate medical attention." << endl;
-		}
-		else if (abdominalPainSymptom == "yes" && nauseaSymptom == "yes" && vomitingSymptom == "no" && bloatingSymptom == "yes") {
-			cout << "Possible gastritis. Consult a gastroenterologist." << endl;
-		}
-		else if (abdominalPainSymptom == "no" && nauseaSymptom == "yes" && vomitingSymptom == "yes" && bloatingSymptom == "no") {
-			cout << "Probable food poisoning. Consult a doctor for further evaluation." << endl;
-		}
-		else if (abdominalPainSymptom == "no" && nauseaSymptom == "no" && vomitingSymptom == "yes" && bloatingSymptom == "yes") {
-			cout << "Likely gastroenteritis. Rest and stay hydrated." << endl;
-		}
-		else if (abdominalPainSymptom == "no" && nauseaSymptom == "yes" && vomitingSymptom == "no" && bloatingSymptom == "no") {
-			cout << "Mild stomach upset. Monitor symptoms and seek medical advice if they persist." << endl;
-		}
-		else if (abdominalPainSymptom == "yes" && nauseaSymptom == "no" && vomitingSymptom == "no" && bloatingSymptom == "no") {
-			cout << "Possible musculoskeletal abdominal pain. Consult a healthcare professional for evaluation." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -557,24 +506,7 @@ public:
 	}
 
 	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom,string symptom) {
-		if (armPainSymptom == "yes" && armSwellingSymptom == "yes" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your arms. Seek immediate medical attention." << endl;
-		}
-		else if (armPainSymptom == "yes" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your arms. Rest and consult an orthopedic specialist if needed." << endl;
-		}
-		else if (armPainSymptom == "no" && armSwellingSymptom == "yes" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your arms. Consult a doctor for further evaluation." << endl;
-		}
-		else if (armPainSymptom == "no" && armSwellingSymptom == "no" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your arms. Consult a neurologist for further assessment." << endl;
-		}
-		else if (armPainSymptom == "no" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
-			cout << "Mild swelling in your arms. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your arms. Rest and consult a healthcare professional if symptoms persist." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -626,24 +558,7 @@ public:
 	}
 
 	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom) {
-		if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your hands. Seek immediate medical attention." << endl;
-		}
-		else if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your hands. Rest and consult an orthopedic specialist if needed." << endl;
-		}
-		else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your hands. Consult a doctor for further evaluation." << endl;
-		}
-		else if (handPainSymptom == "no" && handSwellingSymptom == "no" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your hands. Consult a neurologist for further assessment." << endl;
-		}
-		else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
-			cout << "Mild swelling in your hands. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your hands. Rest and consult a healthcare professional if symptoms persist." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -694,24 +609,7 @@ public:
 	}
 
 	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom,string symptom) {
-		if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "yes" && shoulderNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your shoulders. Seek immediate medical attention." << endl;
-		}
-		else if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "no" && shoulderNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your shoulders. Rest and consult an orthopedic specialist if needed." << endl;
-		}
-		else if (shoulderPainSymptom == "no" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "yes" && shoulderNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your shoulders. Consult a doctor for further evaluation." << endl;
-		}
-		else if (shoulderPainSymptom == "no" && shoulderSwellingSymptom == "no" && shoulderWeaknessSymptom == "yes" && shoulderNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your shoulders. Consult a neurologist for further assessment." << endl;
-		}
-		else if (shoulderPainSymptom == "no" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "no" && shoulderNumbnessSymptom == "no") {
-			cout << "Mild swelling in your shoulders. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "no" && shoulderWeaknessSymptom == "no" && shoulderNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your shoulders. Rest and consult a healthcare professional if symptoms persist." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -763,24 +661,7 @@ public:
 	}
 
 	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom,string symptom) {
-		if (footPainSymptom == "yes" && footSwellingSymptom == "yes" && footWeaknessSymptom == "yes" && footNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your feet. Seek immediate medical attention." << endl;
-		}
-		else if (footPainSymptom == "yes" && footSwellingSymptom == "yes" && footWeaknessSymptom == "no" && footNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your feet. Rest and consult an orthopedic specialist if needed." << endl;
-		}
-		else if (footPainSymptom == "no" && footSwellingSymptom == "yes" && footWeaknessSymptom == "yes" && footNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your feet. Consult a doctor for further evaluation." << endl;
-		}
-		else if (footPainSymptom == "no" && footSwellingSymptom == "no" && footWeaknessSymptom == "yes" && footNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your feet. Consult a neurologist for further assessment." << endl;
-		}
-		else if (footPainSymptom == "no" && footSwellingSymptom == "yes" && footWeaknessSymptom == "no" && footNumbnessSymptom == "no") {
-			cout << "Mild swelling in your feet. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (footPainSymptom == "yes" && footSwellingSymptom == "no" && footWeaknessSymptom == "no" && footNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your feet. Rest and consult a healthcare professional if symptoms persist." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -832,24 +713,7 @@ public:
 	}
 
 	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom,string symptom) {
-		if (legPainSymptom == "yes" && legSwellingSymptom == "yes" && legWeaknessSymptom == "yes" && legNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your legs. Seek immediate medical attention." << endl;
-		}
-		else if (legPainSymptom == "yes" && legSwellingSymptom == "yes" && legWeaknessSymptom == "no" && legNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your legs. Rest and consult an orthopedic specialist if needed." << endl;
-		}
-		else if (legPainSymptom == "no" && legSwellingSymptom == "yes" && legWeaknessSymptom == "yes" && legNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your legs. Consult a doctor for further evaluation." << endl;
-		}
-		else if (legPainSymptom == "no" and legSwellingSymptom == "no" && legWeaknessSymptom == "yes" && legNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your legs. Consult a neurologist for further assessment." << endl;
-		}
-		else if (legPainSymptom == "no" && legSwellingSymptom == "yes" && legWeaknessSymptom == "no" && legNumbnessSymptom == "no") {
-			cout << "Mild swelling in your legs. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (legPainSymptom == "yes" && legSwellingSymptom == "no" && legWeaknessSymptom == "no" && legNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your legs. Rest and consult a healthcare professional if symptoms persist." << endl;
-		}
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
