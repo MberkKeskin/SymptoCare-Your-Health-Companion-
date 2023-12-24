@@ -25,23 +25,23 @@ class head : public human {
 class eye : public head, public human {
 
 private:
-	string symptonForBlurredVision, symptonForEyePain, symptomForEyeSwell, symptom;
+	string symptomForBlurredVision, symptomForEyePain, symptomForEyeSwell, symptom;
 
 public:
-	
+
 	string blurredVision() {
 		cout << " Do you have blurred vision? (yes/no) " << endl;
-		cin >> symptonForBlurredVision;
-		return symptonForBlurredVision;
+		cin >> symptomForBlurredVision;
+		return symptomForBlurredVision;
 	}
 
 	string eyePain() {
 		cout << " Do you have eye pain? (yes/no) " << endl;
-		cin >> symptonForEyePain;
-		return symptonForEyePain;
+		cin >> symptomForEyePain;
+		return symptomForEyePain;
 	}
 
-	
+
 
 	string eyeSweell() {
 		cout << " Do you have eye sweel? (yes/no) " << endl;
@@ -55,25 +55,25 @@ public:
 		return symptom;
 	}
 
-	void findEyeDisaster(string semptomBluredVision, string semptomeyePain ,string semptomEyeSwell,string symptom) {
+	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom) {
 		if ((semptomBluredVision == "yes" || semptomBluredVision == "Yes" || semptomBluredVision == "YES") && (semptomeyePain == "yes" || semptomeyePain == "YES" || semptomeyePain == "Yes")) {
-			cout << " You have Glokom disaster " << endl;
+			cout << " You have Glokom disease " << endl;
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if (semptomBluredVision == "yes" && semptomeyePain == "yes") {
-			cout << " You have katarakt disaster " << endl;
+			cout << " You have katarakt disease " << endl;
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if (semptomEyeSwell == "yes") {
-			cout << " You have Alerjic Konjonktivit disaster " << endl;
+			cout << " You have Alerjic Konjonktivit disease " << endl;
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
-		else if (symptom=="yes"){
+		else if (symptom == "yes") {
 			cout << " If you have other symptoms please go to doctor again " << endl;
-			
+
 		}
-		else if(symptom == "no"){
-			cout << " plese enter ture department eye departmennt maybe wrong for you " << endl;
+		else if (symptom == "no") {
+			cout << "Please enter true department. Eye department might be the wrong department for you " << endl;
 		}
 
 	}
@@ -82,48 +82,47 @@ public:
 
 class mouth : public head, public human {
 private:
-	string symptonTasteDiasater,symptomBleedingTheet,symptomForToohLosse, symptomMouthDryness,symptonMouthCankerSores,semptom;
+	string symptomTasteDiasater, symptomBleedingTeeth, symptomForToothLoss, symptomMouthDryness, symptomMouthCankerSores, symptom;
 
 public:
-	
-	string tasteDisaster() {
-		cout << " Do you have tasteDisaster? (yes/no) " << endl;
-		cin >> symptonTasteDiasater;
-		return symptonTasteDiasater;
 
+	string tasteDisaster() {
+		cout << " Do you have taste loss? (yes/no) " << endl;
+		cin >> symptomTasteDiasater;
+		return symptomTasteDiasater;
 	}
 
 	string bleedingTeeth() {
-		cout << " Do you have bleeding teeth ? (yes/no) " << endl;
-		cin >> symptomBleedingTheet;
-		return symptomBleedingTheet;
+		cout << " Do you have bleeding teeth? (yes/no) " << endl;
+		cin >> symptomBleedingTeeth;
+		return symptomBleedingTeeth;
 	}
 
 	string toothLosse() {
-		cout << " Do you have any tooth losse ? (yes/no) " << endl;
-		cin >> symptomForToohLosse;
-		return symptomForToohLosse;
+		cout << " Do you have any tooth loss? (yes/no) " << endl;
+		cin >> symptomForToothLoss;
+		return symptomForToothLoss;
 	}
 
 	string mouthDryness() {
-		cout << " Do you have mouth Dryness ? (yes/no) " << endl;
+		cout << " Do you have mouth dryness ? (yes/no) " << endl;
 		cin >> symptomMouthDryness;
 		return symptomMouthDryness;
 	}
 
 	string mouthCankerSores() {
 		cout << " Do you have mouthCankerSores ? (yes/no) " << endl;
-		cin >> symptonMouthCankerSores;
-		return symptonMouthCankerSores;
+		cin >> symptomMouthCankerSores;
+		return symptomMouthCankerSores;
 	}
 
 	string nothingSymptom() {
 		cout << " Do you have other Symptoms ? (yes/no) " << endl;
-		cin >> semptom;
-		return semptom;
+		cin >> symptom;
+		return symptom;
 	}
 
-	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomToothLose, string semptomDryness, string symptomCankerSores, string semtom) {
+	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomToothLose, string semptomDryness, string symptomCankerSores, string symptom) {
 		if ((semptomTasteDisaster == "yes" || semptomTasteDisaster == "Yes" || semptomTasteDisaster == "YES") && (semptomBleddingTeeth == "YES" || semptomBleddingTeeth == "Yes" || semptomBleddingTeeth == "yes")) {
 			cout << "You have tongue cancer";
 		}
@@ -134,23 +133,66 @@ public:
 			cout << "You have frengi";
 		}
 
-		else if (semtom == "yes" || semtom == "Yes" || semtom == "YES") {
+		else if ((semptomBleddingTeeth == "yes" || semptomBleddingTeeth == "Yes" || semptomBleddingTeeth == "YES") && (semptomToothLose == "yes" || semptomToothLose == "Yes" || semptomToothLose == "YES")) {
+			cout << "Immediately apply to a dentist.";
+		}
+
+		else if (symptom == "yes" || symptom == "Yes" || symptom == "YES") {
 			cout << " You have other mouth disaster " << endl;
 		}
 
-		else if (semtom == "no" || semtom == "No" || semtom == "NO") {
-			cout << " Please enter true apartment  " << endl;
+		else if (symptom == "no" || symptom == "No" || symptom == "NO") {
+			cout << "Please enter true department" << endl;
 		}
-
 	}
-
-	
-
-
 };
 
 class brain : public head, public human {
+private:
+	string headache, nausea, seizures, shaking, memoryLoss, panicAttack, symptom;
 
+public: 
+	string headacheSymptom() {
+		cout << "Do you have strong headaches? (yes/no)" << endl;
+		cin >> headache;
+		return headache;
+	}
+
+	string nauseaSymptom() {
+		cout << "Do you have nausea? (yes/no)" << endl;
+		cin >> nausea;
+		return nausea;
+	}
+
+	string seizureSymptom() {
+		cout << "Do you have seizures very often? (yes/no)" << endl;
+		cin >> seizures;
+		return seizures;
+	}
+
+	string shakingSymptom() {
+		cout << "Does your body shake more than an average person? (yes/no)" << endl;
+		cin >> shaking;
+		return shaking;
+	}
+
+	string memoryLossSymptom() {
+		cout << "Do you have memory loss? (yes/no)" << endl;
+		cin >> memoryLoss;
+		return memoryLoss;
+	}
+
+	string panicAttackSymptom() {
+		cout << "Do you have panic attacks frequently? (yes/no)" << endl;
+		cin >> panicAttack;
+		return panicAttack;
+	}
+
+	string nothingSymptom() {
+		cout << "Do you have any other symptoms? (yes/no)" << endl;
+		cin >> symptom;
+		return symptom;
+	}
 };
 
 class body : public human {
