@@ -236,18 +236,21 @@ public:
 		return symptom;
 	}
 
-	void findBrainDisaster(string headache, string seizure,string memory, string panicAttack, string symptom) {
-		
-		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+	void findBrainDisaster(string headache,  string seizure, string memory, string panicAttack, string symptom) {
+		if ((headache == "yes") && (seizure == "yes") && (memory == "yes") && (panicAttack == "yes")) {
+			cout << "You have epilepsi" << endl;
 		}
 
-		else if (symptom == "no") {
-			cout << "Please enter true department" << endl;
+		else if ((headache == "yes") && (seizure == "yes") && (memory == "yes") && (panicAttack == "no")) {
+			cout << "You have Vascular Problems" << endl;
 		}
-		else {
-			cout << "Please enter only yes/no. Thank you. " << endl;
 
+		else if ((headache == "yes") && (seizure == "yes") && (memory == "no") && (panicAttack == "yes") ) {
+			cout << "You have Psychogenic Seizures:" << endl;
+		}
+
+		else if ((headache == "yes") && (seizure == "yes") && (memory == "no") && (panicAttack == "no") ) {
+			cout << "You have Neurological Diseases" << endl;
 		}
 
 	}
