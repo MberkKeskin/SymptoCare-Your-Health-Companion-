@@ -252,6 +252,19 @@ public:
 		else if ((headache == "yes") && (seizure == "yes") && (memory == "no") && (panicAttack == "no") ) {
 			cout << "You have Neurological Diseases" << endl;
 		}
+		else if ((headache == "yes") &&(seizures == "no") &&(memoryLoss == "yes") &&(panicAttack == "yes")) {
+    			cout << "Possible heart-related issue. Consult a cardiologist." << endl;
+		}
+		else if ((headache == "yes") &&(seizures == "no") &&(memoryLoss == "yes") &&(panicAttack == "no")) 		{
+    			cout << "Probable respiratory infection. Consult a doctor for further evaluation." << endl;
+		}
+		else if ((headache == "yes") &&(seizures == "no") &&(memoryLoss == "no") &&(panicAttack == "yes")) {
+    			cout << "Likely influenza. Rest and stay hydrated." << endl;
+		}
+		else if ((headache == "yes") &&(seizures == "no") &&(memoryLoss == "no") &&(panicAttack == "no")) {
+    			cout << "Mild respiratory irritation. Monitor symptoms and seek medical advice if they persist." << endl;
+		}
+
 
 	}
 };
