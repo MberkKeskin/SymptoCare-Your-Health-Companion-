@@ -151,7 +151,7 @@ class brain : public head, public human {
 private:
 	string headache, nausea, seizures, shaking, memoryLoss, panicAttack, symptom;
 
-public: 
+public:
 	string headacheSymptom() {
 		cout << "Do you have strong headaches? (yes/no)" << endl;
 		cin >> headache;
@@ -192,6 +192,20 @@ public:
 		cout << "Do you have any other symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		return symptom;
+	}
+
+	void findBrainDisaster(string headache, string nausea, string seizure, string shaking, string memory, string panicAttack, string nothing) {
+		if ((headache == "yes" || headache == "YES" || headache == "Yes") && (nausea == "yes" || nausea == "YES" || nausea == "Yes")) {
+			cout << " you have migraine" << endl;
+
+		}
+		else if ((panicAttack == "yes" || panicAttack == "yes" || panicAttack == "yes") && (seizure == "yes" || seizure == "Yes" || seizure == "YES") && (shaking == "yes" || shaking == "Yes" || shaking == "YES")) {
+			cout << " you have anxiety" << endl;
+		}
+		else if ((shaking == "yes" || shaking == "Yes" || shaking == "YES") && (headache == "yes" || headache == "YES" || headache == "Yes")) {
+			cout << " you have parkinson" << endl;
+		}
+
 	}
 };
 
