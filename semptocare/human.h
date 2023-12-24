@@ -274,6 +274,22 @@ public:
 		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "no") && (panicAttack == "yes")) {
 			cout << "Sorry One symptom is not enought for ill" << endl;
 		}
+
+		else if (headache == "no" && seizures == "yes" && memoryLoss == "yes" && panicAttack == "yes") {
+			cout << "You might have epilepsy or anxiety." << endl;
+		}
+
+		else if (headache == "no" && seizures == "yes" && memoryLoss == "yes" && panicAttack == "no") {
+			cout << "You might have epilepsy or Alzheimer's disease." << endl;
+		}
+		
+		else if (headache == "no" && seizures == "yes" && memoryLoss == "no" && panicAttack == "yes") {
+			cout << "You might have epilepsy. Consult a psychiatrist for your panic attack." << endl;
+		}
+		
+		else if (headache == "no" && seizures == "yes" && memoryLoss == "no" && panicAttack == "no") {
+			cout << "You might have epilepsy, traumatic injuries or brain infections." << endl;
+		}
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
