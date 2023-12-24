@@ -72,7 +72,7 @@ public:
 			cout << " You have Katarackt disease " << endl;
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
-			cout << " You have Presiboji disease " << endl;
+			cout << " Sorry One symptom is not enought for ill " << endl;
 		}
 		else if (symptom == "yes") {
 			cout << " If you have other eye disaster symptoms please go to doctor  " << endl;
@@ -191,12 +191,16 @@ public:
 		else if (symptom == "no") {
 			cout << "Please enter true department" << endl;
 		}
+		else {
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
+		}
 	}
 };
 
 class brain : public head, public human {
 private:
-	string headache,  seizures, memoryLoss, panicAttack, symptom;
+	string headache, seizures, memoryLoss, panicAttack, symptom;
 
 public:
 	string headacheSymptom() {
@@ -232,8 +236,8 @@ public:
 		return symptom;
 	}
 
-	void findBrainDisaster(string headache, string nausea, string seizure, string shaking, string memory, string panicAttack, string nothing) {
-		if ((headache == "yes" || headache == "YES" || headache == "Yes") && (nausea == "yes" || nausea == "YES" || nausea == "Yes")) {
+	void findBrainDisaster(string headache, string nausea, string seizure, string shaking, string memory, string panicAttack, string symptom) {
+		if ((headache == "yes") && (nausea == "yes" || nausea == "YES" || nausea == "Yes")) {
 			cout << " you have migraine" << endl;
 
 		}
@@ -242,6 +246,17 @@ public:
 		}
 		else if ((shaking == "yes" || shaking == "Yes" || shaking == "YES") && (headache == "yes" || headache == "YES" || headache == "Yes")) {
 			cout << " you have parkinson" << endl;
+		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
+		else {
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 
 	}
@@ -286,11 +301,11 @@ public:
 		return symptom;
 	}
 
-	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom) {
+	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom,string symptom) {
 		if (chestPainSymptom == "yes" && breathSymptom == "yes" && coughSymptom == "yes" && feverSymptom == "yes") {
 			cout << "You may have severe pneumonia. Seek immediate medical attention." << endl;
 		}
-		else if (chestPainSymptom == "yes" && breathSymptom == "yes" && coughSymptom == "no" && feverSymptom == "yes") {
+		else if ((chestPainSymptom == "yes") && breathSymptom == "yes" && coughSymptom == "no" && feverSymptom == "yes") {
 			cout << "Possible heart-related issue. Consult a cardiologist." << endl;
 		}
 		else if (chestPainSymptom == "no" && breathSymptom == "yes" && coughSymptom == "yes" && feverSymptom == "no") {
@@ -305,8 +320,16 @@ public:
 		else if (chestPainSymptom == "yes" && breathSymptom == "no" && coughSymptom == "no" && feverSymptom == "no") {
 			cout << "Possible musculoskeletal chest pain. Consult a healthcare professional for evaluation." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 };
@@ -348,7 +371,7 @@ public:
 		return symptom;
 	}
 
-	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom) {
+	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom,string symptom) {
 		if (chestPainSymptom == "yes" && breathSymptom == "yes" && palpitationsSymptom == "yes" && fatigueSymptom == "yes") {
 			cout << "You may have a serious heart condition. Seek immediate medical attention." << endl;
 		}
@@ -367,8 +390,16 @@ public:
 		else if (chestPainSymptom == "yes" && breathSymptom == "no" && palpitationsSymptom == "no" && fatigueSymptom == "no") {
 			cout << "Possible musculoskeletal chest pain. Consult a healthcare professional for evaluation." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 
@@ -409,7 +440,7 @@ public:
 		return symptom;
 	}
 
-	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom) {
+	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom,string symptom) {
 		if (abdominalPainSymptom == "yes" && nauseaSymptom == "yes" && vomitingSymptom == "yes" && bloatingSymptom == "yes") {
 			cout << "You may have a severe gastrointestinal issue. Seek immediate medical attention." << endl;
 		}
@@ -428,8 +459,16 @@ public:
 		else if (abdominalPainSymptom == "yes" && nauseaSymptom == "no" && vomitingSymptom == "no" && bloatingSymptom == "no") {
 			cout << "Possible musculoskeletal abdominal pain. Consult a healthcare professional for evaluation." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 
@@ -475,7 +514,7 @@ public:
 		return symptom;
 	}
 
-	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom) {
+	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom,string symptom) {
 		if (armPainSymptom == "yes" && armSwellingSymptom == "yes" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "yes") {
 			cout << "You may have a serious neurological or vascular issue in your arms. Seek immediate medical attention." << endl;
 		}
@@ -494,8 +533,16 @@ public:
 		else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
 			cout << "Possible muscle strain in your arms. Rest and consult a healthcare professional if symptoms persist." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given arm symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 
@@ -536,7 +583,7 @@ public:
 		return symptom;
 	}
 
-	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom) {
+	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom) {
 		if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
 			cout << "You may have a serious neurological or vascular issue in your hands. Seek immediate medical attention." << endl;
 		}
@@ -555,8 +602,16 @@ public:
 		else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
 			cout << "Possible muscle strain in your hands. Rest and consult a healthcare professional if symptoms persist." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given hand symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 };
@@ -596,7 +651,7 @@ public:
 		return symptom;
 	}
 
-	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom) {
+	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom,string symptom) {
 		if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "yes" && shoulderNumbnessSymptom == "yes") {
 			cout << "You may have a serious neurological or vascular issue in your shoulders. Seek immediate medical attention." << endl;
 		}
@@ -615,8 +670,16 @@ public:
 		else if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "no" && shoulderWeaknessSymptom == "no" && shoulderNumbnessSymptom == "no") {
 			cout << "Possible muscle strain in your shoulders. Rest and consult a healthcare professional if symptoms persist." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given shoulder symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 
@@ -657,7 +720,7 @@ public:
 		return symptom;
 	}
 
-	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom) {
+	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom,string symptom) {
 		if (footPainSymptom == "yes" && footSwellingSymptom == "yes" && footWeaknessSymptom == "yes" && footNumbnessSymptom == "yes") {
 			cout << "You may have a serious neurological or vascular issue in your feet. Seek immediate medical attention." << endl;
 		}
@@ -676,8 +739,16 @@ public:
 		else if (footPainSymptom == "yes" && footSwellingSymptom == "no" && footWeaknessSymptom == "no" && footNumbnessSymptom == "no") {
 			cout << "Possible muscle strain in your feet. Rest and consult a healthcare professional if symptoms persist." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given foot symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 
@@ -718,7 +789,7 @@ public:
 		return symptom;
 	}
 
-	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom) {
+	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom,string symptom) {
 		if (legPainSymptom == "yes" && legSwellingSymptom == "yes" && legWeaknessSymptom == "yes" && legNumbnessSymptom == "yes") {
 			cout << "You may have a serious neurological or vascular issue in your legs. Seek immediate medical attention." << endl;
 		}
@@ -737,8 +808,16 @@ public:
 		else if (legPainSymptom == "yes" && legSwellingSymptom == "no" && legWeaknessSymptom == "no" && legNumbnessSymptom == "no") {
 			cout << "Possible muscle strain in your legs. Rest and consult a healthcare professional if symptoms persist." << endl;
 		}
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+
+		else if (symptom == "no") {
+			cout << "Please enter true department" << endl;
+		}
 		else {
-			cout << "Unable to provide a specific diagnosis based on the given leg symptoms. Consult a healthcare professional." << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+
 		}
 	}
 
