@@ -41,13 +41,13 @@ void findBodyParts(string part) {
 
     else if (part == "brain") {
         string semptom1, semptom2, sempton3, sempton4, sempton5, sempton6, semptom7;
-        mouth* myMouth = new mouth;
-        semptom1 = myBrain->headache();
-        semptom2 = myBrain->nausea();
-        semptom3 = myBrain->seizures();
-        semptom4 = myBrain->shaking();
-        semptom5 = myBrain->memoryLoss();
-        semptom6 = myBrain->panicAttack();
+        brain* myBrain = new brain;
+        semptom1 = myBrain->headacheSymptom();
+        semptom2 = myBrain->nauseaSymptom();
+        semptom3 = myBrain->seizuresSymptom();
+        semptom4 = myBrain->shakingSymptom();
+        semptom5 = myBrain->memoryLossSymptom();
+        semptom6 = myBrain->panicAttackSymptom();
         semptom7 = myBrain->nothingSymptom();
         myMouth->findBrainDisaster(semptom1, semptom2, sempton3, sempton4, sempton5, sempton6, semptom7);
         delete myBrain;
@@ -55,6 +55,15 @@ void findBodyParts(string part) {
     }
 
     else if (part == "chest") {
+        string semptom1, semptom2, sempton3, sempton4, sempton5;
+       chest* myChest = new chest;
+        semptom1 = myBrain->chestPain();
+        semptom2 = myBrain->shortnessOfBreath();
+        semptom3 = myBrain->cough();
+        semptom4 = myBrain->fever();
+        semptom5 = myBrain->nothingSymptom();
+        myMouth->findBrainDisaster(semptom1, semptom2, sempton3, sempton4, sempton5);
+        delete myChest;
 
     }
 
