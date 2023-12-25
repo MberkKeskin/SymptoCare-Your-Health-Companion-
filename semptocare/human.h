@@ -968,6 +968,9 @@ public:
 		while (true) {
 			cout << "What is your gender (male/female)" << endl;
 			getline(cin, genderSelection);
+			for (char& ch : genderSelection) {
+				ch = tolower(ch);
+			}
 
 			if (genderSelection == "male" || genderSelection == "female") {
 				gender = (genderSelection == "male");
@@ -1004,6 +1007,9 @@ public:
 		while (true) {
 			cout << "Are you a smoker? (yes/no): ";
 			getline(cin, habit);
+			for (char& ch : habit) {
+				ch = tolower(ch);
+			}
 			if (habit == "yes" || habit == "no") {
 				smoking = (habit == "yes");
 				break;
@@ -1016,6 +1022,9 @@ public:
 		while (true) {
 			cout << "Do you drink occasionally? (yes/no): ";
 			getline(cin, habit);
+			for (char& ch : habit) {
+				ch = tolower(ch);
+			}
 			if (habit == "yes" || habit == "no") {
 				drinking = (habit == "yes");
 				break;
@@ -1028,6 +1037,9 @@ public:
 		while (true) {
 			cout << "Are you an allergic person? (yes/no): ";
 			getline(cin, habit);
+			for (char& ch : habit) {
+				ch = tolower(ch);
+			}
 			if (habit == "yes" || habit == "no") {
 				allergic = (habit == "yes");
 				break;
@@ -1040,6 +1052,9 @@ public:
 		while (true) {
 			cout << "Are you taking any medications (yes/no): ";
 			getline(cin, habit);
+			for (char& ch : habit) {
+				ch = tolower(ch);
+			}
 			if (habit == "yes" || habit == "no") {
 				medication = (habit == "yes");
 				break;
