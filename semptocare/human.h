@@ -418,15 +418,15 @@ public:
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
-			cout << "You might have epilepsy or anxiety." << endl;
+			cout << "You have Kistik Fibrozis disease" << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "no")) {
-			cout << "You might have epilepsy or Alzheimer's disease." << endl;
+			cout << "You might have Plevra  disease." << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "yes")) {
-			cout << "You might have epilepsy. Consult a psychiatrist for your panic attack." << endl;
+			cout << "You might have Sarkoidoz disease." << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "no")) {
@@ -487,26 +487,58 @@ public:
 	}
 
 	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom) {
-		if (chestPainSymptom == "yes" && breathSymptom == "yes" && palpitationsSymptom == "yes" && fatigueSymptom == "yes") {
-			cout << "You may have a serious heart condition. Seek immediate medical attention." << endl;
+		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << "You have lung cancer" << endl;
 		}
-		else if (chestPainSymptom == "yes" && breathSymptom == "yes" && palpitationsSymptom == "no" && fatigueSymptom == "yes") {
-			cout << "Possible angina. Consult a cardiologist." << endl;
+
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << "You have Gastroözofageal Reflü disease" << endl;
 		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && palpitationsSymptom == "yes" && fatigueSymptom == "no") {
-			cout << "Probable arrhythmia. Consult a doctor for further evaluation." << endl;
+
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
+			cout << "You have Pnömoni disease" << endl;
 		}
-		else if (chestPainSymptom == "no" && breathSymptom == "no" && palpitationsSymptom == "yes" && fatigueSymptom == "yes") {
-			cout << "Likely heart palpitations. Monitor symptoms and seek medical advice if they persist." << endl;
+
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
+			cout << "You have plörezi diseases" << endl;
 		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && palpitationsSymptom == "no" && fatigueSymptom == "no") {
-			cout << "Mild shortness of breath. Monitor symptoms and consult a healthcare professional if needed." << endl;
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << "Possible Pnomotoraks diseases" << endl;
 		}
-		else if (chestPainSymptom == "yes" && breathSymptom == "no" && palpitationsSymptom == "no" && fatigueSymptom == "no") {
-			cout << "Possible musculoskeletal chest pain. Consult a healthcare professional for evaluation." << endl;
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << "Probable KOAH." << endl;
 		}
-		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
+			cout << "Likely pulmonary embolism." << endl;
+		}
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << "You have Asthma disease." << endl;
+		}
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << "You have Kistik Fibrozis disease" << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << "You might have Plevra  disease." << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
+			cout << "You might have Sarkoidoz disease." << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
 		}
 
 		else if (symptom == "no") {
