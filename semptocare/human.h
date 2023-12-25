@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 #include <limits>
@@ -11,7 +12,7 @@ private:
 	string bodyPart;
 
 public:
-	void convertToLowercase(string &symptom) {
+	void convertToLowercase(string& symptom) {
 		for (char& ch : symptom) {
 			ch = tolower(ch);
 		}
@@ -71,11 +72,11 @@ public:
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-			cout << " You have Optic Norit disease " << endl;
+			cout << " You have Optic Retinopati disease " << endl;
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-			cout << " You have Allergic Conjunctivitis disease " << endl;
+			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
@@ -83,6 +84,14 @@ public:
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
 			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional." << endl;
+		}
+		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
+			cout << " You have Optic Norit disease " << endl;
+			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
+		}
+		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
+			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
+			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if (symptom == "yes") {
 			cout << " If you have any other symptoms, please consult a doctor." << endl;
@@ -280,34 +289,36 @@ public:
 			cout << "Likely influenza. Rest and stay hydrated." << endl;
 		}
 		else if ((headache == "yes") && (seizures == "no") && (memoryLoss == "no") && (panicAttack == "no")) {
-			cout << "Mild respiratory irritation. Monitor symptoms and seek medical advice if they persist." << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 
 		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "yes") && (panicAttack == "yes")) {
 			cout << "Panic attacks and memory loss can be associated with anxiety disorders." << endl;
 		}
 		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "yes") && (panicAttack == "no")) {
-			cout << "Memory loss may indicate Alzheimer's disease, dementia, or other memory disorders." << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "no") && (panicAttack == "yes")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 
-		else if (headache == "no" && seizures == "yes" && memoryLoss == "yes" && panicAttack == "yes") {
+		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "yes")) {
 			cout << "You might have epilepsy or anxiety." << endl;
 		}
 
-		else if (headache == "no" && seizures == "yes" && memoryLoss == "yes" && panicAttack == "no") {
+		else if ((headache == "no") && (seizures == "yes") &&( memoryLoss == "yes") && (panicAttack == "no")) {
 			cout << "You might have epilepsy or Alzheimer's disease." << endl;
 		}
 
-		else if (headache == "no" && seizures == "yes" && memoryLoss == "no" && panicAttack == "yes") {
+		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "no") && (panicAttack == "yes")) {
 			cout << "You might have epilepsy. Consult a psychiatrist for your panic attack." << endl;
 		}
 
-		else if (headache == "no" && seizures == "yes" && memoryLoss == "no" && panicAttack == "no") {
-			cout << "You might have epilepsy, traumatic injuries or brain infections." << endl;
+		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "no") && (panicAttack == "no")) {
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
+
+		
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -319,6 +330,7 @@ public:
 			cout << "Please enter only yes/no. Thank you. " << endl;
 
 		}
+		
 	}
 };
 
@@ -367,27 +379,60 @@ public:
 	}
 
 	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom) {
-		if (chestPainSymptom == "yes" && breathSymptom == "yes" && coughSymptom == "yes" && feverSymptom == "yes") {
-			cout << "You may have severe pneumonia. Seek immediate medical attention." << endl;
+		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
+			cout << "You have lung cancer" << endl;
 		}
-		else if ((chestPainSymptom == "yes") && breathSymptom == "yes" && coughSymptom == "no" && feverSymptom == "yes") {
-			cout << "Possible heart-related issue. Consult a cardiologist." << endl;
+
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "no")) {
+			cout << "You have Gastroözofageal Reflü disease" << endl;
 		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && coughSymptom == "yes" && feverSymptom == "no") {
-			cout << "Probable respiratory infection. Consult a doctor for further evaluation." << endl;
+
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "yes")) {
+			cout << "You have Pnömoni disease" << endl;
 		}
-		else if (chestPainSymptom == "no" && breathSymptom == "no" && coughSymptom == "yes" && feverSymptom == "yes") {
-			cout << "Likely influenza. Rest and stay hydrated." << endl;
+
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "no")) {
+			cout << "You have plörezi diseases" << endl;
 		}
-		else if (chestPainSymptom == "no" && breathSymptom == "yes" && coughSymptom == "no" && feverSymptom == "no") {
-			cout << "Mild respiratory irritation. Monitor symptoms and seek medical advice if they persist." << endl;
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
+			cout << "Possible Pnomotoraks diseases" << endl;
 		}
-		else if (chestPainSymptom == "yes" && breathSymptom == "no" && coughSymptom == "no" && feverSymptom == "no") {
-			cout << "Possible musculoskeletal chest pain. Consult a healthcare professional for evaluation." << endl;
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "no")) {
+			cout << "Probable KOAH." << endl;
 		}
-		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "no") && (feverSymptom == "yes")) {
+			cout << "Likely pulmonary embolism." << endl;
 		}
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "no") && (feverSymptom == "no")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
+			cout << "You have Asthma disease." << endl;
+		}
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "no")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (coughSymptom == "no") && (feverSymptom == "yes")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
+			cout << "You might have epilepsy or anxiety." << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "no")) {
+			cout << "You might have epilepsy or Alzheimer's disease." << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "yes")) {
+			cout << "You might have epilepsy. Consult a psychiatrist for your panic attack." << endl;
+		}
+
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "no")) {
+			cout << "Sorry One symptom is not enought for ill" << endl;
+		}
+
 
 		else if (symptom == "no") {
 			cout << "Please enter true department" << endl;
