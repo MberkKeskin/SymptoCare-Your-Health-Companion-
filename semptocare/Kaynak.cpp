@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <locale.h>
-#include "Human.h"
+#include  "Üst Bilgi.h"
 
 using namespace std;
 
@@ -15,8 +15,9 @@ void findBodyParts(string part) {
         symptom1 = myEye->blurredVision();
         symptom2 = myEye->eyePain();
         symptom3 = myEye->eyeSweell();
-        symptom4 = myEye->nothingSymptom();
-
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no")) {
+            symptom4 = myEye->nothingSymptom();
+        }
         myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4);
         delete myEye;
     }
@@ -29,8 +30,9 @@ void findBodyParts(string part) {
         symptom3 = myMouth->toothLosse();
         symptom4 = myMouth->mouthDryness();
         symptom5 = myMouth->mouthCankerSores();
-        symptom6 = myMouth->nothingSymptom();
-
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no") && (symptom5=="no")) {
+            symptom6 = myMouth->nothingSymptom();
+        }
         myMouth->findMouthDisaster(symptom1, symptom2, symptom3, symptom4, symptom5, symptom6);
         delete myMouth;
     }
@@ -42,8 +44,10 @@ void findBodyParts(string part) {
         symptom2 = myBrain->seizureSymptom();
         symptom3 = myBrain->memoryLossSymptom();
         symptom4 = myBrain->panicAttackSymptom();
-        symptom5 = myBrain->nothingSymptom();
-
+     
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myBrain->nothingSymptom();
+        }
         myBrain->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myBrain;
     }
@@ -84,6 +88,7 @@ void findBodyParts(string part) {
     else {
         cout << "Invalid input." << endl;
         part = human1.getBodyPart();
+        findBodyParts(part);
     }
 }
 
@@ -96,9 +101,10 @@ int main() {
     string part;
 
     human insan1;
+    part = insan1.getBodyPart();
+    findBodyParts(part);
 
-
-    string choiceForEmergency;
+   /* string choiceForEmergency;
     int choiceForMenu = 0;
 
     cout << " Welcome to SymptoCare!" << endl;
@@ -142,7 +148,7 @@ int main() {
             cout << "Invalid input. Please enter 1 or 2." << endl;
         }
     }
-
+    */
     cout << " Bizi tercih ettiginiz için tesekkür ederiz." << endl;
 
     return 0;
