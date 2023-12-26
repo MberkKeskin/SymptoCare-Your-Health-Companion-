@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <locale.h>
-#include  "Üst Bilgi.h"
+#include  "Human.h"
 
 using namespace std;
 
@@ -30,7 +30,7 @@ void findBodyParts(string part) {
         symptom3 = myMouth->toothLosse();
         symptom4 = myMouth->mouthDryness();
         symptom5 = myMouth->mouthCankerSores();
-        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no") && (symptom5=="no")) {
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
             symptom6 = myMouth->nothingSymptom();
         }
         myMouth->findMouthDisaster(symptom1, symptom2, symptom3, symptom4, symptom5, symptom6);
@@ -44,7 +44,7 @@ void findBodyParts(string part) {
         symptom2 = myBrain->seizureSymptom();
         symptom3 = myBrain->memoryLossSymptom();
         symptom4 = myBrain->panicAttackSymptom();
-     
+
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myBrain->nothingSymptom();
         }
@@ -55,34 +55,121 @@ void findBodyParts(string part) {
     else if (part == "chest") {
         string symptom1, symptom2, symptom3, symptom4, symptom5;
         chest* myChest = new chest;
+        symptom1 = myChest->chestPain();
+        symptom2 = myChest->shortnessOfBreath();
+        symptom3 = myChest->cough();
+        symptom4 = myChest->fever();
+
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myChest->nothingSymptom();
+        }
+        myChest->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myChest;
     }
 
     else if (part == "heart") {
+        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        heart* myHeart = new heart;
+        symptom1 = myHeart->chestPpain();
+        symptom2 = myHeart->shortnessOfBbreath();
+        symptom3 = myHeart->palpitations();
+        symptom4 = myHeart->fatigue();
 
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myHeart->nothingSymptom();
+        }
+        myHeart->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myHeart;
     }
 
     else if (part == "abdomen") {
+        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        abdomen* myAbdomen = new abdomen;
+        symptom1 = myAbdomen->abdominalPain();
+        symptom2 = myAbdomen->nausea();
+        symptom3 = myAbdomen->vomiting();
+        symptom4 = myAbdomen->bloating();
 
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myAbdomen->nothingSymptom();
+        }
+        myAbdomen->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myAbdomen;
     }
 
     else if (part == "arms") {
+        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        arms* myArms = new arms;
+        symptom1 = myArms->armPain();
+        symptom2 = myArms->armSwelling();
+        symptom3 = myArms->armWeakness();
+        symptom4 = myArms->armNumbness();
 
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myArms->nothingSymptom();
+        }
+        myArms->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myArms;
     }
 
     else if (part == "hands") {
+        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        hands* myHands = new hands;
+        symptom1 = myHands->handPain();
+        symptom2 = myHands->handSwelling();
+        symptom3 = myHands->handWeakness();
+        symptom4 = myHands->handNumbness();
 
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myHands->nothingSymptom();
+        }
+        myHands->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myHands;
     }
 
     else if (part == "shoulders") {
+        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        shoulders* myShoulders = new shoulders;
+        symptom1 = myShoulders->shoulderPain();
+        symptom2 = myShoulders->shoulderSwelling();
+        symptom3 = myShoulders->shoulderWeakness();
+        symptom4 = myShoulders->shoulderNumbness();
 
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myShoulders->nothingSymptom();
+        }
+        myShoulders->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myShoulders;
     }
 
     else if (part == "foot") {
+        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        foot* myFoot = new foot;
+        symptom1 = myFoot->footPain();
+        symptom2 = myFoot->footSwelling();
+        symptom3 = myFoot->footWeakness();
+        symptom4 = myFoot->footNumbness();
 
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myFoot->nothingSymptom();
+        }
+        myFoot->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myFoot;
     }
 
     else if (part == "legs") {
+        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        legs* myLegs = new legs;
+        symptom1 = myLegs->legPain();
+        symptom2 = myLegs->legSwelling();
+        symptom3 = myLegs->legWeakness();
+        symptom4 = myLegs->legNumbness();
 
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+            symptom5 = myLegs->nothingSymptom();
+        }
+        myLegs->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        delete myLegs;
     }
 
     else {
@@ -104,51 +191,51 @@ int main() {
     part = insan1.getBodyPart();
     findBodyParts(part);
 
-   /* string choiceForEmergency;
-    int choiceForMenu = 0;
+     string choiceForEmergency;
+     int choiceForMenu = 0;
 
-    cout << " Welcome to SymptoCare!" << endl;
+     cout << " Welcome to SymptoCare!" << endl;
 
-    while (true) {
-        cout << " Do you have an emergency situation? (yes/no)" << endl;
-        cin >> choiceForEmergency;
+     while (true) {
+         cout << " Do you have an emergency situation? (yes/no)" << endl;
+         cin >> choiceForEmergency;
 
-        if (choiceForEmergency == "yes") {
-            cout << "En kisa zamanda acil servise müracaat ediniz." << endl;
-            return 0;
-        }
-        else if (choiceForEmergency == "no") {
-            break;
-        }
-        else {
-            cout << "Invalid input. Please enter 'yes' or 'no'." << endl;
-        }
-    }
+         if (choiceForEmergency == "yes") {
+             cout << "En kisa zamanda acil servise müracaat ediniz." << endl;
+             return 0;
+         }
+         else if (choiceForEmergency == "no") {
+             break;
+         }
+         else {
+             cout << "Invalid input. Please enter 'yes' or 'no'." << endl;
+         }
+     }
 
-    while (choiceForMenu != 2) {
-        cout << " 1. Enter Patient information" << endl;
-        cout << " 2. Exit" << endl;
+     while (choiceForMenu != 2) {
+         cout << " 1. Enter Patient information" << endl;
+         cout << " 2. Exit" << endl;
 
-        cout << " Enter what do you want" << endl;
-        cin >> choiceForMenu;
+         cout << " Enter what do you want" << endl;
+         cin >> choiceForMenu;
 
-        if (cin.fail()) {
-            cout << "Invalid input. Please enter a valid number." << endl;
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            continue;
-        }
+         if (cin.fail()) {
+             cout << "Invalid input. Please enter a valid number." << endl;
+             cin.clear();
+             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+             continue;
+         }
 
-        if (choiceForMenu == 1) {
-            user.getInfo();
-            part = insan1.getBodyPart();
-            findBodyParts(part);
-        }
-        else if (choiceForMenu != 2) {
-            cout << "Invalid input. Please enter 1 or 2." << endl;
-        }
-    }
-    */
+         if (choiceForMenu == 1) {
+             user.getInfo();
+             part = insan1.getBodyPart();
+             findBodyParts(part);
+         }
+         else if (choiceForMenu != 2) {
+             cout << "Invalid input. Please enter 1 or 2." << endl;
+         }
+     }
+
     cout << " Bizi tercih ettiginiz için tesekkür ederiz." << endl;
 
     return 0;
