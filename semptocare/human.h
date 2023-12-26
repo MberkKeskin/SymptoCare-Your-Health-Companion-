@@ -433,7 +433,10 @@ public:
 			cout << "Sorry One symptom is not enought for ill" << endl;
 		}
 
-
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
+		}
+			
 		else if (symptom == "no") {
 			cout << "Please enter true department" << endl;
 		}
@@ -488,57 +491,61 @@ public:
 
 	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "You have lung cancer" << endl;
+			cout << "You have Myocardial Infarction " << endl;
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << "You have Gastroözofageal Reflü disease" << endl;
+			cout << "You have Angina Pektoris disease,Heart failure,Myokarit disase or Aritmiler  disease" << endl;
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "You have Pnömoni disease" << endl;
+			cout << "You have Myokardit disease,Anjina Pektoris,Aortic Stenosis or Coronary Artery Disease" << endl;
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
-			cout << "You have plörezi diseases" << endl;
+			cout << "You have likely  Perikardit ,Pulmoner Emboli, Angina Pektoris,Heart Valve Diseases or Heart failure diseases" << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "Possible Pnomotoraks diseases" << endl;
+			cout << "Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases" << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << "Probable KOAH." << endl;
+			cout << "Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure" << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "Likely pulmonary embolism." << endl;
+			cout << "Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati." << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "You have Asthma disease." << endl;
+			cout << "You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ." << endl;
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "You have Kistik Fibrozis disease" << endl;
+			cout << "You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease" << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << "You might have Plevra  disease." << endl;
+			cout << "You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease." << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "You might have Sarkoidoz disease." << endl;
+			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; disease." << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+		} 
+
+		else if (symptom == "yes") {
+			cout << " You have other mouth disaster " << endl;
 		}
 
 		else if (symptom == "no") {
@@ -593,24 +600,60 @@ public:
 	}
 
 	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom) {
-		if (abdominalPainSymptom == "yes" && nauseaSymptom == "yes" && vomitingSymptom == "yes" && bloatingSymptom == "yes") {
-			cout << "You may have a severe gastrointestinal issue. Seek immediate medical attention." << endl;
+		if ((abdominalPainSymptom == "yes") && (nauseaSymptom== "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
+			cout << "You have Myocardial Infarction " << endl;
 		}
-		else if (abdominalPainSymptom == "yes" && nauseaSymptom == "yes" && vomitingSymptom == "no" && bloatingSymptom == "yes") {
-			cout << "Possible gastritis. Consult a gastroenterologist." << endl;
+
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
+			cout << "You have Gastroenterit  disease" << endl;
 		}
-		else if (abdominalPainSymptom == "no" && nauseaSymptom == "yes" && vomitingSymptom == "yes" && bloatingSymptom == "no") {
-			cout << "Probable food poisoning. Consult a doctor for further evaluation." << endl;
+
+		else if ((abdominalPainSymptom== "yes") && (nauseaSymptom== "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+			cout << "You have Gastroenterit,Irritable Bowel Syndrome,Peptik Ülser or Gastroözofageal Reflü Disease" << endl;
 		}
-		else if (abdominalPainSymptom == "no" && nauseaSymptom == "no" && vomitingSymptom == "yes" && bloatingSymptom == "yes") {
-			cout << "Likely gastroenteritis. Rest and stay hydrated." << endl;
+
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
+			cout << "You have likely  Gastroenterit,Peptik Ülser,Irritable Bowel Syndrome,Peptik Ülser or Gastroözofageal Reflü diseases" << endl;
 		}
-		else if (abdominalPainSymptom == "no" && nauseaSymptom == "yes" && vomitingSymptom == "no" && bloatingSymptom == "no") {
-			cout << "Mild stomach upset. Monitor symptoms and seek medical advice if they persist." << endl;
+		else if ((abdominalPainSymptom== "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom== "yes")) {
+			cout << "Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases" << endl;
 		}
-		else if (abdominalPainSymptom == "yes" && nauseaSymptom == "no" && vomitingSymptom == "no" && bloatingSymptom == "no") {
-			cout << "Possible musculoskeletal abdominal pain. Consult a healthcare professional for evaluation." << endl;
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptomm == "yes") && (bloatingSymptom == "no")) {
+			cout << "Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure" << endl;
 		}
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+			cout << "Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati." << endl;
+		}
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+		}
+
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom== "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
+			cout << "You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ." << endl;
+		}
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+		}
+		else if ((cabdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+		}
+
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
+			cout << "You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease" << endl;
+		}
+
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
+			cout << "You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease." << endl;
+		}
+
+		else if ((abdominalPainSymptom== "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; disease." << endl;
+		}
+
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+		} 
+
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
