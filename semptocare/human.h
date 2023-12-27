@@ -28,7 +28,7 @@ public:
 class head : public human {
 };
 
-class eye : public head, public human {
+class eye : public head {
 
 private:
 	string symptomForBlurredVision, symptomForEyePain, symptomForEyeSwell, symptom;
@@ -115,7 +115,7 @@ string getBodyPart() override {
 
 };
 
-class mouth : public head, public human {
+class mouth : public head {
 private:
 	string symptomTasteDiasater, symptomBleedingTeeth, symptomForToothLoss, symptomMouthDryness, symptomMouthCankerSores, symptom;
 
@@ -228,7 +228,7 @@ public:
 	}
 };
 
-class brain : public head, public human {
+class brain : public head{
 private:
 	string headache, seizures, memoryLoss, panicAttack, symptom;
 
@@ -343,7 +343,7 @@ class body : public human {
 
 };
 
-class chest : public body, public human {
+class chest : public body{
 private:
 	string symptomChestPain, symptomShortnessOfBreath, symptomCough, symptomFever, symptom;
 
@@ -454,7 +454,7 @@ public:
 
 
 
-class heart : public body, public human {
+class heart : public body {
 private:
 	string symptomChestPain, symptomShortnessOfBreath, symptomPalpitations, symptomFatigue, symptom;
 
@@ -564,7 +564,7 @@ public:
 
 };
 
-class abdomen : public body, public human {
+class abdomen : public body{
 private:
 	string symptomAbdominalPain, symptomNausea, symptomVomiting, symptomBloating, symptom;
 
@@ -679,7 +679,7 @@ class limb : public human {
 
 };
 
-class arms : public limb, public human {
+class arms : public limb{
 private:
 	string symptomArmPain, symptomArmSwelling, symptomArmWeakness, symptomArmNumbness, symptom;
 
@@ -753,7 +753,7 @@ public:
 
 };
 
-class hands : public limb, public human {
+class hands : public limb{
 private:
 	string symptomHandPain, symptomHandSwelling, symptomHandWeakness, symptomHandNumbness, symptom;
 
@@ -826,7 +826,7 @@ public:
 	}
 };
 
-class shoulders : public limb, public human {
+class shoulders : public limb{
 private:
 	string symptomShoulderPain, symptomShoulderSwelling, symptomShoulderWeakness, symptomShoulderNumbness, symptom;
 
@@ -900,7 +900,7 @@ public:
 
 };
 
-class foot : public limb, public human {
+class foot : public limb{
 private:
 	string symptomFootPain, symptomFootSwelling, symptomFootWeakness, symptomFootNumbness, symptom;
 
@@ -974,7 +974,7 @@ public:
 
 };
 
-class legs : public limb, public human {
+class legs : public limb{
 private:
 	string symptomLegPain, symptomLegSwelling, symptomLegWeakness, symptomLegNumbness, symptom;
 
