@@ -8,7 +8,7 @@
 using namespace std;
 
 class human {
-private:
+protected:
 	string bodyPart;
 
 public:
@@ -34,6 +34,11 @@ private:
 	string symptomForBlurredVision, symptomForEyePain, symptomForEyeSwell, symptom;
 
 public:
+string getBodyPart() override {
+	cout << "What's your eye problem area?" << endl;
+	getline(cin, bodyPart);
+	return bodyPart;
+}
 
 	string blurredVision() {
 		cout << " Do you have blurred vision? (yes/no) " << endl;
