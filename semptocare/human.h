@@ -34,11 +34,11 @@ private:
 	string symptomForBlurredVision, symptomForEyePain, symptomForEyeSwell, symptom;
 
 public:
-string getBodyPart() override {
-	cout << "What's your eye problem area?" << endl;
-	getline(cin, bodyPart);
-	return bodyPart;
-}
+	string getBodyPart() override {
+		cout << "What's your eye problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 
 	string blurredVision() {
 		cout << " Do you have blurred vision? (yes/no) " << endl;
@@ -53,8 +53,6 @@ string getBodyPart() override {
 		human::convertToLowercase(symptomForEyePain);
 		return symptomForEyePain;
 	}
-
-
 
 	string eyeSweell() {
 		cout << " Do you have eye sweel? (yes/no) " << endl;
@@ -120,7 +118,11 @@ private:
 	string symptomTasteDiasater, symptomBleedingTeeth, symptomForToothLoss, symptomMouthDryness, symptomMouthCankerSores, symptom;
 
 public:
-
+	string getBodyPart() override {
+		cout << "What's your mouth problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 	string tasteDisaster() {
 		cout << " Do you have taste loss? (yes/no) " << endl;
 		cin >> symptomTasteDiasater;
@@ -166,27 +168,34 @@ public:
 	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomToothLose, string semptomDryness, string symptomCankerSores, string symptom) {
 
 		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes") && (semptomToothLose == "yes")) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "You have tongue cancer" << endl;
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (semptomToothLose == "yes") && (symptomCankerSores == "no")) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "You have Periodontal disease" << endl;
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomToothLose == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "You have Chronic Gingivitis disease" << endl;
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "You have Xerostomia disease" << endl;
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "yes") && (semptomToothLose == "no")) {
@@ -228,11 +237,16 @@ public:
 	}
 };
 
-class brain : public head{
+class brain : public head {
 private:
 	string headache, seizures, memoryLoss, panicAttack, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your brain problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 	string headacheSymptom() {
 		cout << "Do you have strong headaches? (yes/no)" << endl;
 		cin >> headache;
@@ -311,7 +325,7 @@ public:
 			cout << "You might have epilepsy or anxiety." << endl;
 		}
 
-		else if ((headache == "no") && (seizures == "yes") &&( memoryLoss == "yes") && (panicAttack == "no")) {
+		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "no")) {
 			cout << "You might have epilepsy or Alzheimer's disease." << endl;
 		}
 
@@ -323,7 +337,7 @@ public:
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 
-		
+
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
@@ -335,7 +349,7 @@ public:
 			cout << "Please enter only yes/no. Thank you. " << endl;
 
 		}
-		
+
 	}
 };
 
@@ -343,11 +357,16 @@ class body : public human {
 
 };
 
-class chest : public body{
+class chest : public body {
 private:
 	string symptomChestPain, symptomShortnessOfBreath, symptomCough, symptomFever, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your chest problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 	string chestPain() {
 		cout << "Do you have chest pain? (yes/no)" << endl;
 		cin >> symptomChestPain;
@@ -441,7 +460,7 @@ public:
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
-			
+
 		else if (symptom == "no") {
 			cout << "Please enter true department" << endl;
 		}
@@ -459,6 +478,11 @@ private:
 	string symptomChestPain, symptomShortnessOfBreath, symptomPalpitations, symptomFatigue, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your heart problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 	string chestPpain() {
 		cout << "Do you have chest pain? (yes/no)" << endl;
 		cin >> symptomChestPain;
@@ -542,12 +566,12 @@ public:
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; disease." << endl;
+			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; 
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-		} 
+		}
 
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
@@ -564,11 +588,17 @@ public:
 
 };
 
-class abdomen : public body{
+class abdomen : public body {
 private:
 	string symptomAbdominalPain, symptomNausea, symptomVomiting, symptomBloating, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your abdomen problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
+
 	string abdominalPain() {
 		cout << "Do you have abdominal pain? (yes/no)" << endl;
 		cin >> symptomAbdominalPain;
@@ -605,7 +635,8 @@ public:
 	}
 
 	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom) {
-		if ((abdominalPainSymptom == "yes") && (nauseaSymptom== "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
+		
+		if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
 			cout << "You have Myocardial Infarction " << endl;
 		}
 
@@ -613,17 +644,17 @@ public:
 			cout << "You have Gastroenterit  disease" << endl;
 		}
 
-		else if ((abdominalPainSymptom== "yes") && (nauseaSymptom== "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
 			cout << "You have Gastroenterit,Irritable Bowel Syndrome,Peptik Ülser or Gastroözofageal Reflü Disease" << endl;
 		}
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
 			cout << "You have likely  Gastroenterit,Peptik Ülser,Irritable Bowel Syndrome,Peptik Ülser or Gastroözofageal Reflü diseases" << endl;
 		}
-		else if ((abdominalPainSymptom== "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom== "yes")) {
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
 			cout << "Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases" << endl;
 		}
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptomm == "yes") && (bloatingSymptom == "no")) {
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
 			cout << "Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure" << endl;
 		}
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
@@ -633,13 +664,13 @@ public:
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom== "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
 			cout << "You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ." << endl;
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
-		else if ((cabdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
 
@@ -651,13 +682,13 @@ public:
 			cout << "You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease." << endl;
 		}
 
-		else if ((abdominalPainSymptom== "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
-			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; disease." << endl;
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; 
 		}
 
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-		} 
+		}
 
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
@@ -679,11 +710,17 @@ class limb : public human {
 
 };
 
-class arms : public limb{
+class arms : public limb {
 private:
 	string symptomArmPain, symptomArmSwelling, symptomArmWeakness, symptomArmNumbness, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your arms problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
+
 	string armPain() {
 		cout << "Do you have pain in your arms? (yes/no)" << endl;
 		cin >> symptomArmPain;
@@ -753,11 +790,16 @@ public:
 
 };
 
-class hands : public limb{
+class hands : public limb {
 private:
 	string symptomHandPain, symptomHandSwelling, symptomHandWeakness, symptomHandNumbness, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your hands problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 	string handPain() {
 		cout << "Do you have pain in your hands? (yes/no)" << endl;
 		cin >> symptomHandPain;
@@ -826,11 +868,16 @@ public:
 	}
 };
 
-class shoulders : public limb{
+class shoulders : public limb {
 private:
 	string symptomShoulderPain, symptomShoulderSwelling, symptomShoulderWeakness, symptomShoulderNumbness, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your shoulder problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 	string shoulderPain() {
 		cout << "Do you have pain in your shoulders? (yes/no)" << endl;
 		cin >> symptomShoulderPain;
@@ -900,11 +947,17 @@ public:
 
 };
 
-class foot : public limb{
+class foot : public limb {
 private:
 	string symptomFootPain, symptomFootSwelling, symptomFootWeakness, symptomFootNumbness, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your foot problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
+
 	string footPain() {
 		cout << "Do you have pain in your feet? (yes/no)" << endl;
 		cin >> symptomFootPain;
@@ -974,11 +1027,16 @@ public:
 
 };
 
-class legs : public limb{
+class legs : public limb {
 private:
 	string symptomLegPain, symptomLegSwelling, symptomLegWeakness, symptomLegNumbness, symptom;
 
 public:
+	string getBodyPart() override {
+		cout << "What's your legs problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
 	string legPain() {
 		cout << "Do you have pain in your legs? (yes/no)" << endl;
 		cin >> symptomLegPain;
