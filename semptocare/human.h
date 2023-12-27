@@ -18,7 +18,7 @@ public:
 		}
 	}
 
-	string getBodyPart() {
+	virtual string getBodyPart() {
 		cout << "What's your problem area?" << endl;
 		getline(cin, bodyPart);
 		return bodyPart;
