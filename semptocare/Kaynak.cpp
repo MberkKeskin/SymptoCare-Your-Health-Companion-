@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include  "Üst Bilgi.h"
+#include  "human.h"
 
 using namespace std;
 

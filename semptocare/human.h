@@ -775,6 +775,14 @@ public:
 		else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
 			cout << "Possible muscle strain in your arms. Rest and consult a healthcare professional if symptoms persist." << endl;
 		}
+        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
+            cout << "You may suffer from ,Radial Nerve Compression: Compression of the radial nerve on the inner part of the arm can lead to pain and numbness." << endl;
+        }
+        else if (armPainSymptom == "no" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
+            cout <<" If you are not experiencing symptoms such as arm pain, swelling, weakness, and numbness, it can generally be said that you are healthy. The absence of these symptoms may indicate a condition outside various diseases or conditions. However, to maintain your health and prevent diseases, it is important to undergo regular medical check-ups, adopt a balanced dietary habit, and maintain an active lifestyle. Not having these symptoms generally suggests a state of well-being. Nevertheless, if you have any health concerns, it is important to consult with a healthcare professional who can assess your overall health and provide necessary guidance." << endl;
+        }
+        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
+            cout << "" << endl
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
