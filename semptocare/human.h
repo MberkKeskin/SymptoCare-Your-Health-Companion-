@@ -201,10 +201,10 @@ public:
 		}
 		
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes") ) {
-			cout << "You have Oral Lichen Planus" << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes") ) {
-			cout << "You have mouth condition disease" << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
 		}
 	
 		else if (symptom == "yes") {
