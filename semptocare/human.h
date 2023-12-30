@@ -75,7 +75,7 @@ public:
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-			cout << " You have Optic Retinopati disease " << endl;
+			cout << " You have Hipertansif Retinopati,Üveit and Optic Retinopati disease " << endl;
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
@@ -83,13 +83,13 @@ public:
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
-			cout << " You have cataract disease " << endl;
+			cout << " You have Orbital Selülit,Hipertansif Retinopati and cataract disease " << endl;
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
 			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional." << endl;
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-			cout << " You have Optic Norit disease " << endl;
+			cout << " You have Üveit,Konjonktivit and Optic Norit disease " << endl;
 			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
@@ -137,12 +137,7 @@ public:
 		return symptomBleedingTeeth;
 	}
 
-	string toothLosse() {
-		cout << " Do you have any tooth loss? (yes/no) " << endl;
-		cin >> symptomForToothLoss;
-		human::convertToLowercase(symptomForToothLoss);
-		return symptomForToothLoss;
-	}
+	
 
 	string mouthDryness() {
 		cout << " Do you have mouth dryness ? (yes/no) " << endl;
@@ -167,62 +162,51 @@ public:
 
 	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomToothLose, string semptomDryness, string symptomCankerSores, string symptom) {
 
-		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes") && (semptomToothLose == "yes")) {
+		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes") ) {
 			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "You have tongue cancer" << endl;
 		}
 
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (semptomToothLose == "yes") && (symptomCankerSores == "no")) {
+		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
 			cout << "hasta yeriniz:" << bodyPart << endl;
-			cout << "You have Periodontal disease" << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
 		}
 
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomToothLose == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
-			cout << "hasta yeriniz:" << bodyPart << endl;
-			cout << "You have Chronic Gingivitis disease" << endl;
-		}
 
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
+		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
 			cout << "hasta yeriniz:" << bodyPart << endl;
-			cout << "You have Xerostomia disease" << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
 		}
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
-			cout << "hasta yeriniz:" << bodyPart << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
+		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
 			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no") && (semptomToothLose == "no")) {
+		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
 			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "yes") && (semptomToothLose == "no")) {
+		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no"))) {
+			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no") && (semptomToothLose == "yes")) {
+		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
 		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "yes") && (semptomToothLose == "yes")) {
-			cout << "You have Gum disease" << endl;
+		
+		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
 		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes") && (semptomToothLose == "yes")) {
-			cout << "You have Oral Candidiasis" << endl;
+		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
 		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes") && (semptomToothLose == "no")) {
-			cout << "You have Aphthous Stomatitis" << endl;
-
-		}
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes") && (semptomToothLose == "yes")) {
+		
+		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes") ) {
 			cout << "You have Oral Lichen Planus" << endl;
 		}
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes") && (semptomToothLose == "yes")) {
+		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes") ) {
 			cout << "You have mouth condition disease" << endl;
 		}
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no") && (semptomToothLose == "yes")) {
-			cout << "You have Chronic Gingivitis disease" << endl;
-		}
+	
 		else if (symptom == "yes") {
 			cout << "If you have any other symptoms, please consult a doctor." << endl;
 		}
