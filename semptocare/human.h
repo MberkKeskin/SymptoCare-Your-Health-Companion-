@@ -23,6 +23,17 @@ public:
 		getline(cin, bodyPart);
 		return bodyPart;
 	}
+void writeDiagnosisToFile(const string& diagnosis, const string& areaName) {
+	ofstream outputFile("C:\\Dio\\diagnosis_report.txt", ios::app);
+	if (outputFile.is_open()) {
+		outputFile << "Our possible diagnosis is " << diagnosis << " due to your disease in the " << areaName << " Please get medical treatment as soon as possible" << endl;
+
+		outputFile.close();
+	}
+	else {
+		cout << "Dosyaya yazma hatası. Dosyanın açık olduğundan emin olun." << endl;
+	}
+}
 };
 
 class head : public human {
@@ -68,49 +79,73 @@ public:
 		return symptom;
 	}
 
+	void writeDiagnosisToFile(const string& diagnosis, const string& areaName) {
+	human::writeDiagnosisToFile(diagnosis,areaName);
+	}
+
+
 	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom) {
+	string diagnosis;
 
-		if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
-			cout << " You have Glaucoma disease " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-		}
-		else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-			cout << " You have Hipertansif Retinopati,Üveit and Optic Retinopati disease " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-		}
-		else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-		}
-		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
-			cout << " You have Orbital Selülit,Hipertansif Retinopati and cataract disease " << endl;
-		}
-		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
-			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional." << endl;
-		}
-		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-			cout << " You have Üveit,Konjonktivit and Optic Norit disease " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-		}
-		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-		}
-		else if (symptom == "yes") {
-			cout << " If you have any other symptoms, please consult a doctor." << endl;
-		}
-		else if (symptom == "no") {
-			cout << "Please enter true department. Eye department might be the wrong department for you." << endl;
-		}
+	if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = "Glokom disease";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis,"Eye");
+	}
 
-		else {
-			cout << "Please enter only yes/no. Thank you. " << endl;
-
-		}
-
+	else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = "You have Hipertansif Retinopati,Üveit and Optic Retinopati disease";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis, "Eye");
+	}
+	else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = "--HASTALIK DOLDURMAK LAZIM KESİN--";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis, "Eye");
+	}
+	else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = "You have Orbital Selülit,Hipertansif Retinopati and cataract disease";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis, "Eye");
+	}
+	else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = "--HASTALIK DOLDURMAK LAZIM KESİN--";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis, "Eye");
+	}
+	else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = " You have Üveit,Konjonktivit and Optic Norit disease";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis, "Eye");
+	}
+	else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = " --HASTALIK DOLDURMAK LAZIM KESİN--";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis, "Eye");
+	}
+	else if (symptom == "yes") {
+		cout << " Please read your Health report, get well soon " << endl;
+		diagnosis = " --HASTALIK DOLDURMAK LAZIM KESİN--";
+		//cout << diagnosis << endl;
+		writeDiagnosisToFile(diagnosis, "Eye");
+	}
+	else if (symptom == "no") {
+		cout << "Please enter true department. Eye department might be the wrong department for you." << endl;
+	}
+	
+	else {
+		cout << "Please enter only yes/no. Thank you. " << endl;
 
 	}
 
+}
 };
 
 class mouth : public head {
