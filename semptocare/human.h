@@ -781,9 +781,27 @@ public:
         else if (armPainSymptom == "no" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
             cout <<" If you are not experiencing symptoms such as arm pain, swelling, weakness, and numbness, it can generally be said that you are healthy. The absence of these symptoms may indicate a condition outside various diseases or conditions. However, to maintain your health and prevent diseases, it is important to undergo regular medical check-ups, adopt a balanced dietary habit, and maintain an active lifestyle. Not having these symptoms generally suggests a state of well-being. Nevertheless, if you have any health concerns, it is important to consult with a healthcare professional who can assess your overall health and provide necessary guidance." << endl;
         }
-        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
-            cout << "" << endl
-		else if (symptom == "yes") {
+        else if (armPainSymptom == "no" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
+            cout
+                    << "You may have ,Neuropathy: A condition arising from nerve damage. This condition can lead to arm pain and numbness"
+                    << endl;
+        }
+        else if (armPainSymptom == "no" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
+            cout <<"These symptoms can arise from various conditions. Arm swelling is typically associated with circulation problems, infections, or other inflammatory conditions. Arm numbness, on the other hand, may result from issues in the nervous system, nerve compression, or other neurological problems."<<endl;
+        }
+        else if (armPainSymptom == "yes" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
+            cout << "Injuries, infections, inflammatory conditions, or circulatory problems can trigger these symptoms."<<endl;
+
+        }
+        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "yes") {
+            cout << "Pain, weakness, and numbness in the arm may arise from a problem in the nerves or be associated with the compression of a specific nerve in the region."<<endl;
+
+        }
+        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "no") {
+            cout << "Tendon injury or another musculoskeletal issue may be possible."<<endl;
+
+        }
+            else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
 
@@ -862,6 +880,36 @@ public:
 		else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
 			cout << "Possible muscle strain in your hands. Rest and consult a healthcare professional if symptoms persist." << endl;
 		}
+        else if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
+            cout << "The presence of pain, swelling, and weakness in the hand without numbness may suggest various musculoskeletal or inflammatory conditions. Conditions such as arthritis, tendonitis, or other inflammatory disorders could be considered." << endl;
+        }
+        else if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
+            cout << "The presence of hand pain and swelling without weakness or numbness may suggest various conditions, including inflammatory or traumatic causes. Inflammatory conditions like arthritis or injuries such as sprains or strains could be considered." << endl;
+        }
+        else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
+            cout << "The presence of hand pain, weakness, and numbness without swelling may suggest various neurological or musculoskeletal issues. Conditions such as nerve compression, carpal tunnel syndrome, or other neurological disorders could be considered." << endl;
+        }
+        else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
+            cout << "The presence of hand pain and weakness without swelling or numbness may suggest various musculoskeletal or neurological issues. Conditions such as muscle strain, tendonitis, or nerve compression could be considered."<<endl;
+
+
+        }
+        else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "no" && handNumbnessSymptom == "yes") {
+            cout << "The presence of hand pain and numbness without swelling or weakness may suggest various neurological or circulatory issues. Conditions such as nerve compression, peripheral neuropathy, or circulatory problems could be considered." << endl;
+        }
+        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
+            cout << "The presence of hand swelling, weakness, and numbness without pain may suggest various neurological, musculoskeletal, or vascular issues. Conditions such as nerve compression, peripheral neuropathy, or vascular disorders could be considered." << endl;
+        }
+        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
+            cout << "The presence of hand swelling and weakness without pain or numbness may suggest various musculoskeletal or neurological issues. Conditions such as muscle strain, tendonitis, or nerve compression could be considered." << endl;
+        }
+        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "yes") {
+            cout << "The presence of hand swelling and numbness without pain or weakness may suggest various musculoskeletal or neurological issues. Conditions such as nerve compression, peripheral neuropathy, or other neurological disorders could be considered." << endl;
+        }
+        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
+            cout << "The presence of hand swelling without pain, weakness, or numbness may suggest various musculoskeletal or circulatory issues. Conditions such as localized inflammation, fluid retention, or vascular problems could be considered." << endl;
+        }
+
 		else if (symptom == "yes") {
 			cout << " You have other mouth disaster " << endl;
 		}
