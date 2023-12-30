@@ -24,18 +24,18 @@ void findBodyParts(string part) {
     }
 
     else if (part == "mouth") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6,symptom7;
+        string symptom1, symptom2, symptom4, symptom5, symptom6,symptom7;
         mouth* myMouth = new mouth;
         symptom7 = myMouth->getBodyPart();
         symptom1 = myMouth->tasteDisaster();
         symptom2 = myMouth->bleedingTeeth();
-        symptom3 = myMouth->toothLosse();
+       
         symptom4 = myMouth->mouthDryness();
         symptom5 = myMouth->mouthCankerSores();
-        if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
+        if ((symptom1 == "no") && (symptom2 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
             symptom6 = myMouth->nothingSymptom();
         }
-        myMouth->findMouthDisaster(symptom1, symptom2, symptom3, symptom4, symptom5, symptom6);
+        myMouth->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6);
         delete myMouth;
     }
 
