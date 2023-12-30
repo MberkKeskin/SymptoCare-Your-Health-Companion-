@@ -1,16 +1,16 @@
 #include <iostream>
 #include <string>
 
-#include  "human.h"
+#include  "Header.h"
 
 using namespace std;
 
-void findBodyParts(string part) {
+void findBodyParts(string part,string name, long long int idNumber, int age,string gender,int activite,float height,float weight,string sigara,string alcol,string medic,string alergic) {
 
     human human1;
 
     if (part == "eye") {
-        string symptom1, symptom2, symptom3, symptom4,symptom6;
+        string symptom1, symptom2, symptom3, symptom4, symptom6;
         eye* myEye = new eye;
         symptom6 = myEye->getBodyPart();
         symptom1 = myEye->blurredVision();
@@ -19,17 +19,17 @@ void findBodyParts(string part) {
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no")) {
             symptom4 = myEye->nothingSymptom();
         }
-        myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4);
+        myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
         delete myEye;
     }
 
     else if (part == "mouth") {
-        string symptom1, symptom2, symptom4, symptom5, symptom6,symptom7;
+        string symptom1, symptom2, symptom4, symptom5, symptom6, symptom7;
         mouth* myMouth = new mouth;
         symptom7 = myMouth->getBodyPart();
         symptom1 = myMouth->tasteDisaster();
         symptom2 = myMouth->bleedingTeeth();
-       
+
         symptom4 = myMouth->mouthDryness();
         symptom5 = myMouth->mouthCankerSores();
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
@@ -40,9 +40,9 @@ void findBodyParts(string part) {
     }
 
     else if (part == "brain") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5,symptom6;
+        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         brain* myBrain = new brain;
-        symptom6=myBrain->getBodyPart();
+        symptom6 = myBrain->getBodyPart();
         symptom1 = myBrain->headacheSymptom();
         symptom2 = myBrain->seizureSymptom();
         symptom3 = myBrain->memoryLossSymptom();
@@ -56,9 +56,9 @@ void findBodyParts(string part) {
     }
 
     else if (part == "chest") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5,symptom6;
+        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         chest* myChest = new chest;
-        symptom6=myChest->getBodyPart();
+        symptom6 = myChest->getBodyPart();
         symptom1 = myChest->chestPain();
         symptom2 = myChest->shortnessOfBreath();
         symptom3 = myChest->cough();
@@ -88,9 +88,9 @@ void findBodyParts(string part) {
     }
 
     else if (part == "abdomen") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5,symptom6;
+        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         abdomen* myAbdomen = new abdomen;
-        symptom6= myAbdomen->getBodyPart();
+        symptom6 = myAbdomen->getBodyPart();
         symptom1 = myAbdomen->abdominalPain();
         symptom2 = myAbdomen->nausea();
         symptom3 = myAbdomen->vomiting();
@@ -106,7 +106,7 @@ void findBodyParts(string part) {
     else if (part == "arms") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         arms* myArms = new arms;
-        symptom6= myArms->getBodyPart();
+        symptom6 = myArms->getBodyPart();
         symptom1 = myArms->armPain();
         symptom2 = myArms->armSwelling();
         symptom3 = myArms->armWeakness();
@@ -120,9 +120,9 @@ void findBodyParts(string part) {
     }
 
     else if (part == "hands") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5,symptom6;
+        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         hands* myHands = new hands;
-        symptom6= myHands->getBodyPart();
+        symptom6 = myHands->getBodyPart();
         symptom1 = myHands->handPain();
         symptom2 = myHands->handSwelling();
         symptom3 = myHands->handWeakness();
@@ -183,23 +183,26 @@ void findBodyParts(string part) {
     else {
         cout << "Invalid input." << endl;
         part = human1.getBodyPart();
-        findBodyParts(part);
+        findBodyParts(part, name,  idNumber,  age,  gender,  activite,  height,  weight, sigara,  alcol,  medic,  alergic);
     }
 }
 
 // ACİL SERVİS PROTOKOLÜ TANIMLANACAK
 
 int main() {
-    
+
     cout << "ACİL SERVİS PROTOKOLÜ TANIMLANACAK!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     user user;
-    string part;
-
+   
+    string part,isim, habit, gender, sigara, alkol, alergi, ilac;
+    int yas, activity;
+    long long int TCKimlikNo;
+    float boy, kilo;
     human insan1;
-    part = insan1.getBodyPart();
-    findBodyParts(part);
     
-    /*string choiceForEmergency;
+
+    
+    string choiceForEmergency;
     int choiceForMenu = 0;
 
     cout << " Welcome to SymptoCare!" << endl;
@@ -236,14 +239,26 @@ int main() {
 
         if (choiceForMenu == 1) {
             user.getInfo();
+            isim = user.getName();
+            TCKimlikNo = user.getİDNumber();
+            yas = user.getAge();
+            gender = user.getGender();
+            activity = user.getActivity();
+            boy = user.getHeight();
+            kilo = user.getWeight();
+            sigara = user.getSmoking();
+            alkol = user.getDrinking();
+            ilac = user.getMedication();
+            alergi = user.getAlergic();
             part = insan1.getBodyPart();
-            findBodyParts(part);
-        }
+            findBodyParts(part, isim, TCKimlikNo, yas, gender, activity, boy, kilo, sigara, alkol, ilac, alergi);
+            
+        }  
         else if (choiceForMenu != 2) {
             cout << "Invalid input. Please enter 1 or 2." << endl;
         }
     }
-    */
+    
     cout << " Bizi tercih ettiginiz için tesekkür ederiz." << endl;
 
     return 0;
