@@ -1186,18 +1186,54 @@ public:
 
 class user {
 private:
-	string name, habit, genderSelection;
+	string name,nameForReturn, habitForCigarette, habitForAlcol, habitForAlergic,habitForMedicane , genderSelection, smoking, drinking, allergic, medication,gender;
 	int age, activityRate;
 	long long int TCKimlik;
 	float weight, height;
-	bool smoking, drinking, allergic, medication, gender;
+	
 
 public:
+	int getİDNumber() {
+
+		return TCKimlik;;
+	}
+	string getName() {
+		return name;
+	}
+	int getAge() {
+		return age;
+	}
+	string getGender() {
+		return genderSelection;
+	}
+	int getActivity() {
+		return activityRate;
+	}
+	float getWeight() {
+		return weight;
+	}
+	float getHeight() {
+		return height;
+	}
+	string getSmoking() {
+		return habitForCigarette;
+	}
+	string getDrinking() {
+		return habitForAlcol;
+	}
+	string getMedication() {
+		return habitForMedicane;
+	}
+	string getAlergic() {
+		return habitForAlergic;
+	}
+	
 	void getInfo() {
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		while (true) {
 			cout << "Your name: ";
 			if (getline(cin, name)) {
+				
 				break;
 			}
 			else {
@@ -1231,7 +1267,15 @@ public:
 			}
 
 			if (genderSelection == "male" || genderSelection == "female") {
-				gender = (genderSelection == "male");
+				if (genderSelection == "male") {
+					gender = (genderSelection == "male");
+					 getGender();
+				}
+
+				else if (genderSelection == "female") {
+					gender = (genderSelection == "female");
+					 getGender();
+				}
 				break;
 			}
 			else {
@@ -1264,42 +1308,46 @@ public:
 
 		while (true) {
 			cout << "Are you a smoker? (yes/no): ";
-			getline(cin, habit);
-			for (char& ch : habit) {
+			getline(cin, habitForCigarette);
+			for (char& ch : habitForCigarette) {
 				ch = tolower(ch);
 			}
-			if (habit == "yes" || habit == "no") {
-				smoking = (habit == "yes");
+			if (habitForCigarette == "yes" || habitForCigarette == "no") {
+				
+				
 				break;
 			}
 			else {
 				cout << "Invalid input. Please enter 'yes' or 'no'." << endl;
 			}
+			
 		}
-
+		
 		while (true) {
 			cout << "Do you drink occasionally? (yes/no): ";
-			getline(cin, habit);
-			for (char& ch : habit) {
+			getline(cin, habitForAlcol);
+			for (char& ch : habitForAlcol) {
 				ch = tolower(ch);
 			}
-			if (habit == "yes" || habit == "no") {
-				drinking = (habit == "yes");
+			if (habitForAlcol == "yes" || habitForAlcol == "no") {
+				
 				break;
 			}
 			else {
 				cout << "Invalid input. Please enter 'yes' or 'no'." << endl;
+				
 			}
+			
 		}
-
+		
 		while (true) {
 			cout << "Are you an allergic person? (yes/no): ";
-			getline(cin, habit);
-			for (char& ch : habit) {
+			getline(cin, habitForAlergic);
+			for (char& ch : habitForAlergic) {
 				ch = tolower(ch);
 			}
-			if (habit == "yes" || habit == "no") {
-				allergic = (habit == "yes");
+			if (habitForAlergic == "yes" || habitForAlergic == "no") {
+				
 				break;
 			}
 			else {
@@ -1309,12 +1357,12 @@ public:
 
 		while (true) {
 			cout << "Are you taking any medications (yes/no): ";
-			getline(cin, habit);
-			for (char& ch : habit) {
+			getline(cin, habitForMedicane);
+			for (char& ch : habitForMedicane) {
 				ch = tolower(ch);
 			}
-			if (habit == "yes" || habit == "no") {
-				medication = (habit == "yes");
+			if (habitForMedicane == "yes" || habitForMedicane == "no") {
+				
 				break;
 			}
 			else {
@@ -1322,4 +1370,4 @@ public:
 			}
 		}
 	}
-};
+}; 
