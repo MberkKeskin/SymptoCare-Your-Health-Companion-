@@ -23,17 +23,13 @@ public:
 		getline(cin, bodyPart);
 		return bodyPart;
 	}
-void writeDiagnosisToFile(const string& diagnosis, const string& areaName) {
-	ofstream outputFile("C:\\Dio\\diagnosis_report.txt", ios::app);
-	if (outputFile.is_open()) {
-		outputFile << "Our possible diagnosis is " << diagnosis << " due to your disease in the " << areaName << " Please get medical treatment as soon as possible" << endl;
-
-		outputFile.close();
+	virtual string nothingSymptom() {
+		cout << " Do you have any other symptoms? (yes/no) " << std::endl;
+		string symptom;
+		cin >> symptom;
+		convertToLowercase(symptom);
+		return symptom;
 	}
-	else {
-		cout << "Dosyaya yazma hatası. Dosyanın açık olduğundan emin olun." << endl;
-	}
-}
 };
 
 class head : public human {
@@ -72,80 +68,379 @@ public:
 		return symptomForEyeSwell;
 	}
 
-	string nothingSymptom() {
-		cout << " Do you have any other symptoms? (yes/no) " << endl;
+	string nothingSymptom() override {
+		cout << " Do you have any other Eye disease symptoms? (yes/no) " << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void writeDiagnosisToFile(const string& diagnosis, const string& areaName) {
-	human::writeDiagnosisToFile(diagnosis,areaName);
-	}
+	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
+
+		if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+
+			cout << "Disase area :" << bodyPart << endl;
+			cout << " You have Glaucoma disease " << endl;
+			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << " You have Hipertansif Retinopati,Üveit and Optic Retinopati disease " << endl;
+			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+
+			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
+			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
+
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << " You have Orbital Selülit,Hipertansif Retinopati and cataract disease " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << " You have Üveit,Konjonktivit and Optic Norit disease " << endl;
+
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if (symptom == "yes") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << " If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Please enter true department. Eye department might be the wrong department for you." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+
+		}
 
 
-	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom) {
-	string diagnosis;
-
-	if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = "Glokom disease";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis,"Eye");
 	}
 
-	else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = "You have Hipertansif Retinopati,Üveit and Optic Retinopati disease";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis, "Eye");
-	}
-	else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = "--HASTALIK DOLDURMAK LAZIM KESİN--";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis, "Eye");
-	}
-	else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = "You have Orbital Selülit,Hipertansif Retinopati and cataract disease";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis, "Eye");
-	}
-	else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = "--HASTALIK DOLDURMAK LAZIM KESİN--";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis, "Eye");
-	}
-	else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = " You have Üveit,Konjonktivit and Optic Norit disease";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis, "Eye");
-	}
-	else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = " --HASTALIK DOLDURMAK LAZIM KESİN--";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis, "Eye");
-	}
-	else if (symptom == "yes") {
-		cout << " Please read your Health report, get well soon " << endl;
-		diagnosis = " --HASTALIK DOLDURMAK LAZIM KESİN--";
-		//cout << diagnosis << endl;
-		writeDiagnosisToFile(diagnosis, "Eye");
-	}
-	else if (symptom == "no") {
-		cout << "Please enter true department. Eye department might be the wrong department for you." << endl;
-	}
-	
-	else {
-		cout << "Please enter only yes/no. Thank you. " << endl;
-
-	}
-
-}
 };
 
 class mouth : public head {
@@ -172,7 +467,7 @@ public:
 		return symptomBleedingTeeth;
 	}
 
-	
+
 
 	string mouthDryness() {
 		cout << " Do you have mouth dryness ? (yes/no) " << endl;
@@ -188,69 +483,414 @@ public:
 		return symptomMouthCankerSores;
 	}
 
-	string nothingSymptom() {
-		cout << " Do you have other Symptoms ? (yes/no) " << endl;
+	string nothingSymptom() override {
+		cout << " Do you have other Mouth disease Symptoms ? (yes/no) " << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomToothLose, string semptomDryness, string symptomCankerSores, string symptom) {
+	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
 
-		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes") ) {
-			cout << "hasta yeriniz:" << bodyPart << endl;
+		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
-			cout << "hasta yeriniz:" << bodyPart << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
-			cout << "hasta yeriniz:" << bodyPart << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "hasta yeriniz:" << bodyPart << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no"))) {
-			cout << "hasta yeriniz:" << bodyPart << endl;
+		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		
+
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes") ) {
+
+		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes") ) {
+		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-	
+
 		else if (symptom == "yes") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -294,81 +934,415 @@ public:
 		return panicAttack;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any other Brain disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findBrainDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom) {
+	void findBrainDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
 		if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "yes")) {
-			cout << "You have epilepsi" << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "no")) {
-			cout << "You have Vascular Problems" << endl;
+		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "no") && (panicAttack == "yes")) {
-			cout << "You have Psychogenic Seizures:" << endl;
-		}
 
-		else if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "no") && (panicAttack == "no")) {
-			cout << "You have Neurological Diseases" << endl;
+		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if ((headache == "yes") && (seizures == "no") && (memoryLoss == "yes") && (panicAttack == "yes")) {
-			cout << "Possible heart-related issue. Consult a cardiologist." << endl;
-		}
-		else if ((headache == "yes") && (seizures == "no") && (memoryLoss == "yes") && (panicAttack == "no")) {
-			cout << "Probable respiratory infection. Consult a doctor for further evaluation." << endl;
-		}
-		else if ((headache == "yes") && (seizures == "no") && (memoryLoss == "no") && (panicAttack == "yes")) {
-			cout << "Likely influenza. Rest and stay hydrated." << endl;
-		}
-		else if ((headache == "yes") && (seizures == "no") && (memoryLoss == "no") && (panicAttack == "no")) {
+		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "no") && (memoryLoss == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
+		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 
-		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "yes") && (panicAttack == "yes")) {
-			cout << "Panic attacks and memory loss can be associated with anxiety disorders." << endl;
-		}
-		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "yes") && (panicAttack == "no")) {
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if ((headache == "no") && (seizures == "no") && (memoryLoss == "no") && (panicAttack == "yes")) {
+		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-
-		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "yes")) {
-			cout << "You might have epilepsy or anxiety." << endl;
-		}
-
-		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "no")) {
-			cout << "You might have epilepsy or Alzheimer's disease." << endl;
-		}
-
-		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "no") && (panicAttack == "yes")) {
-			cout << "You might have epilepsy. Consult a psychiatrist for your panic attack." << endl;
-		}
-
-		else if ((headache == "no") && (seizures == "yes") && (memoryLoss == "no") && (panicAttack == "no")) {
+		else if ((headache == "no") && (seizures == "no") && (panicAttack == "no") && (memoryLoss == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
+		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
 
 		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
-
 	}
 };
 
@@ -414,77 +1388,413 @@ public:
 		return symptomFever;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any other Chest disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom) {
+	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
-			cout << "You have lung cancer" << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "no")) {
-			cout << "You have Gastroözofageal Reflü disease" << endl;
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "yes")) {
-			cout << "You have Pnömoni disease" << endl;
+
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "no") && (coughSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "no") && (coughSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "no")) {
-			cout << "You have plörezi diseases" << endl;
+		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
-			cout << "Possible Pnomotoraks diseases" << endl;
-		}
-		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "no")) {
-			cout << "Probable KOAH." << endl;
-		}
-		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "no") && (feverSymptom == "yes")) {
-			cout << "Likely pulmonary embolism." << endl;
-		}
-		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (coughSymptom == "no") && (feverSymptom == "no")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
+		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
-			cout << "You have Asthma disease." << endl;
-		}
-		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (coughSymptom == "yes") && (feverSymptom == "no")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
-		}
-		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (coughSymptom == "no") && (feverSymptom == "yes")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
-		}
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
 
-		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
-			cout << "You have Kistik Fibrozis disease" << endl;
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
+		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
 
-		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "no")) {
-			cout << "You might have Plevra  disease." << endl;
-		}
-
-		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "yes")) {
-			cout << "You might have Sarkoidoz disease." << endl;
-		}
-
-		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (coughSymptom == "no") && (feverSymptom == "no")) {
-			cout << "Sorry One symptom is not enought for ill" << endl;
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -530,77 +1840,578 @@ public:
 		return symptomFatigue;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any other Heart disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom) {
+	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
 			cout << "You have Myocardial Infarction " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
 			cout << "You have Angina Pektoris disease,Heart failure,Myokarit disase or Aritmiler  disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Myokardit disease,Anjina Pektoris,Aortic Stenosis or Coronary Artery Disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have likely  Perikardit ,Pulmoner Emboli, Angina Pektoris,Heart Valve Diseases or Heart failure diseases" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
 			cout << "You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << "You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; 
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "yes") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
 			cout << " You have other mouth disaster " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -646,78 +2457,414 @@ public:
 		return symptomBloating;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any other Abdomen disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom) {
-		
+	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
+
 		if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
-			cout << "You have Myocardial Infarction " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
-			cout << "You have Gastroenterit  disease" << endl;
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
-			cout << "You have Gastroenterit,Irritable Bowel Syndrome,Peptik Ülser or Gastroözofageal Reflü Disease" << endl;
-		}
 
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
-			cout << "You have likely  Gastroenterit,Peptik Ülser,Irritable Bowel Syndrome,Peptik Ülser or Gastroözofageal Reflü diseases" << endl;
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
-			cout << "Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases" << endl;
-		}
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
-			cout << "Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure" << endl;
-		}
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
-			cout << "Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati." << endl;
-		}
-		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
-			cout << "You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ." << endl;
-		}
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
-			cout << "You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease" << endl;
-		}
-
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "no")) {
-			cout << "You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease." << endl;
-		}
-
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "yes")) {
-			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl; 
-		}
-
-		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (vomitingSymptom == "no") && (bloatingSymptom == "no")) {
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "no") && (vomitingSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -768,71 +2915,416 @@ public:
 		return symptomArmNumbness;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any other Arm disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom) {
-		if (armPainSymptom == "yes" && armSwellingSymptom == "yes" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your arms. Seek immediate medical attention." << endl;
-		}
-		else if (armPainSymptom == "yes" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your arms. Rest and consult an orthopedic specialist if needed." << endl;
-		}
-		else if (armPainSymptom == "no" && armSwellingSymptom == "yes" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your arms. Consult a doctor for further evaluation." << endl;
-		}
-		else if (armPainSymptom == "no" && armSwellingSymptom == "no" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your arms. Consult a neurologist for further assessment." << endl;
-		}
-		else if (armPainSymptom == "no" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
-			cout << "Mild swelling in your arms. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your arms. Rest and consult a healthcare professional if symptoms persist." << endl;
-		}
-        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
-            cout << "You may suffer from ,Radial Nerve Compression: Compression of the radial nerve on the inner part of the arm can lead to pain and numbness." << endl;
-        }
-        else if (armPainSymptom == "no" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
-            cout <<" If you are not experiencing symptoms such as arm pain, swelling, weakness, and numbness, it can generally be said that you are healthy. The absence of these symptoms may indicate a condition outside various diseases or conditions. However, to maintain your health and prevent diseases, it is important to undergo regular medical check-ups, adopt a balanced dietary habit, and maintain an active lifestyle. Not having these symptoms generally suggests a state of well-being. Nevertheless, if you have any health concerns, it is important to consult with a healthcare professional who can assess your overall health and provide necessary guidance." << endl;
-        }
-        else if (armPainSymptom == "no" && armSwellingSymptom == "no" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
-            cout
-                    << "You may have ,Neuropathy: A condition arising from nerve damage. This condition can lead to arm pain and numbness"
-                    << endl;
-        }
-        else if (armPainSymptom == "no" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "yes") {
-            cout <<"These symptoms can arise from various conditions. Arm swelling is typically associated with circulation problems, infections, or other inflammatory conditions. Arm numbness, on the other hand, may result from issues in the nervous system, nerve compression, or other neurological problems."<<endl;
-        }
-        else if (armPainSymptom == "yes" && armSwellingSymptom == "yes" && armWeaknessSymptom == "no" && armNumbnessSymptom == "no") {
-            cout << "Injuries, infections, inflammatory conditions, or circulatory problems can trigger these symptoms."<<endl;
+	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
+		if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armWeaknessSymptom == "yes") && (armNumbnessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
 
-        }
-        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "yes") {
-            cout << "Pain, weakness, and numbness in the arm may arise from a problem in the nerves or be associated with the compression of a specific nerve in the region."<<endl;
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
 
-        }
-        else if (armPainSymptom == "yes" && armSwellingSymptom == "no" && armWeaknessSymptom == "yes" && armNumbnessSymptom == "no") {
-            cout << "Tendon injury or another musculoskeletal issue may be possible."<<endl;
+		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
 
-        }
-            else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+
+		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((armPainSymptom == "no") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((armPainSymptom == "no") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((armPainSymptom == "no") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((armPainSymptom == "no") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((armPainSymptom == "no") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if (symptom == "yes") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
-
 };
 
 class hands : public limb {
@@ -873,71 +3365,412 @@ public:
 		return symptomHandNumbness;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom()  override {
+		cout << "Do you have any other Hand disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom) {
-		if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your hands. Seek immediate medical attention." << endl;
+	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
+		if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handWeaknessSymptom == "yes") && (handNumbnessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your hands. Rest and consult an orthopedic specialist if needed." << endl;
+
+		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your hands. Consult a doctor for further evaluation." << endl;
-		}
-		else if (handPainSymptom == "no" && handSwellingSymptom == "no" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your hands. Consult a neurologist for further assessment." << endl;
-		}
-		else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
-			cout << "Mild swelling in your hands. Monitor symptoms and consult a healthcare professional if needed." << endl;
-		}
-		else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your hands. Rest and consult a healthcare professional if symptoms persist." << endl;
-		}
-        else if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
-            cout << "The presence of pain, swelling, and weakness in the hand without numbness may suggest various musculoskeletal or inflammatory conditions. Conditions such as arthritis, tendonitis, or other inflammatory disorders could be considered." << endl;
-        }
-        else if (handPainSymptom == "yes" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
-            cout << "The presence of hand pain and swelling without weakness or numbness may suggest various conditions, including inflammatory or traumatic causes. Inflammatory conditions like arthritis or injuries such as sprains or strains could be considered." << endl;
-        }
-        else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
-            cout << "The presence of hand pain, weakness, and numbness without swelling may suggest various neurological or musculoskeletal issues. Conditions such as nerve compression, carpal tunnel syndrome, or other neurological disorders could be considered." << endl;
-        }
-        else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
-            cout << "The presence of hand pain and weakness without swelling or numbness may suggest various musculoskeletal or neurological issues. Conditions such as muscle strain, tendonitis, or nerve compression could be considered."<<endl;
 
 
-        }
-        else if (handPainSymptom == "yes" && handSwellingSymptom == "no" && handWeaknessSymptom == "no" && handNumbnessSymptom == "yes") {
-            cout << "The presence of hand pain and numbness without swelling or weakness may suggest various neurological or circulatory issues. Conditions such as nerve compression, peripheral neuropathy, or circulatory problems could be considered." << endl;
-        }
-        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "yes") {
-            cout << "The presence of hand swelling, weakness, and numbness without pain may suggest various neurological, musculoskeletal, or vascular issues. Conditions such as nerve compression, peripheral neuropathy, or vascular disorders could be considered." << endl;
-        }
-        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "yes" && handNumbnessSymptom == "no") {
-            cout << "The presence of hand swelling and weakness without pain or numbness may suggest various musculoskeletal or neurological issues. Conditions such as muscle strain, tendonitis, or nerve compression could be considered." << endl;
-        }
-        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "yes") {
-            cout << "The presence of hand swelling and numbness without pain or weakness may suggest various musculoskeletal or neurological issues. Conditions such as nerve compression, peripheral neuropathy, or other neurological disorders could be considered." << endl;
-        }
-        else if (handPainSymptom == "no" && handSwellingSymptom == "yes" && handWeaknessSymptom == "no" && handNumbnessSymptom == "no") {
-            cout << "The presence of hand swelling without pain, weakness, or numbness may suggest various musculoskeletal or circulatory issues. Conditions such as localized inflammation, fluid retention, or vascular problems could be considered." << endl;
-        }
+		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((handPainSymptom == "no") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((handPainSymptom == "no") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((handPainSymptom == "no") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((handPainSymptom == "no") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((handPainSymptom == "no") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
 
 		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -981,41 +3814,413 @@ public:
 		return symptomShoulderNumbness;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any other  Shoulder disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom) {
-		if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "yes" && shoulderNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your shoulders. Seek immediate medical attention." << endl;
+	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
+		if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderWeaknessSymptom == "yes") && (shoulderNumbnessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "hasta yeriniz:" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "no" && shoulderNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your shoulders. Rest and consult an orthopedic specialist if needed." << endl;
+
+		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (shoulderPainSymptom == "no" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "yes" && shoulderNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your shoulders. Consult a doctor for further evaluation." << endl;
+
+
+		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (shoulderPainSymptom == "no" && shoulderSwellingSymptom == "no" && shoulderWeaknessSymptom == "yes" && shoulderNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your shoulders. Consult a neurologist for further assessment." << endl;
+		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (shoulderPainSymptom == "no" && shoulderSwellingSymptom == "yes" && shoulderWeaknessSymptom == "no" && shoulderNumbnessSymptom == "no") {
-			cout << "Mild swelling in your shoulders. Monitor symptoms and consult a healthcare professional if needed." << endl;
+		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (shoulderPainSymptom == "yes" && shoulderSwellingSymptom == "no" && shoulderWeaknessSymptom == "no" && shoulderNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your shoulders. Rest and consult a healthcare professional if symptoms persist." << endl;
+		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
+		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
 		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -1061,41 +4266,413 @@ public:
 		return symptomFootNumbness;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any other Foot disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom) {
-		if (footPainSymptom == "yes" && footSwellingSymptom == "yes" && footWeaknessSymptom == "yes" && footNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your feet. Seek immediate medical attention." << endl;
+	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
+		if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footWeaknessSymptom == "yes") && (footNumbnessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (footPainSymptom == "yes" && footSwellingSymptom == "yes" && footWeaknessSymptom == "no" && footNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your feet. Rest and consult an orthopedic specialist if needed." << endl;
+
+		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (footPainSymptom == "no" && footSwellingSymptom == "yes" && footWeaknessSymptom == "yes" && footNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your feet. Consult a doctor for further evaluation." << endl;
+
+
+		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "no") && (footWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (footPainSymptom == "no" && footSwellingSymptom == "no" && footWeaknessSymptom == "yes" && footNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your feet. Consult a neurologist for further assessment." << endl;
+		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "no") && (footNumbnessSymptom == "no") && (footWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (footPainSymptom == "no" && footSwellingSymptom == "yes" && footWeaknessSymptom == "no" && footNumbnessSymptom == "no") {
-			cout << "Mild swelling in your feet. Monitor symptoms and consult a healthcare professional if needed." << endl;
+		else if ((footPainSymptom == "no") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "no") && (footWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (footPainSymptom == "yes" && footSwellingSymptom == "no" && footWeaknessSymptom == "no" && footNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your feet. Rest and consult a healthcare professional if symptoms persist." << endl;
+		else if ((footPainSymptom == "no") && (footSwellingSymptom == "no") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
+		else if ((footPainSymptom == "no") && (footSwellingSymptom == "no") && (footNumbnessSymptom == "no") && (footWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((footPainSymptom == "no") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((footPainSymptom == "no") && (footSwellingSymptom == "no") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "no") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "no") && (footWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
 		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -1140,41 +4717,413 @@ public:
 		return symptomLegNumbness;
 	}
 
-	string nothingSymptom() {
-		cout << "Do you have any other symptoms? (yes/no)" << endl;
+	string nothingSymptom() override {
+		cout << "Do you have any   other leg disease symptoms? (yes/no)" << endl;
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
 
-	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom) {
-		if (legPainSymptom == "yes" && legSwellingSymptom == "yes" && legWeaknessSymptom == "yes" && legNumbnessSymptom == "yes") {
-			cout << "You may have a serious neurological or vascular issue in your legs. Seek immediate medical attention." << endl;
+	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
+		if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legWeaknessSymptom == "yes") && (legNumbnessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have tongue cancer" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (legPainSymptom == "yes" && legSwellingSymptom == "yes" && legWeaknessSymptom == "no" && legNumbnessSymptom == "yes") {
-			cout << "Possible musculoskeletal injury in your legs. Rest and consult an orthopedic specialist if needed." << endl;
+
+		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (legPainSymptom == "no" && legSwellingSymptom == "yes" && legWeaknessSymptom == "yes" && legNumbnessSymptom == "no") {
-			cout << "Probable circulatory problem in your legs. Consult a doctor for further evaluation." << endl;
+
+
+		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "no") && (legWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (legPainSymptom == "no" and legSwellingSymptom == "no" && legWeaknessSymptom == "yes" && legNumbnessSymptom == "yes") {
-			cout << "Likely nerve compression in your legs. Consult a neurologist for further assessment." << endl;
+		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "no") && (legNumbnessSymptom == "no") && (legWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (legPainSymptom == "no" && legSwellingSymptom == "yes" && legWeaknessSymptom == "no" && legNumbnessSymptom == "no") {
-			cout << "Mild swelling in your legs. Monitor symptoms and consult a healthcare professional if needed." << endl;
+		else if ((legPainSymptom == "no") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "no") && (legWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
-		else if (legPainSymptom == "yes" && legSwellingSymptom == "no" && legWeaknessSymptom == "no" && legNumbnessSymptom == "no") {
-			cout << "Possible muscle strain in your legs. Rest and consult a healthcare professional if symptoms persist." << endl;
+		else if ((legPainSymptom == "no") && (legSwellingSymptom == "no") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "no")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
+		else if ((legPainSymptom == "no") && (legSwellingSymptom == "no") && (legNumbnessSymptom == "no") && (legWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((legPainSymptom == "no") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((legPainSymptom == "no") && (legSwellingSymptom == "no") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
+		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "no") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "no") && (legWeaknessSymptom == "yes")) {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
+		}
+
 		else if (symptom == "yes") {
-			cout << " You have other mouth disaster " << endl;
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
+			cout << " Name: " << name << endl;
+			cout << " TC Kimlik No: " << idNumber << endl;
+			cout << " Age: " << age << endl;
+			cout << " Gender: " << gender << endl;
+			cout << " Aktity rate: " << activite << endl;
+			cout << " Height: " << height << endl;
+			cout << " Weight: " << weight << endl;
+
+			if (sigara == "yes") {
+				cout << " Drinking Cigarete " << endl;
+			}
+			else {
+				cout << " Not Drinking Cigarete " << endl;
+			}
+			if (medic == "yes") {
+				cout << " Using Apecial Medications  " << endl;
+			}
+			else {
+				cout << " Not Using special Medications " << endl;
+			}
+			if (alcol == "yes") {
+				cout << " Drinking Alcol " << endl;
+			}
+			else {
+				cout << " Not Drinking Alcol " << endl;
+			}
+			if (alergic == "yes") {
+				cout << " Have special Alergic " << endl;
+			}
+			else {
+				cout << " Not Have special Alergic " << endl;
+			}
+			cout << "Disase area :" << bodyPart << endl;
+			cout << "If you have any other symptoms, please consult a doctor." << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 
 		else if (symptom == "no") {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter true department" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 		}
 		else {
+			cout << endl;
+			cout << endl;
+			cout << "-------------------------------------" << endl;
 			cout << "Please enter only yes/no. Thank you. " << endl;
+			cout << "-------------------------------------" << endl;
+			cout << endl;
+			cout << endl;
 
 		}
 	}
@@ -1186,11 +5135,11 @@ public:
 
 class user {
 private:
-	string name,nameForReturn, habitForCigarette, habitForAlcol, habitForAlergic,habitForMedicane , genderSelection, smoking, drinking, allergic, medication,gender;
+	string name, nameForReturn, habitForCigarette, habitForAlcol, habitForAlergic, habitForMedicane, genderSelection, smoking, drinking, allergic, medication, gender;
 	int age, activityRate;
 	long long int TCKimlik;
 	float weight, height;
-	
+
 
 public:
 	int getİDNumber() {
@@ -1227,13 +5176,13 @@ public:
 	string getAlergic() {
 		return habitForAlergic;
 	}
-	
+
 	void getInfo() {
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		while (true) {
 			cout << "Your name: ";
 			if (getline(cin, name)) {
-				
+
 				break;
 			}
 			else {
@@ -1269,12 +5218,12 @@ public:
 			if (genderSelection == "male" || genderSelection == "female") {
 				if (genderSelection == "male") {
 					gender = (genderSelection == "male");
-					 getGender();
+					getGender();
 				}
 
 				else if (genderSelection == "female") {
 					gender = (genderSelection == "female");
-					 getGender();
+					getGender();
 				}
 				break;
 			}
@@ -1313,16 +5262,16 @@ public:
 				ch = tolower(ch);
 			}
 			if (habitForCigarette == "yes" || habitForCigarette == "no") {
-				
-				
+
+
 				break;
 			}
 			else {
 				cout << "Invalid input. Please enter 'yes' or 'no'." << endl;
 			}
-			
+
 		}
-		
+
 		while (true) {
 			cout << "Do you drink occasionally? (yes/no): ";
 			getline(cin, habitForAlcol);
@@ -1330,16 +5279,16 @@ public:
 				ch = tolower(ch);
 			}
 			if (habitForAlcol == "yes" || habitForAlcol == "no") {
-				
+
 				break;
 			}
 			else {
 				cout << "Invalid input. Please enter 'yes' or 'no'." << endl;
-				
+
 			}
-			
+
 		}
-		
+
 		while (true) {
 			cout << "Are you an allergic person? (yes/no): ";
 			getline(cin, habitForAlergic);
@@ -1347,7 +5296,7 @@ public:
 				ch = tolower(ch);
 			}
 			if (habitForAlergic == "yes" || habitForAlergic == "no") {
-				
+
 				break;
 			}
 			else {
@@ -1362,7 +5311,7 @@ public:
 				ch = tolower(ch);
 			}
 			if (habitForMedicane == "yes" || habitForMedicane == "no") {
-				
+
 				break;
 			}
 			else {
@@ -1370,4 +5319,4 @@ public:
 			}
 		}
 	}
-}; 
+};
