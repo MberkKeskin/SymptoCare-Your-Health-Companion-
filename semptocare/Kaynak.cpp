@@ -35,7 +35,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
             symptom6 = myMouth->nothingSymptom();
         }
-        myMouth->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6);
+        myMouth->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom7);
         delete myMouth;
     }
 
@@ -51,7 +51,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myBrain->nothingSymptom();
         }
-        myBrain->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myBrain->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name , idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myBrain;
     }
 
@@ -67,7 +67,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myChest->nothingSymptom();
         }
-        myChest->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myChest->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myChest;
     }
 
@@ -83,7 +83,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myHeart->nothingSymptom();
         }
-        myHeart->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myHeart->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myHeart;
     }
 
@@ -99,7 +99,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myAbdomen->nothingSymptom();
         }
-        myAbdomen->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myAbdomen->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myAbdomen;
     }
 
@@ -115,7 +115,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myArms->nothingSymptom();
         }
-        myArms->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myArms->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myArms;
     }
 
@@ -131,13 +131,14 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myHands->nothingSymptom();
         }
-        myHands->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myHands->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myHands;
     }
 
     else if (part == "shoulders") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         shoulders* myShoulders = new shoulders;
+        symptom6 = myShoulders->getBodyPart();
         symptom1 = myShoulders->shoulderPain();
         symptom2 = myShoulders->shoulderSwelling();
         symptom3 = myShoulders->shoulderWeakness();
@@ -146,13 +147,14 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myShoulders->nothingSymptom();
         }
-        myShoulders->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myShoulders->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myShoulders;
     }
 
     else if (part == "foot") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         foot* myFoot = new foot;
+        symptom6 = myFoot->getBodyPart();
         symptom1 = myFoot->footPain();
         symptom2 = myFoot->footSwelling();
         symptom3 = myFoot->footWeakness();
@@ -161,13 +163,14 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myFoot->nothingSymptom();
         }
-        myFoot->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myFoot->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myFoot;
     }
 
     else if (part == "legs") {
-        string symptom1, symptom2, symptom3, symptom4, symptom5;
+        string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
         legs* myLegs = new legs;
+        symptom6 = myLegs->getBodyPart();
         symptom1 = myLegs->legPain();
         symptom2 = myLegs->legSwelling();
         symptom3 = myLegs->legWeakness();
@@ -176,7 +179,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myLegs->nothingSymptom();
         }
-        myLegs->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
+        myLegs->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete myLegs;
     }
 
