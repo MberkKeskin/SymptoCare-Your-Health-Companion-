@@ -1,13 +1,15 @@
 #include <iostream>
 #include <string>
 
-#include  "Header.h"
+#include  "Human.h"
 
 using namespace std;
 
 void findBodyParts(string part, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
 
     human human1;
+    user user1;
+    
 
     if (part == "eye") {
         string symptom1, symptom2, symptom3, symptom4, symptom6;
@@ -19,7 +21,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no")) {
             symptom4 = myEye->nothingSymptom();
         }
-        myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4);
         delete myEye;
     }
 
@@ -35,7 +38,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
             symptom6 = myMouth->nothingSymptom();
         }
-        myMouth->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myMouth->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6);
         delete myMouth;
     }
 
@@ -51,7 +55,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myBrain->nothingSymptom();
         }
-        myBrain->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myBrain->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myBrain;
     }
 
@@ -67,7 +72,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myChest->nothingSymptom();
         }
-        myChest->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myChest->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myChest;
     }
 
@@ -83,7 +89,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myHeart->nothingSymptom();
         }
-        myHeart->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myHeart->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myHeart;
     }
 
@@ -99,7 +106,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myAbdomen->nothingSymptom();
         }
-        myAbdomen->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myAbdomen->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myAbdomen;
     }
 
@@ -115,7 +123,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myArms->nothingSymptom();
         }
-        myArms->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myArms->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myArms;
     }
 
@@ -131,7 +140,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myHands->nothingSymptom();
         }
-        myHands->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myHands->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myHands;
     }
 
@@ -146,7 +156,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myShoulders->nothingSymptom();
         }
-        myShoulders->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myShoulders->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myShoulders;
     }
 
@@ -161,7 +172,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myFoot->nothingSymptom();
         }
-        myFoot->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myFoot->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myFoot;
     }
 
@@ -176,7 +188,8 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = myLegs->nothingSymptom();
         }
-        myLegs->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic);
+        user1.printUserInfo(name, idNumber, age, gender, activite, height, weight, sigara, medic, alcol, alergic);
+        myLegs->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5);
         delete myLegs;
     }
 
