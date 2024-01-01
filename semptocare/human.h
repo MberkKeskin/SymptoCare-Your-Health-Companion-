@@ -16,7 +16,7 @@ private:
 
 
 public:
-	int getİDNumber() {
+	long int getİDNumber() {
 
 		return TCKimlik;;
 	}
@@ -319,6 +319,7 @@ public:
 		cout << " Eye illnes:  " << illness << endl;
 
 	}
+	
 
 	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
@@ -337,54 +338,44 @@ public:
 			printDiagnosis(diagnosis);
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << " You have Orbital Selülit,Hipertansif Retinopati and cataract disease " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = " You have Orbital Selülit,Hipertansif Retinopati and cataract disease ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
-			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << " You have Üveit,Konjonktivit and Optic Norit disease " << endl;
-
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = " You have Üveit,Konjonktivit and Optic Norit disease ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << " If you have any other symptoms, please consult a doctor." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = " If you have any other symptoms, please consult a doctor.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
+		
 		}
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department. Eye department might be the wrong department for you." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter true department. Eye department might be the wrong department for you.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else {
@@ -405,7 +396,7 @@ public:
 
 class mouth : public head {
 private:
-	string symptomTasteDiasater, symptomBleedingTeeth, symptomForToothLoss, symptomMouthDryness, symptomMouthCankerSores, symptom;
+	string symptomTasteDiasater, symptomBleedingTeeth, symptomForToothLoss, symptomMouthDryness, symptomMouthCankerSores, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -454,127 +445,100 @@ public:
 
 	}
 
-	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom) {
+	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have tongue cancer" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have tongue cancer";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
+
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "hasta yeriniz:" << bodyPart << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "hasta yeriniz:" << bodyPart << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+			
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis="Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis= "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis= "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "If you have any other symptoms, please consult a doctor." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "If you have any other symptoms, please consult a doctor.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter true department";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter only yes/no. Thank you. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter only yes/no. Thank you. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 
 		}
 	}
@@ -582,7 +546,7 @@ public:
 
 class brain : public head {
 private:
-	string headache, seizures, memoryLoss, panicAttack, symptom;
+	string headache, seizures, memoryLoss, panicAttack, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -624,127 +588,104 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << " Brain illnes:  " << illness << endl;
 
-	void findBrainDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom) {
+	}
+	void findBrainDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have tongue cancer" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have brain Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "no") && (memoryLoss == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+			
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+			
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "no") && (memoryLoss == "yes")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
+			
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
 			cout << "-------------------------------------" << endl;
 			cout << endl;
 			cout << endl;
 		}
 
 		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);;
 		}
 
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "If you have any other symptoms, please consult a doctor." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "If you have any other symptoms, please consult a doctor.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Please enter true department";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter only yes/no. Thank you. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter only yes/no. Thank you. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 
 		}
 	}
@@ -756,7 +697,7 @@ class body : public human {
 
 class chest : public body {
 private:
-	string symptomChestPain, symptomShortnessOfBreath, symptomCough, symptomFever, symptom;
+	string symptomChestPain, symptomShortnessOfBreath, symptomCough, symptomFever, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -798,127 +739,103 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << " Chest illnes:  " << illness << endl;
 
-	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom) {
+	}
+
+	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have tongue cancer" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have tongue cancer";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "no") && (coughSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+			
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "no") && (coughSymptom == "yes")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+
+			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "If you have any other symptoms, please consult a doctor." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "If you have any other symptoms, please consult a doctor.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter true department";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter only yes/no. Thank you. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter only yes/no. Thank you. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 
 		}
 	}
@@ -928,7 +845,7 @@ public:
 
 class heart : public body {
 private:
-	string symptomChestPain, symptomShortnessOfBreath, symptomPalpitations, symptomFatigue, symptom;
+	string symptomChestPain, symptomShortnessOfBreath, symptomPalpitations, symptomFatigue, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -970,152 +887,126 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << " Heart illnes:  " << illness << endl;
 
-	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom) {
+	}
+
+	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "You have Myocardial Infarction " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Myocardial Infarction ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << "You have Angina Pektoris disease,Heart failure,Myokarit disase or Aritmiler  disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "You have Angina Pektoris disease,Heart failure,Myokarit disase or Aritmiler  disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Myokardit disease,Anjina Pektoris,Aortic Stenosis or Coronary Artery Disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Myokardit disease,Anjina Pektoris,Aortic Stenosis or Coronary Artery Disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have likely  Perikardit ,Pulmoner Emboli, Angina Pektoris,Heart Valve Diseases or Heart failure diseases" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "You have likely  Perikardit ,Pulmoner Emboli, Angina Pektoris,Heart Valve Diseases or Heart failure diseases";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases .";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << " You have other mouth disaster " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = " You have other Heart disaster ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter true department";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter only yes/no. Thank you. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Please enter only yes/no. Thank you. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 
 		}
 	}
@@ -1124,7 +1015,7 @@ public:
 
 class abdomen : public body {
 private:
-	string symptomAbdominalPain, symptomNausea, symptomVomiting, symptomBloating, symptom;
+	string symptomAbdominalPain, symptomNausea, symptomVomiting, symptomBloating, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -1167,128 +1058,106 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << " Abdomen illnes:  " << illness << endl;
 
-	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom) {
+	}
+
+	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have tongue cancer" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have tongue cancer";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+		
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+		
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+	
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "no") && (vomitingSymptom == "yes")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+
+			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "If you have any other symptoms, please consult a doctor." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "If you have any other symptoms, please consult a doctor.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Please enter true department";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter only yes/no. Thank you. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "Please enter only yes/no. Thank you. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 
 		}
 	}
@@ -1302,7 +1171,7 @@ class limb : public human {
 
 class arms : public limb {
 private:
-	string symptomArmPain, symptomArmSwelling, symptomArmWeakness, symptomArmNumbness, symptom;
+	string symptomArmPain, symptomArmSwelling, symptomArmWeakness, symptomArmNumbness, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -1345,127 +1214,104 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << "Arm illnes:  " << illness << endl;
 
-	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom) {
+	}
+
+	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armWeaknessSymptom == "yes") && (armNumbnessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have tongue cancer" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have tongue cancer";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+
+			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+		
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "no") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "no") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+		
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "no") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "yes")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((armPainSymptom == "no") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "no") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "If you have any other symptoms, please consult a doctor." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "If you have any other symptoms, please consult a doctor.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Please enter true department";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter only yes/no. Thank you. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Please enter only yes/no. Thank you. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 
 		}
 	}
@@ -1473,7 +1319,7 @@ public:
 
 class hands : public limb {
 private:
-	string symptomHandPain, symptomHandSwelling, symptomHandWeakness, symptomHandNumbness, symptom;
+	string symptomHandPain, symptomHandSwelling, symptomHandWeakness, symptomHandNumbness, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -1515,126 +1361,104 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << "Hand illnes:  " << illness << endl;
 
-	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom) {
+	}
+
+	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handWeaknessSymptom == "yes") && (handNumbnessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have tongue cancer" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have tongue cancer";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+	
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "no") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+		
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "no") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "no")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
+		
 
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "no") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "yes")) {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((handPainSymptom == "no") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
-			cout << "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "no") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	
+			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);;
 		}
 
 		else if (symptom == "yes") {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "If you have any other symptoms, please consult a doctor." << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+	;
+			diagnosis = "If you have any other symptoms, please consult a doctor.";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if (symptom == "no") {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter true department" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "Please enter true department";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else {
-			cout << endl;
-			cout << endl;
-			cout << "-------------------------------------" << endl;
-			cout << "Please enter only yes/no. Thank you. " << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "Please enter only yes/no. Thank you. ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 
 		}
 	}
@@ -1642,7 +1466,7 @@ public:
 
 class shoulders : public limb {
 private:
-	string symptomShoulderPain, symptomShoulderSwelling, symptomShoulderWeakness, symptomShoulderNumbness, symptom;
+	string symptomShoulderPain, symptomShoulderSwelling, symptomShoulderWeakness, symptomShoulderNumbness, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -1684,31 +1508,31 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << "Shoulder illnes:  " << illness << endl;
 
-	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom) {
+	}
+	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderWeaknessSymptom == "yes") && (shoulderNumbnessSymptom == "yes")) {
-			cout << "hasta yeriniz:" << bodyPart << endl;
-			cout << "You have tongue cancer" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = "You have tongue cancer";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << "You have Gingival Bleeding,Periodontal Disease and Periodontal disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+		
+			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "no")) {
 			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "no")) {
 			cout << endl;
@@ -1716,9 +1540,8 @@ public:
 			cout << "-------------------------------------" << endl;
 
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "no")) {
 			cout << endl;
@@ -1726,9 +1549,8 @@ public:
 			cout << "-------------------------------------" << endl;
 
 			cout << "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional" << endl;
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "no")) {
 			cout << endl;
@@ -1813,7 +1635,7 @@ public:
 
 class foot : public limb {
 private:
-	string symptomFootPain, symptomFootSwelling, symptomFootWeakness, symptomFootNumbness, symptom;
+	string symptomFootPain, symptomFootSwelling, symptomFootWeakness, symptomFootNumbness, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -1856,8 +1678,12 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << "Foot illnes:  " << illness << endl;
 
-	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom) {
+	}
+
+	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footWeaknessSymptom == "yes") && (footNumbnessSymptom == "yes")) {
 			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have tongue cancer" << endl;
@@ -1985,7 +1811,7 @@ public:
 
 class legs : public limb {
 private:
-	string symptomLegPain, symptomLegSwelling, symptomLegWeakness, symptomLegNumbness, symptom;
+	string symptomLegPain, symptomLegSwelling, symptomLegWeakness, symptomLegNumbness, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -2027,8 +1853,12 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis(string illness) override {
+		cout << "Leg illnes:  " << illness << endl;
 
-	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom) {
+	}
+
+	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legWeaknessSymptom == "yes") && (legNumbnessSymptom == "yes")) {
 			cout << "Disase area :" << bodyPart << endl;
 			cout << "You have tongue cancer" << endl;
