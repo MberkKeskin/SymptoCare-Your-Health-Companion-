@@ -193,6 +193,38 @@ public:
 			}
 		}
 	}
+};
+
+class human {
+private:
+	string name, nameForReturn, habitForCigarette, habitForAlcohol, habitForAllergic, habitForMedication, genderSelection, smoking, drinking, allergic, medication, gender;
+	int age, activityRate;
+	long long int TCKimlik;
+	float weight, height;
+
+protected:
+	string bodyPart;
+
+public:
+
+	void convertToLowercase(string& symptom) {
+		for (char& ch : symptom) {
+			ch = tolower(ch);
+		}
+	}
+
+	virtual string getBodyPart() {
+		cout << "What's your problem area?" << endl;
+		getline(cin, bodyPart);
+		return bodyPart;
+	}
+	virtual string nothingSymptom() {
+		cout << " Do you have any other symptoms? (yes/no) " << std::endl;
+		string symptom;
+		cin >> symptom;
+		convertToLowercase(symptom);
+		return symptom;
+	}
 
 	void printUserInfo(string name, long long int TCKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic) {
 		cout << "\n" << endl;
@@ -229,31 +261,11 @@ public:
 		else {
 			cout << "Not allergic." << endl;
 		}
-	}
-};
-
-class human {
-protected:
-	string bodyPart;
-
-public:
-	void convertToLowercase(string& symptom) {
-		for (char& ch : symptom) {
-			ch = tolower(ch);
-		}
-	}
-
-	virtual string getBodyPart() {
-		cout << "What's your problem area?" << endl;
-		getline(cin, bodyPart);
-		return bodyPart;
-	}
-	virtual string nothingSymptom() {
-		cout << " Do you have any other symptoms? (yes/no) " << std::endl;
-		string symptom;
-		cin >> symptom;
-		convertToLowercase(symptom);
-		return symptom;
+		cout << "Disase area :" << bodyPart << endl;
+		cout << " You have Glaucoma disease " << endl;
+		cout << "-------------------------------------" << endl;
+		cout << endl;
+		cout << endl;
 	}
 };
 
