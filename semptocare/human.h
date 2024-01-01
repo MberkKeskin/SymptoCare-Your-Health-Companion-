@@ -199,7 +199,7 @@ class human {
 private:
 	string name, nameForReturn, habitForCigarette, habitForAlcohol, habitForAllergic, habitForMedication, genderSelection, smoking, drinking, allergic, medication, gender;
 	int age, activityRate;
-	long long int TCKimlik;
+	long long int IDKimlik;
 	float weight, height;
 
 protected:
@@ -225,8 +225,12 @@ public:
 		convertToLowercase(symptom);
 		return symptom;
 	}
+	 virtual void printDiagnosis(string illness) {
+		
+		 cout <<"ilness area:" << illness<<  endl;
 
-	void printUserInfo(string name, long long int TCKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic) {
+	}
+	void printUserInfo(string name, long long int TCKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic,string bodyPart) {
 		cout << "\n" << endl;
 		cout << "-------------------------------------" << endl;
 		cout << " Name: " << name << endl;
@@ -262,20 +266,20 @@ public:
 			cout << "Not allergic." << endl;
 		}
 		cout << "Disase area :" << bodyPart << endl;
-		cout << " You have Glaucoma disease " << endl;
-		cout << "-------------------------------------" << endl;
-		cout << endl;
-		cout << endl;
+		
+		
 	}
 };
 
 class head : public human {
+
 };
 
 class eye : public head {
 
+
 private:
-	string symptomForBlurredVision, symptomForEyePain, symptomForEyeSwell, symptom;
+	string symptomForBlurredVision, symptomForEyePain, symptomForEyeSwell, symptom,diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -311,24 +315,26 @@ public:
 		human::convertToLowercase(symptom);
 		return symptom;
 	}
+	void printDiagnosis (string illness) override {
+		cout << " Eye illnes:  " << illness << endl;
 
-	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom) {
+	}
+
+	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << " You have Glaucoma disease " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			diagnosis = " You have Glaucoma disease";
+			
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
+		
+			
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
-			cout << "Disase area :" << bodyPart << endl;
-			cout << " You have Hipertansif Retinopati,Üveit and Optic Retinopati disease " << endl;
-			//ABİ NORMALDE BURAYI TEXT FİLE RAPOR OLARAK YAPCAZ BEN SADECE GEÇİÇİ YAZDIM
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			
+			diagnosis = " You have Hipertansif Retinopati,Üveit and Optic Retinopati disease ";
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
 			cout << " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional. " << endl;
@@ -442,6 +448,10 @@ public:
 		cin >> symptom;
 		human::convertToLowercase(symptom);
 		return symptom;
+	}
+	void printDiagnosis(string illness) override {
+		cout << " Mouth illnes:  " << illness << endl;
+
 	}
 
 	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom) {
