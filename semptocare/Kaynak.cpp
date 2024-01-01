@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include  "Human.h"
+#include  "Header.h"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
     human human1;
 
     if (part == "eye") {
-        string symptom1, symptom2, symptom3, symptom4, symptom6;
+        string symptom1, symptom2, symptom3, symptom4, symptom6,symptom5;
         eye* myEye = new eye;
         symptom6 = myEye->getBodyPart();
         symptom1 = myEye->blurredVision();
@@ -19,7 +19,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no")) {
             symptom4 = myEye->nothingSymptom();
         }
-        myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4);
+        myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age,  gender,  activite,  height,  weight,  sigara,  alcol,  medic,  alergic, symptom6);
         delete myEye;
     }
 
