@@ -595,14 +595,14 @@ public:
 	void findBrainDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "yes")) {
 			
-			diagnosis = "You have brain Periodontal disease";
+			diagnosis = "You have Epilepsy disease";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "no")) {
 		
-			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			diagnosis = "You have Epileptic, Migraines with Aura, Panic Disorder and Other Neurological Conditions disease";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -610,7 +610,7 @@ public:
 
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "no")) {
 			
-			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			diagnosis = "You have Epileptic Seizures, Migraines, Other Neurological Conditions and Stress or Anxiety disease";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -637,33 +637,32 @@ public:
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "no") && (memoryLoss == "yes")) {
 			
 			diagnosis = "Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional";
-			cout << "-------------------------------------" << endl;
-			cout << endl;
-			cout << endl;
+			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
+			printDiagnosis(diagnosis);
 		}
 
 		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 			
-			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			diagnosis = "You have Epilepsy, Panic Disorder, Transient Global Amnesia (TGA) and  Psychogenic Nonepileptic Seizures (PNES) disease";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 		
-			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			diagnosis = "You have Panic Disorder, Generalized Anxiety Disorder (GAD), Dissociative Disorders, Post-Traumatic Stress Disorder (PTSD) and Other Mental Health Conditions";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 			
-			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			diagnosis = "You have Migraines with Aura, Panic Disorder, Memory-related Conditions or Stress-Related Issues";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "yes")) {
 			
-			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			diagnosis = "You have Migraines with Aura, Panic Disorder, Memory-related Conditions or Stress-Related Issues";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);;
 		}
@@ -747,14 +746,14 @@ public:
 	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
 			
-			diagnosis = "You have tongue cancer";
+			diagnosis = "You have Flu (Influenza)";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "no")) {
 		
-			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			diagnosis = "You have Pneumonia, Bronchitis, COVID-19 or Cardiac Issues";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -762,7 +761,7 @@ public:
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "no")) {
 		
-			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			diagnosis = "You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -794,26 +793,26 @@ public:
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
 	
-			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			diagnosis = "You have Respiratory Infections, Influenza (Flu), COVID-19 or Asthma Exacerbation";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
 
-			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			diagnosis = "You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
 		
-			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			diagnosis = "You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "yes")) {
 			
-			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			diagnosis = "You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -895,7 +894,7 @@ public:
 	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
 			
-			diagnosis = "You have Myocardial Infarction ";
+			diagnosis = "You have Respiratory Issues ";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1067,14 +1066,14 @@ public:
 
 		if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
 		
-			diagnosis = "You have tongue cancer";
+			diagnosis = "You have Gastroenteritis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
 		
-			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			diagnosis = "You have Gastroenteritis, Irritable Bowel Syndrome (IBS), Gastritis or Functional Dyspepsia";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1082,7 +1081,7 @@ public:
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
 			
-			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			diagnosis = "You have Gastroenteritis, Peptic Ulcer, Gallbladder Issues, Food Poisoning or Functional Abdominal Pain Syndrome";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1116,26 +1115,26 @@ public:
 
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
 	
-			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			diagnosis = "You have Food Poisoning, Gastroenteritis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
 
-			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			diagnosis = "You have Food Poisoning, Gastroenteritis, Gastroparesis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
 		
-			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			diagnosis = "You have Food Poisoning, Gastroenteritis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "yes")) {
 		
-			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			diagnosis = "You have Food Poisoning, Gastroenteritis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1222,14 +1221,14 @@ public:
 	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armWeaknessSymptom == "yes") && (armNumbnessSymptom == "yes")) {
 			
-			diagnosis = "You have tongue cancer";
+			diagnosis = "You havePeripheral Artery Disease (PAD)";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "no")) {
 	
-			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			diagnosis = "You have Peripheral Artery Disease (PAD), Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Musculoskeletal Issues";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1237,7 +1236,7 @@ public:
 
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "no")) {
 
-			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			diagnosis = "You have Peripheral Artery Disease (PAD), Infection, Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Musculoskeletal Issues";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1270,26 +1269,26 @@ public:
 
 		else if ((armPainSymptom == "no") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
 	
-			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			diagnosis = "You have Peripheral Artery Disease (PAD), Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Infection";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "no") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
 	
-			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			diagnosis = "You have Peripheral Artery Disease (PAD), Infection, Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Musculoskeletal Issues";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "no") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "yes")) {
 		
-			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			diagnosis = "You have Peripheral Artery Disease (PAD), Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Infection";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "no") && (armWeaknessSymptom == "yes")) {
 		
-			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			diagnosis = "You have Peripheral Artery Disease (PAD), Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Infection";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1369,14 +1368,14 @@ public:
 	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handWeaknessSymptom == "yes") && (handNumbnessSymptom == "yes")) {
 		
-			diagnosis = "You have tongue cancer";
+			diagnosis = "You have Carpal Tunnel Syndrome";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "no")) {
 		
-			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			diagnosis = "You have Rheumatoid Arthritis,Carpal Tunnel Syndrome, Peripheral Neuropathy or De Quervain's Tenosynovitis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1384,7 +1383,7 @@ public:
 
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "no")) {
 		
-			diagnosis = "You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease";
+			diagnosis = "You have Rheumatoid Arthritis,Carpal Tunnel Syndrome, Cubital Tunnel Syndrome, Peripheral Neuropathy or De Quervain's Tenosynovitis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1417,26 +1416,26 @@ public:
 		}
 
 		else if ((handPainSymptom == "no") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
-			diagnosis = "You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease";
+			diagnosis = "You have Carpal Tunnel Syndrome, Cubital Tunnel Syndrome, Peripheral Neuropathy or De Quervain's Tenosynovitis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "no") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
 	
-			diagnosis = "You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease";
+			diagnosis = "You have Rheumatoid Arthritis,Carpal Tunnel Syndrome, Cubital Tunnel Syndrome, Peripheral Neuropathy or De Quervain's Tenosynovitis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "no") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "yes")) {
 		
-			diagnosis = "You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus";
+			diagnosis = "You have Rheumatoid Arthritis, Cubital Tunnel Syndrome, Peripheral Neuropathy or De Quervain's Tenosynovitis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "no") && (handWeaknessSymptom == "yes")) {
 		
-			diagnosis = "You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease";
+			diagnosis = "You have Rheumatoid Arthritis,Carpal Tunnel Syndrome, Peripheral Neuropathy or De Quervain's Tenosynovitis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);;
 		}
@@ -1515,21 +1514,21 @@ public:
 	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderWeaknessSymptom == "yes") && (shoulderNumbnessSymptom == "yes")) {
 			
-			diagnosis = "You have tongue cancer";
+			diagnosis = "You have Rotator Cuff Injury";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "no")) {
 		
-			diagnosis = "You have Gingival Bleeding,Periodontal Disease and Periodontal disease";
+			diagnosis = "You have Rotator Cuff Injury,Shoulder Impingement Syndrome, Frozen Shoulder (Adhesive Capsulitis) or Brachial Plexus Injury";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "no")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Thoracic Outlet Syndrome, Rotator Cuff Injury,Shoulder Impingement Syndrome, Frozen Shoulder (Adhesive Capsulitis) or Brachial Plexus Injury";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1555,23 +1554,23 @@ public:
 		}
 
 		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = "You have Rotator Cuff Injury,Shoulder Impingement Syndrome, Frozen Shoulder (Adhesive Capsulitis) or Brachial Plexus Injury";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((shoulderPainSymptom == "no") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = "  You have Thoracic Outlet Syndrome, Rotator Cuff Injury,Shoulder Impingement Syndrome, Frozen Shoulder (Adhesive Capsulitis) or Brachial Plexus Injury";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "no") && (shoulderNumbnessSymptom == "yes") && (shoulderWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Rotator Cuff Injury,Shoulder Impingement Syndrome, Frozen Shoulder (Adhesive Capsulitis) or Brachial Plexus Injury";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderNumbnessSymptom == "no") && (shoulderWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Thoracic Outlet Syndrome, Rotator Cuff Injury, Frozen Shoulder (Adhesive Capsulitis) or Brachial Plexus Injury";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1659,20 +1658,20 @@ public:
 
 	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footWeaknessSymptom == "yes") && (footNumbnessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Neuropathy";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "no")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Neuropathy, Tarsal Tunnel Syndrome, Peripheral Artery Disease (PAD) or Foot Arthritis ";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "no") && (footWeaknessSymptom == "no")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = "  You have Sciatica, Peripheral Neuropathy, Tarsal Tunnel Syndrome, Peripheral Artery Disease (PAD) or Foot Arthritis ";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1698,23 +1697,23 @@ public:
 		}
 
 		else if ((footPainSymptom == "no") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Sciatica, Peripheral Neuropathy, Peripheral Artery Disease (PAD) or Foot Arthritis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((footPainSymptom == "no") && (footSwellingSymptom == "no") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = "You have Sciatica, Peripheral Neuropathy, Tarsal Tunnel Syndrome, Peripheral Artery Disease (PAD) or Foot Arthritis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "no") && (footNumbnessSymptom == "yes") && (footWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Sciatica, Tarsal Tunnel Syndrome, Peripheral Artery Disease (PAD) or Foot Arthritis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footNumbnessSymptom == "no") && (footWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Neuropathy, Tarsal Tunnel Syndrome, Peripheral Artery Disease (PAD) or Foot Arthritis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1801,20 +1800,20 @@ public:
 
 	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legWeaknessSymptom == "yes") && (legNumbnessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Artery Disease (PAD)";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "no")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Neuropathy, Deep Vein Thrombosis (DVT), Sciatica or Lumbar Spinal Stenosis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 
 		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "no") && (legWeaknessSymptom == "no")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = "  You have Musculoskeletal Issues, Peripheral Neuropathy, Deep Vein Thrombosis (DVT), Sciatica or Lumbar Spinal Stenosis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
@@ -1840,23 +1839,23 @@ public:
 		}
 
 		else if ((legPainSymptom == "no") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Neuropathy, Deep Vein Thrombosis (DVT), Sciatica or Lumbar Spinal Stenosis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((legPainSymptom == "no") && (legSwellingSymptom == "no") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Artery Disease (PAD), Peripheral Neuropathy, Deep Vein Thrombosis (DVT), Sciatica or Lumbar Spinal Stenosis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "no") && (legNumbnessSymptom == "yes") && (legWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = "You have Peripheral Artery Disease (PAD), Peripheral Neuropathy, Deep Vein Thrombosis (DVT) or Lumbar Spinal Stenosis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
 		else if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legNumbnessSymptom == "no") && (legWeaknessSymptom == "yes")) {
-			diagnosis = " Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.";
+			diagnosis = " You have Peripheral Artery Disease (PAD), Deep Vein Thrombosis (DVT), Sciatica or Lumbar Spinal Stenosis";
 			printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
 			printDiagnosis(diagnosis);
 		}
