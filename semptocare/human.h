@@ -473,7 +473,7 @@ public:
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Hipertansif Retinopati,Üveit and Optic Retinopati disease----";
+			string diagnosis = "----You have Hipertansif Retinopati,Üveit or Optic Retinopati disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
 			//diagnosis = " You have Hipertansif Retinopati,Üveit and Optic Retinopati disease ";
 			//printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
@@ -488,7 +488,7 @@ public:
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Orbital Selülit,Hipertansif Retinopati and cataract disease----";
+			string diagnosis = "----You have Orbital Selülit,Hipertansif Retinopati or cataract disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
 			//diagnosis = "  ";
 			//printUserInfo(name, IDKimlik, age, gender, activityRate, height, weight, habitForCigarette, habitForMedication, habitForAlcohol, habitForAllergic, bodyPart);
@@ -503,7 +503,7 @@ public:
 			//printDiagnosis(diagnosis);
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
-			string diagnosis = "----You have Üveit,Konjonktivit and Optic Norit disease----";
+			string diagnosis = "----You have Üveit,Konjonktivit or Optic Norit disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
 			WritingConsoleInformation(name);
 			//diagnosis = " You have Üveit,Konjonktivit and Optic Norit disease ";
@@ -617,12 +617,12 @@ public:
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Gingival Bleeding,Periodontal Disease and Periodontal disease----";
+			string diagnosis = "----You have Gingival Bleeding,Periodontal Disease or Periodontal disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems and Xerostomia disease----";
+			string diagnosis = "----You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems or Xerostomia disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
@@ -647,12 +647,12 @@ public:
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Canker Sores,Xerostomia, Periodontal disease and  Gum disease----";
+			string diagnosis = "----You have Canker Sores,Xerostomia, Periodontal disease or  Gum disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Xerostomia,Gingival Bleeding,Gum Diseases and Periodontal disease----";
+			string diagnosis = "----You have Xerostomia,Gingival Bleeding,Gum Diseases or Periodontal disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 
@@ -746,7 +746,7 @@ void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, 
 		}
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "no")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Epileptic, Migraines with Aura, Panic Disorder and Other Neurological Conditions disease----";
+			string diagnosis = "----You have Epileptic, Migraines with Aura, Panic Disorder or Other Neurological Conditions disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 
@@ -780,12 +780,12 @@ void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, 
 
 		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Epilepsy, Panic Disorder, Transient Global Amnesia (TGA) and  Psychogenic Nonepileptic Seizures (PNES) disease----";
+			string diagnosis = "----You have Epilepsy, Panic Disorder, Transient Global Amnesia (TGA) or  Psychogenic Nonepileptic Seizures (PNES) disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 			WritingConsoleInformation(name);
-			string diagnosis = "----You have Panic Disorder, Generalized Anxiety Disorder (GAD), Dissociative Disorders, Post-Traumatic Stress Disorder (PTSD) and Other Mental Health Conditions----";
+			string diagnosis = "----You have Panic Disorder, Generalized Anxiety Disorder (GAD), Dissociative Disorders, Post-Traumatic Stress Disorder (PTSD) or Other Mental Health Conditions----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 
