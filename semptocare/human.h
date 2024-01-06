@@ -1,5 +1,3 @@
-
-
 #pragma once
 #include <iostream>
 #include <limits>
@@ -26,24 +24,24 @@ public:
 	static void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, const string& alcol, const string& sigara, const string& medic, const string& diagnosis, const string& areaName, const string& Username, const int& Userage, const string& UserGender, const int& UserActivite, const int& Userheight, const int& Userweight) {
 		string filePath = Username + " Health Report" + ".txt";
 		ofstream outputFile(filePath, ios::app);
-		
+
 		if (outputFile.is_open()) {
 			outputFile << endl;
 			outputFile << endl;
 			outputFile << "-------------------------------------" << endl;
 			outputFile << " Name: " << Username << endl;
-			outputFile << " TC Kimlik No: " << idNumber << endl;
+			outputFile << " Turkish ID Number: " << idNumber << endl;
 			outputFile << " Age: " << Userage << endl;
 			outputFile << " Gender: " << UserGender << endl;
-			outputFile << " Aktity rate: " << UserActivite << endl;
+			outputFile << " Activity rate: " << UserActivite << endl;
 			outputFile << " Height: " << Userheight << endl;
 			outputFile << " Weight: " << Userweight << endl;
 
 			if (sigara == "yes") {
-				outputFile << " Drinking Cigarete " << endl;
+				outputFile << "Active smoker" << endl;
 			}
 			else {
-				outputFile << " Not Drinking Cigarete " << endl;
+				outputFile << "Non-smoker" << endl;
 			}
 			if (medic == "yes") {
 				outputFile << " Using Special Medications  " << endl;
@@ -52,16 +50,16 @@ public:
 				outputFile << " Not Using special Medications " << endl;
 			}
 			if (alcol == "yes") {
-				outputFile << " Drinking Alcohol " << endl;
+				outputFile << "Frequent drinker" << endl;
 			}
 			else {
-				outputFile << " Not Drinking Alcohol " << endl;
+				outputFile << "Non-drinker." << endl;
 			}
 			if (alergic == "yes") {
-				outputFile << " Have special Allergic " << endl;
+				outputFile << "Allergic" << endl;
 			}
 			else {
-				outputFile << " Not Have special Allergic " << endl;
+				outputFile << "Non-allergic." << endl;
 			}
 			outputFile << diagnosis << endl;
 			outputFile << "-------------------------------------" << endl;
@@ -294,7 +292,7 @@ public:
 	}
 
 	virtual string getBodyPart() {
-		cout << "What's your problem area?" << endl;
+		cout << "What's your problem area? (brain/mouth/heart/chest/abdomen/arms/hands/foot/shoulders/legs)" << endl;
 		getline(cin, bodyPart);
 		return bodyPart;
 	}
@@ -310,7 +308,7 @@ public:
 		cout << "ilness area:" << illness << endl;
 
 	}
-	
+
 
 };
 
@@ -361,70 +359,70 @@ public:
 	void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, const string& alcol, const string& sigara, const string& medic, const string& diagnosis, const string& areaName, const string& Username, const int& Userage, const string& UserGender, const int& UserActivite, const int& Userheight, const int& Userweight) {
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
-	
+
 
 
 	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
 
-			
+
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Glaucoma disease----";
+			diagnosis = "----You have Glaucoma disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
 
 
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
 			WritingConsoleInformation(name);
-		 diagnosis = "----You have Hipertansif Retinopati,Üveit or Optic Retinopati disease----";
+			diagnosis = "----You have Hypertensive Retinopathy, Uveitis or Optic Retinopathy disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
-			
+
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
-			
+
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Orbital Selülit,Hipertansif Retinopati or cataract disease----";
+			diagnosis = "----You have Orbital cellulite, hypertensive retinopathy or cataract disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
-			
+
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "no")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
-			
+
 		}
 		else if ((semptomBluredVision == "yes") && (semptomeyePain == "no") && (semptomEyeSwell == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Üveit,Konjonktivit or Optic Norit disease----";
+			diagnosis = "----You have uveitis, conjunctivitis or Optic Norit disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
-			
+
 		}
 		else if ((semptomBluredVision == "no") && (semptomeyePain == "yes") && (semptomEyeSwell == "no")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
-			
+
 		}
 		else if (symptom == "yes") {
 			WritingConsoleInformation(name);
-			 diagnosis = "----If you have any other symptoms, please consult a doctor.----";
+			diagnosis = "----If you have any other symptoms, please consult a doctor.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
 
-			
+
 
 		}
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Please enter true department. Eye department might be the wrong department for you.----";
+			diagnosis = "----Please enter true department. Eye department might be the wrong department for you.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Eye", name, age, gender, activityRate, height, weight);
 
-			
+
 		}
 
 		else {
@@ -495,101 +493,101 @@ public:
 
 		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have tongue cancer----";
+			diagnosis = "----You have tongue cancer----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 			printDiagnosis(diagnosis);
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Gingival Bleeding,Periodontal Disease or Oral Hygiene Problems----";
+			diagnosis = "----You have Gingival Bleeding,Periodontal Disease or Oral Hygiene Problems----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Periodontal Disease,Taste Disorder,Xerostomia,Caries,Oral Hygiene Problems or Xerostomia disease----";
+			diagnosis = "----You have Periodontal Disease, Taste Disorder, Caries, Oral Hygiene Problems or Xerostomia disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Canker Sores,Xerostomia, Periodontal disease or  Gum disease----";
+			diagnosis = "----You have Canker Sores,Xerostomia, Periodontal disease or Gum disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Xerostomia,Gingival Bleeding,Gum Diseases or Periodontal disease----";
+			diagnosis = "----You have Xerostomia,Gingival Bleeding,Gum Diseases or Periodontal disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus----";
+			diagnosis = "----You have Taste Disorder,Dryness,Canker Sores or Oral Lichen Planus----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease----";
+			diagnosis = "----You have  Bleeding Teeth,Taste Disorder,Gingival Bleeding or mouth condition disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have  Periodontal disease,Gum disease,Xerostomia,Gingival Bleeding or mouth condition disease----";
+			diagnosis = "----You have  Periodontal disease,Gum disease,Xerostomia,Gingival Bleeding or mouth condition disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 
 		}
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "no") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have  Xerostomia, Canker Sores,Xerostomia,Gingival Bleeding or mouth condition disease----";
+			diagnosis = "----You have  Xerostomia, Canker Sores,Xerostomia,Gingival Bleeding or mouth condition disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have   Periodontal disease,Xerostomia ,Dryness,Gingival Bleeding or mouth condition disease----";
+			diagnosis = "----You have   Periodontal disease,Xerostomia ,Dryness,Gingival Bleeding or mouth condition disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 
 		}
 		else if ((semptomTasteDisaster == "no") && (semptomBleddingTeeth == "yes") && (semptomDryness == "no") && (symptomCankerSores == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have  Oral Hygiene Problems, Periodontal disease,Canker Sores ,Dryness or Gingival Bleeding ----";
+			diagnosis = "----You have  Oral Hygiene Problems, Periodontal disease,Canker Sores ,Dryness or Gingival Bleeding ----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 
 		}
 
 		else if (symptom == "yes") {
 			WritingConsoleInformation(name);
-			 diagnosis = "---If you have any other symptoms, please consult a doctor.----";
+			diagnosis = "---If you have any other symptoms, please consult a doctor.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
-			 diagnosis = "---Please enter true department.----";
+			diagnosis = "---Please enter true department.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else {
 			WritingConsoleInformation(name);
-			 diagnosis = "---Please enter only yes/no. Thank you.----";
+			diagnosis = "---Please enter only yes/no. Thank you.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 	}
@@ -647,62 +645,62 @@ public:
 	void findBrainDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Epilepsy disease----";
+			diagnosis = "----You have Epilepsy disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Epileptic, Migraines with Aura, Panic Disorder or Other Neurological Conditions disease----";
+			diagnosis = "----You have Epileptic, Migraines with Aura, Panic Disorder or Other Neurological Conditions disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 
 
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Epileptic Seizures, Migraines, Other Neurological Conditions and Stress or Anxiety disease----";
+			diagnosis = "----You have Epileptic Seizures, Migraines, Other Neurological Conditions and Stress or Anxiety disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "no") && (memoryLoss == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "no") && (memoryLoss == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 
 		}
 
 		else if ((headache == "no") && (seizures == "yes") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Epilepsy, Panic Disorder, Transient Global Amnesia (TGA) or  Psychogenic Nonepileptic Seizures (PNES) disease----";
+			diagnosis = "----You have Epilepsy, Panic Disorder, Transient Global Amnesia (TGA) or  Psychogenic Nonepileptic Seizures (PNES) disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "no") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Panic Disorder, Generalized Anxiety Disorder (GAD), Dissociative Disorders, Post-Traumatic Stress Disorder (PTSD) or Other Mental Health Conditions----";
+			diagnosis = "----You have Panic Disorder, Generalized Anxiety Disorder (GAD), Dissociative Disorders, Post-Traumatic Stress Disorder (PTSD) or Other Mental Health Conditions----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Migraines with Aura, Panic Disorder, Memory-related Conditions or Stress-Related Issues----";
+			diagnosis = "----You have Migraines with Aura, Panic Disorder, Memory-related Conditions or Stress-Related Issues----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "yes") && (seizures == "yes") && (panicAttack == "no") && (memoryLoss == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Migraines with Aura, Panic Disorder, Memory-related Conditions or Stress-Related Issues----";
+			diagnosis = "----You have Migraines with Aura, Panic Disorder, Memory-related Conditions or Stress-Related Issues----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else if ((headache == "yes") && (seizures == "no") && (panicAttack == "yes") && (memoryLoss == "no")) {
@@ -732,18 +730,18 @@ public:
 
 		else if (symptom == "yes") {
 			WritingConsoleInformation(name);
-			 diagnosis = "----If you have any other symptoms, please consult a doctor.----";
+			diagnosis = "----If you have any other symptoms, please consult a doctor.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Please enter true department.----";
+			diagnosis = "----Please enter true department.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 		}
 		else {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Please enter only yes/no. Thank you. .----";
+			diagnosis = "----Please enter only yes/no. Thank you. .----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Brain", name, age, gender, activityRate, height, weight);
 
 
@@ -807,58 +805,58 @@ public:
 	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Flu (Influenza)----";
+			diagnosis = "----You have Flu (Influenza)----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Pneumonia, Bronchitis, COVID-19 or Cardiac Issues----";
+			diagnosis = "----You have Pneumonia, Bronchitis, COVID-19 or Cardiac Issues----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
+			diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "no") && (coughSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "no") && (coughSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Respiratory Infections, Influenza (Flu), COVID-19 or Asthma Exacerbation----";
+			diagnosis = "----You have Respiratory Infections, Influenza (Flu), COVID-19 or Asthma Exacerbation----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
+			diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
+			diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (feverSymptom == "no") && (coughSymptom == "yes")) {
 			WritingConsoleInformation(name);
-		 diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
+			diagnosis = "----You have Cardiac Issues, Pulmonary Embolism, Musculoskeletal Pain, Gastroesophageal Reflux Disease (GERD) or Panic Attacks----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (feverSymptom == "yes") && (coughSymptom == "no")) {
@@ -888,18 +886,18 @@ public:
 
 		else if (symptom == "yes") {
 			WritingConsoleInformation(name);
-			 diagnosis = "----If you have any other symptoms, please consult a doctor.----";
+			diagnosis = "----If you have any other symptoms, please consult a doctor.----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
-			 diagnosis = "Please enter true department";
+			diagnosis = "Please enter true department";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 		else {
 			WritingConsoleInformation(name);
-			 diagnosis = "Please enter only yes/no. Thank you.";
+			diagnosis = "Please enter only yes/no. Thank you.";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Chest", name, age, gender, activityRate, height, weight);
 		}
 	}
@@ -955,89 +953,89 @@ public:
 	void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, const string& alcol, const string& sigara, const string& medic, const string& diagnosis, const string& areaName, const string& Username, const int& Userage, const string& UserGender, const int& UserActivite, const int& Userheight, const int& Userweight) {
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
-	
+
 
 	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Respiratory Issues----";
+			diagnosis = "----You have Respiratory Issues----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Angina Pektoris disease,Heart failure,Myokarit disase or Aritmiler  disease----";
+			diagnosis = "----You have Angina Pektoris disease,Heart failure,Myokarit disase or Aritmiler  disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Myokardit disease,Anjina Pektoris,Aortic Stenosis or Coronary Artery Disease----";
+			diagnosis = "----You have Myokardit disease,Anjina Pektoris,Aortic Stenosis or Coronary Artery Disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have likely  Perikardit ,Pulmoner Emboli, Angina Pektoris,Heart Valve Diseases or Heart failure diseases----";
+			diagnosis = "----You have likely  Perikardit ,Pulmoner Emboli, Angina Pektoris,Heart Valve Diseases or Heart failure diseases----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases----";
+			diagnosis = "----Possible Angina Pektoris,Aritmiler,Heart Valve Diseases or Myokardit diseases----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure----";
+			diagnosis = "----Probable Pulmoner Hipertansiyon,Perikardit,Myocardial Infarction ,Anjina Pektoris or Heart failure----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati----";
+			diagnosis = "----Likely pulmonary embolism,Anjina Pektoris,Myocardial Infarction,Coronary Artery Disease or Kardiyomiyopati----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ----";
+			diagnosis = "----You have Kardiyomiyopati,Hipertansiyon,Aritmiler,Heart failure or Heart Valve Diseases ----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "no") && (breathSymptom == "no") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease----";
+			diagnosis = "----You have Coronary Artery Disease,Aritmiler,Myocardial Infarction or Anjina Pektori disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease----";
+			diagnosis = "----You might have Coronary Artery Disease,Aritmiler,Heart Valve Diseases,Heaart Faiulre or Myokardit disease----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases----";
+			diagnosis = "----You might have Kardiyomiyopati,Aortic Regurgitation,Coronary Artery Disease,Heart Failure or Heart Valve Diseases----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((chestPainSymptom == "no") && (breathSymptom == "yes") && (palpitationsSymptom == "no") && (fatigueSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else if ((chestPainSymptom == "yes") && (breathSymptom == "no") && (palpitationsSymptom == "yes") && (fatigueSymptom == "no")) {
@@ -1064,16 +1062,16 @@ public:
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 
 		}
-	
+
 		else if (symptom == "yes") {
 			WritingConsoleInformation(name);
-			 diagnosis = "---- You have other Heart disaster----";
+			diagnosis = "---- You have other Heart disaster----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
-			 diagnosis = "---- Please enter true departmentr----";
+			diagnosis = "---- Please enter true departmentr----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Heart", name, age, gender, activityRate, height, weight);
 		}
 		else {
@@ -1133,68 +1131,68 @@ public:
 	void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, const string& alcol, const string& sigara, const string& medic, const string& diagnosis, const string& areaName, const string& Username, const int& Userage, const string& UserGender, const int& UserActivite, const int& Userheight, const int& Userweight) {
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
-	
+
 
 	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "---- You have Gastroenteritis----";
+			diagnosis = "---- You have Gastroenteritis----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Gastroenteritis, Irritable Bowel Syndrome (IBS), Gastritis or Functional Dyspepsia----";
+			diagnosis = "----You have Gastroenteritis, Irritable Bowel Syndrome (IBS), Gastritis or Functional Dyspepsia----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Gastroenteritis, Peptic Ulcer, Gallbladder Issues, Food Poisoning or Functional Abdominal Pain Syndrome----";
+			diagnosis = "----You have Gastroenteritis, Peptic Ulcer, Gallbladder Issues, Food Poisoning or Functional Abdominal Pain Syndrome----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "no") && (vomitingSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
+			diagnosis = "----Sorry! One symptom is not enough for diagnosis. Please consult a healthcare professional----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "yes") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Food Poisoning, Gastroenteritis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
+			diagnosis = "----You have Food Poisoning, Gastroenteritis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if ((abdominalPainSymptom == "no") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Food Poisoning, Gastroenteritis, Gastroparesis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
+			diagnosis = "----You have Food Poisoning, Gastroenteritis, Gastroparesis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Food Poisoning, Gastroenteritis, Gastroparesis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
+			diagnosis = "----You have Food Poisoning, Gastroenteritis, Gastroparesis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (bloatingSymptom == "no") && (vomitingSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Food Poisoning, Gastroenteritis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
+			diagnosis = "----You have Food Poisoning, Gastroenteritis, Functional Gastrointestinal Disorders or  Obstruction of the Bowel----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "no") && (bloatingSymptom == "yes") && (vomitingSymptom == "no")) {
@@ -1224,7 +1222,7 @@ public:
 
 		else if (symptom == "yes") {
 			WritingConsoleInformation(name);
-			 diagnosis = "----If you have any other symptoms, please consult a doctor----";
+			diagnosis = "----If you have any other symptoms, please consult a doctor----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Abdomen", name, age, gender, activityRate, height, weight);
 		}
 		else if (symptom == "no") {
@@ -1300,13 +1298,13 @@ public:
 	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armWeaknessSymptom == "yes") && (armNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You havePeripheral Artery Disease (PAD)----";
+			diagnosis = "----You havePeripheral Artery Disease (PAD)----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Arm", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armNumbnessSymptom == "yes") && (armWeaknessSymptom == "no")) {
 			WritingConsoleInformation(name);
-			 diagnosis = "----You have Peripheral Artery Disease (PAD), Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Musculoskeletal Issues----";
+			diagnosis = "----You have Peripheral Artery Disease (PAD), Deep Vein Thrombosis (DVT), Nerve Compression or Injury or Musculoskeletal Issues----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Arm", name, age, gender, activityRate, height, weight);
 		}
 
@@ -1455,12 +1453,12 @@ public:
 	void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, const string& alcol, const string& sigara, const string& medic, const string& diagnosis, const string& areaName, const string& Username, const int& Userage, const string& UserGender, const int& UserActivite, const int& Userheight, const int& Userweight) {
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
-	
+
 	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handWeaknessSymptom == "yes") && (handNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "You have Carpal Tunnel Syndrome";
-			
+
 			printDiagnosis(diagnosis);
 		}
 
@@ -1613,7 +1611,7 @@ public:
 	void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, const string& alcol, const string& sigara, const string& medic, const string& diagnosis, const string& areaName, const string& Username, const int& Userage, const string& UserGender, const int& UserActivite, const int& Userheight, const int& Userweight) {
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
-	
+
 	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderWeaknessSymptom == "yes") && (shoulderNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
@@ -1708,13 +1706,13 @@ public:
 
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
-			
+
 			diagnosis = "Please enter true department";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
 		}
 		else {
 			WritingConsoleInformation(name);
-			
+
 			diagnosis = "Please enter only yes/no. Thank you. ";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Shoulders", name, age, gender, activityRate, height, weight);
 
@@ -1865,7 +1863,7 @@ public:
 
 		else if (symptom == "yes") {
 			WritingConsoleInformation(name);
-	
+
 			diagnosis = "If you have any other symptoms, please consult a doctor.";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Foot", name, age, gender, activityRate, height, weight);
 
@@ -1875,14 +1873,14 @@ public:
 			WritingConsoleInformation(name);
 			cout << endl;
 			cout << endl;
-	
+
 			diagnosis = "Please enter true department";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Foot", name, age, gender, activityRate, height, weight);
 
 		}
 		else {
 			WritingConsoleInformation(name);
-	
+
 			diagnosis = "Please enter only yes/no. Thank you. ";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Foot", name, age, gender, activityRate, height, weight);
 
