@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 #include <limits>
@@ -8,6 +9,7 @@
 #include <chrono>
 #include <thread>
 
+
 using namespace std;
 
 class user {
@@ -16,6 +18,7 @@ private:
 	int age, activityRate;
 	long long int TCKimlik;
 	float weight, height;
+
 
 public:
 
@@ -69,7 +72,7 @@ public:
 			cout << "Dosyaya yazma hatası. Dosyanın açık olduğundan emin olun." << endl;
 		}
 	}
-	long long int getİDNumber() {
+	long int getİDNumber() {
 
 		return TCKimlik;
 	}
@@ -310,11 +313,8 @@ public:
 
 };
 
-class head : public organ {
 
-};
-
-class eye : public head {
+class eye : public organ {
 
 
 private:
@@ -433,7 +433,7 @@ public:
 
 };
 
-class mouth : public head {
+class mouth : public organ {
 private:
 	string symptomTasteDiasater, symptomBleedingTeeth, symptomForToothLoss, symptomMouthDryness, symptomMouthCankerSores, symptom, diagnosis;
 
@@ -591,7 +591,7 @@ public:
 	}
 };
 
-class brain : public head {
+class brain : public organ {
 private:
 	string headache, seizures, memoryLoss, panicAttack, symptom, diagnosis;
 
@@ -747,11 +747,8 @@ public:
 	}
 };
 
-class body : public organ {
 
-};
-
-class chest : public body {
+class chest : public organ {
 private:
 	string symptomChestPain, symptomShortnessOfBreath, symptomCough, symptomFever, symptom, diagnosis;
 
@@ -903,7 +900,7 @@ public:
 
 
 
-class heart : public body {
+class heart : public organ {
 private:
 	string symptomChestPain, symptomShortnessOfBreath, symptomPalpitations, symptomFatigue, symptom, diagnosis;
 
@@ -1081,7 +1078,7 @@ public:
 
 };
 
-class abdomen : public body {
+class abdomen : public organ {
 private:
 	string symptomAbdominalPain, symptomNausea, symptomVomiting, symptomBloating, symptom, diagnosis;
 
@@ -1238,12 +1235,9 @@ public:
 
 };
 
-class limb : public organ {
 
 
-};
-
-class arms : public limb {
+class arms : public organ {
 private:
 	string symptomArmPain, symptomArmSwelling, symptomArmWeakness, symptomArmNumbness, symptom, diagnosis;
 
@@ -1404,7 +1398,7 @@ public:
 	}
 };
 
-class hands : public limb {
+class hands : public organ {
 private:
 	string symptomHandPain, symptomHandSwelling, symptomHandWeakness, symptomHandNumbness, symptom, diagnosis;
 
@@ -1562,7 +1556,7 @@ public:
 	}
 };
 
-class shoulders : public limb {
+class shoulders : public organ {
 private:
 	string symptomShoulderPain, symptomShoulderSwelling, symptomShoulderWeakness, symptomShoulderNumbness, symptom, diagnosis;
 
@@ -1719,7 +1713,7 @@ public:
 
 };
 
-class foot : public limb {
+class foot : public organ {
 private:
 	string symptomFootPain, symptomFootSwelling, symptomFootWeakness, symptomFootNumbness, symptom, diagnosis;
 
@@ -1888,7 +1882,7 @@ public:
 
 };
 
-class legs : public limb {
+class legs : public organ {
 private:
 	string symptomLegPain, symptomLegSwelling, symptomLegWeakness, symptomLegNumbness, symptom, diagnosis;
 
