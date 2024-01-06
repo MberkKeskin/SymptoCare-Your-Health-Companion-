@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include  "Header.h"
 
 using namespace std;
@@ -10,7 +11,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
     organ human1;
 
     if (part == "eye") {
-        string symptom1, symptom2, symptom3, symptom4, symptom6,symptom5;
+        string symptom1, symptom2, symptom3, symptom4, symptom6, symptom5;
         eye* EyeOrgan = new eye;
         symptom6 = EyeOrgan->getBodyPart();
         symptom1 = EyeOrgan->blurredVision();
@@ -19,7 +20,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no")) {
             symptom4 = EyeOrgan->nothingSymptom();
         }
-        EyeOrgan->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age,  gender,  activite,  height,  weight,  sigara,  alcol,  medic,  alergic, symptom6);
+        EyeOrgan->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete EyeOrgan;
     }
 
@@ -51,7 +52,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = brainOrgan->nothingSymptom();
         }
-        brainOrgan->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name , idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        brainOrgan->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete brainOrgan;
     }
 
@@ -194,7 +195,39 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
 
 int main() {
 
-    cout << "ACİL SERVİS PROTOKOLÜ TANIMLANACAK!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+
+   /* sf::RenderWindow window;
+    window.create(sf::VideoMode(800, 600), "Symptocare");
+   
+    sf::RectangleShape arı1(sf::Vector2f(100.0f, 50.0f)); // Arı vücudu
+    vucut.setPosition(350.0f, 275.0f);
+    vucut.setFillColor(sf::Color::Yellow);
+
+    sf::RectangleShape arı2(sf::Vector2f(50.0f, 50.0f)); // Arı başı
+    kafa.setPosition(450.0f, 250.0f);
+    kafa.setFillColor(sf::Color::Yellow);
+
+    sf::CircleShape arı3(10.0f); 
+    goz1.setPosition(465.0f, 275.0f);
+    goz1.setFillColor(sf::Color::Black);
+
+    sf::CircleShape arı4(10.0f); 
+    goz2.setPosition(505.0f, 275.0f);
+    goz2.setFillColor(sf::Color::Black); /*
+
+  
+
+   if (kaplama.loadFromFile("ressim") == false) {
+        cout << "olmadi ";
+    }*/ 
+    //Üst satırlar da kod parçası resim dosyası içindi 
+   
+   
+   
+   
+
+    
+   cout << "ACİL SERVİS PROTOKOLÜ TANIMLANACAK!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     user user;
 
     string part, isim, habit, gender, sigara, alkol, alergi, ilac;
@@ -262,7 +295,31 @@ int main() {
         }
     }
 
+    /* while (window.isOpen())
+    {
+
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+
+
+            if (event.type == sf::Event::Closed){
+                window.close();
+            }
+            window.clear(sf::Color::Transparent);
+            window.draw(arı1);
+            window.draw(arı2);
+            window.draw(arı3);
+            window.draw(arı4);
+            
+            window.display();
+
+
+        }
+    } */
+
     cout << " Thank you for choose us :) Get well soon ! ." << endl;
+    
 
     return 0;
 }
