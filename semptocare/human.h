@@ -8,7 +8,6 @@
 #include <chrono>
 #include <thread>
 
-
 using namespace std;
 
 class user {
@@ -17,7 +16,6 @@ private:
 	int age, activityRate;
 	long long int TCKimlik;
 	float weight, height;
-
 
 public:
 
@@ -71,7 +69,7 @@ public:
 			cout << "Dosyaya yazma hatası. Dosyanın açık olduğundan emin olun." << endl;
 		}
 	}
-	long int getİDNumber() {
+	long long int getİDNumber() {
 
 		return TCKimlik;
 	}
