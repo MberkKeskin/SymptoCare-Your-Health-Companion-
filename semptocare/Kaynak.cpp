@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
+//#include <SFML/Graphics.hpp>
+//#include <SFML/Window.hpp>
 #include  "Header.h"
 
 using namespace std;
