@@ -7,180 +7,180 @@ using namespace std;
 
 void findBodyParts(string part, string name, long long int idNumber, int age, string gender, int activite, float height, float weight, string sigara, string alcol, string medic, string alergic) {
 
-    human human1;
+    organ human1;
 
     if (part == "eye") {
         string symptom1, symptom2, symptom3, symptom4, symptom6,symptom5;
-        eye* myEye = new eye;
-        symptom6 = myEye->getBodyPart();
-        symptom1 = myEye->blurredVision();
-        symptom2 = myEye->eyePain();
-        symptom3 = myEye->eyeSweell();
+        eye* EyeOrgan = new eye;
+        symptom6 = EyeOrgan->getBodyPart();
+        symptom1 = EyeOrgan->blurredVision();
+        symptom2 = EyeOrgan->eyePain();
+        symptom3 = EyeOrgan->eyeSweell();
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no")) {
-            symptom4 = myEye->nothingSymptom();
+            symptom4 = EyeOrgan->nothingSymptom();
         }
-        myEye->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age,  gender,  activite,  height,  weight,  sigara,  alcol,  medic,  alergic, symptom6);
-        delete myEye;
+        EyeOrgan->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age,  gender,  activite,  height,  weight,  sigara,  alcol,  medic,  alergic, symptom6);
+        delete EyeOrgan;
     }
 
     else if (part == "mouth") {
         string symptom1, symptom2, symptom4, symptom5, symptom6, symptom7;
-        mouth* myMouth = new mouth;
-        symptom7 = myMouth->getBodyPart();
-        symptom1 = myMouth->tasteDisaster();
-        symptom2 = myMouth->bleedingTeeth();
+        mouth* mouthOrgan = new mouth;
+        symptom7 = mouthOrgan->getBodyPart();
+        symptom1 = mouthOrgan->tasteDisaster();
+        symptom2 = mouthOrgan->bleedingTeeth();
 
-        symptom4 = myMouth->mouthDryness();
-        symptom5 = myMouth->mouthCankerSores();
+        symptom4 = mouthOrgan->mouthDryness();
+        symptom5 = mouthOrgan->mouthCankerSores();
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
-            symptom6 = myMouth->nothingSymptom();
+            symptom6 = mouthOrgan->nothingSymptom();
         }
-        myMouth->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom7);
-        delete myMouth;
+        mouthOrgan->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom7);
+        delete mouthOrgan;
     }
 
     else if (part == "brain") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        brain* myBrain = new brain;
-        symptom6 = myBrain->getBodyPart();
-        symptom1 = myBrain->headacheSymptom();
-        symptom2 = myBrain->seizureSymptom();
-        symptom3 = myBrain->memoryLossSymptom();
-        symptom4 = myBrain->panicAttackSymptom();
+        brain* brainOrgan = new brain;
+        symptom6 = brainOrgan->getBodyPart();
+        symptom1 = brainOrgan->headacheSymptom();
+        symptom2 = brainOrgan->seizureSymptom();
+        symptom3 = brainOrgan->memoryLossSymptom();
+        symptom4 = brainOrgan->panicAttackSymptom();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myBrain->nothingSymptom();
+            symptom5 = brainOrgan->nothingSymptom();
         }
-        myBrain->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name , idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myBrain;
+        brainOrgan->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name , idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete brainOrgan;
     }
 
     else if (part == "chest") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        chest* myChest = new chest;
-        symptom6 = myChest->getBodyPart();
-        symptom1 = myChest->chestPain();
-        symptom2 = myChest->shortnessOfBreath();
-        symptom3 = myChest->cough();
-        symptom4 = myChest->fever();
+        chest* chestOrgan = new chest;
+        symptom6 = chestOrgan->getBodyPart();
+        symptom1 = chestOrgan->chestPain();
+        symptom2 = chestOrgan->shortnessOfBreath();
+        symptom3 = chestOrgan->cough();
+        symptom4 = chestOrgan->fever();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myChest->nothingSymptom();
+            symptom5 = chestOrgan->nothingSymptom();
         }
-        myChest->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myChest;
+        chestOrgan->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete chestOrgan;
     }
 
     else if (part == "heart") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        heart* myHeart = new heart;
-        symptom6 = myHeart->getBodyPart();
-        symptom1 = myHeart->chestPpain();
-        symptom2 = myHeart->shortnessOfBbreath();
-        symptom3 = myHeart->palpitations();
-        symptom4 = myHeart->fatigue();
+        heart* heartOrgan = new heart;
+        symptom6 = heartOrgan->getBodyPart();
+        symptom1 = heartOrgan->chestPpain();
+        symptom2 = heartOrgan->shortnessOfBbreath();
+        symptom3 = heartOrgan->palpitations();
+        symptom4 = heartOrgan->fatigue();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myHeart->nothingSymptom();
+            symptom5 = heartOrgan->nothingSymptom();
         }
-        myHeart->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myHeart;
+        heartOrgan->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete heartOrgan;
     }
 
     else if (part == "abdomen") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        abdomen* myAbdomen = new abdomen;
-        symptom6 = myAbdomen->getBodyPart();
-        symptom1 = myAbdomen->abdominalPain();
-        symptom2 = myAbdomen->nausea();
-        symptom3 = myAbdomen->vomiting();
-        symptom4 = myAbdomen->bloating();
+        abdomen* abdomenOrgan = new abdomen;
+        symptom6 = abdomenOrgan->getBodyPart();
+        symptom1 = abdomenOrgan->abdominalPain();
+        symptom2 = abdomenOrgan->nausea();
+        symptom3 = abdomenOrgan->vomiting();
+        symptom4 = abdomenOrgan->bloating();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myAbdomen->nothingSymptom();
+            symptom5 = abdomenOrgan->nothingSymptom();
         }
-        myAbdomen->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myAbdomen;
+        abdomenOrgan->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete abdomenOrgan;
     }
 
     else if (part == "arms") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        arms* myArms = new arms;
-        symptom6 = myArms->getBodyPart();
-        symptom1 = myArms->armPain();
-        symptom2 = myArms->armSwelling();
-        symptom3 = myArms->armWeakness();
-        symptom4 = myArms->armNumbness();
+        arms* armOrgan = new arms;
+        symptom6 = armOrgan->getBodyPart();
+        symptom1 = armOrgan->armPain();
+        symptom2 = armOrgan->armSwelling();
+        symptom3 = armOrgan->armWeakness();
+        symptom4 = armOrgan->armNumbness();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myArms->nothingSymptom();
+            symptom5 = armOrgan->nothingSymptom();
         }
-        myArms->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myArms;
+        armOrgan->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete armOrgan;
     }
 
     else if (part == "hands") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        hands* myHands = new hands;
-        symptom6 = myHands->getBodyPart();
-        symptom1 = myHands->handPain();
-        symptom2 = myHands->handSwelling();
-        symptom3 = myHands->handWeakness();
-        symptom4 = myHands->handNumbness();
+        hands* handOrgan = new hands;
+        symptom6 = handOrgan->getBodyPart();
+        symptom1 = handOrgan->handPain();
+        symptom2 = handOrgan->handSwelling();
+        symptom3 = handOrgan->handWeakness();
+        symptom4 = handOrgan->handNumbness();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myHands->nothingSymptom();
+            symptom5 = handOrgan->nothingSymptom();
         }
-        myHands->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myHands;
+        handOrgan->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete handOrgan;
     }
 
     else if (part == "shoulders") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        shoulders* myShoulders = new shoulders;
-        symptom6 = myShoulders->getBodyPart();
-        symptom1 = myShoulders->shoulderPain();
-        symptom2 = myShoulders->shoulderSwelling();
-        symptom3 = myShoulders->shoulderWeakness();
-        symptom4 = myShoulders->shoulderNumbness();
+        shoulders* shoulderOrgan = new shoulders;
+        symptom6 = shoulderOrgan->getBodyPart();
+        symptom1 = shoulderOrgan->shoulderPain();
+        symptom2 = shoulderOrgan->shoulderSwelling();
+        symptom3 = shoulderOrgan->shoulderWeakness();
+        symptom4 = shoulderOrgan->shoulderNumbness();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myShoulders->nothingSymptom();
+            symptom5 = shoulderOrgan->nothingSymptom();
         }
-        myShoulders->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myShoulders;
+        shoulderOrgan->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete shoulderOrgan;
     }
 
     else if (part == "foot") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        foot* myFoot = new foot;
-        symptom6 = myFoot->getBodyPart();
-        symptom1 = myFoot->footPain();
-        symptom2 = myFoot->footSwelling();
-        symptom3 = myFoot->footWeakness();
-        symptom4 = myFoot->footNumbness();
+        foot* footOrgan = new foot;
+        symptom6 = footOrgan->getBodyPart();
+        symptom1 = footOrgan->footPain();
+        symptom2 = footOrgan->footSwelling();
+        symptom3 = footOrgan->footWeakness();
+        symptom4 = footOrgan->footNumbness();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myFoot->nothingSymptom();
+            symptom5 = footOrgan->nothingSymptom();
         }
-        myFoot->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myFoot;
+        footOrgan->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete footOrgan;
     }
 
     else if (part == "legs") {
         string symptom1, symptom2, symptom3, symptom4, symptom5, symptom6;
-        legs* myLegs = new legs;
-        symptom6 = myLegs->getBodyPart();
-        symptom1 = myLegs->legPain();
-        symptom2 = myLegs->legSwelling();
-        symptom3 = myLegs->legWeakness();
-        symptom4 = myLegs->legNumbness();
+        legs* legOrgan = new legs;
+        symptom6 = legOrgan->getBodyPart();
+        symptom1 = legOrgan->legPain();
+        symptom2 = legOrgan->legSwelling();
+        symptom3 = legOrgan->legWeakness();
+        symptom4 = legOrgan->legNumbness();
 
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
-            symptom5 = myLegs->nothingSymptom();
+            symptom5 = legOrgan->nothingSymptom();
         }
-        myLegs->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
-        delete myLegs;
+        legOrgan->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        delete legOrgan;
     }
 
     else {
@@ -201,7 +201,7 @@ int main() {
     int yas, activity;
     long long int TCKimlikNo;
     float boy, kilo;
-    human insan1;
+    organ insan1;
 
 
 
@@ -262,7 +262,7 @@ int main() {
         }
     }
 
-    cout << " Bizi tercih ettiginiz için tesekkür ederiz." << endl;
+    cout << " Thank you for choose us :) Get well soon ! ." << endl;
 
     return 0;
 }
