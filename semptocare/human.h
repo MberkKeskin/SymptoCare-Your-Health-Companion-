@@ -284,7 +284,7 @@ public:
 	}
 
 	virtual string getBodyPart() {
-		cout << "What's your problem area? (brain/mouth/heart/chest/abdomen/arms/hands/foot/shoulders/legs)" << endl;
+		cout << "What's your problem area? (eye/brain/mouth/heart/chest/abdomen/arms/hands/foot/shoulders/legs)" << endl;
 		getline(cin, bodyPart);
 		return bodyPart;
 	}
