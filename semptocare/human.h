@@ -1,4 +1,3 @@
-
 #pragma once
 #include <iostream>
 #include <limits>
@@ -9,7 +8,6 @@
 #include <chrono>
 #include <thread>
 
-
 using namespace std;
 
 class user {
@@ -18,7 +16,6 @@ private:
 	int age, activityRate;
 	long long int TCKimlik;
 	float weight, height;
-
 
 public:
 
@@ -72,7 +69,7 @@ public:
 			cout << "Dosyaya yazma hatası. Dosyanın açık olduğundan emin olun." << endl;
 		}
 	}
-	long int getİDNumber() {
+	long long int getİDNumber() {
 
 		return TCKimlik;
 	}
@@ -128,7 +125,6 @@ public:
 
 
 	}
-
 
 	void getInfo() {
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -275,11 +271,6 @@ public:
 };
 
 class organ : public user {
-private:
-	string name, nameForReturn, habitForCigarette, habitForAlcohol, habitForAllergic, habitForMedication, genderSelection, smoking, drinking, allergic, medication, gender;
-	int age, activityRate;
-	long long int IDKimlik;
-	float weight, height;
 
 protected:
 	string bodyPart;
@@ -312,7 +303,6 @@ public:
 
 
 };
-
 
 class eye : public organ {
 
@@ -360,7 +350,7 @@ public:
 
 
 
-	void findEyeDisaster(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findEyeDisease(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
 
@@ -746,7 +736,6 @@ public:
 		}
 	}
 };
-
 
 class chest : public organ {
 private:
@@ -1234,8 +1223,6 @@ public:
 	}
 
 };
-
-
 
 class arms : public organ {
 private:
@@ -2025,7 +2012,7 @@ public:
 			diagnosis = "If you have any other symptoms, please consult a doctor.";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Leg", name, age, gender, activityRate, height, weight);
 		}
-
+  
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
 			diagnosis = "Please enter true department";
