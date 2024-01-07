@@ -253,7 +253,13 @@ int main() {
         cin >> choiceForEmergency;
 
         if (choiceForEmergency == "yes") {
-            cout << "En kisa zamanda acil servise müracaat ediniz." << endl;
+            cout << "Emergency: Please remain calm." << endl;
+            cout << "1. Contact a healthcare professional immediately (dial 112 or your nearest emergency service)."<<endl;
+            cout << "2. Seek assistance from someone nearby." << endl;
+            cout << "3. Cease current activities and take a moment to rest." << endl;
+            cout << "4. Ensure you have mentioned any medications you are currently taking." << endl << endl;
+            cout << "Remember, your health is important, and the nearest healthcare provider will provide you with the best assistance." << endl << endl;
+
             return 0;
         }
         else if (choiceForEmergency == "no") {
