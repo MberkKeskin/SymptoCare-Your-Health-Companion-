@@ -273,7 +273,7 @@ public:
 class organ : public user {
 
 protected:
-	string bodyPart;
+	string bodyPart, diagnosis;
 
 public:
 
@@ -295,10 +295,109 @@ public:
 		convertToLowercase(symptom);
 		return symptom;
 	}
-	virtual void printDiagnosis(string illness) {
+	
 
-		cout << "ilness area:" << illness << endl;
+	virtual void findDisease(string symptom1, string symptom2, string symptom3, string symptom4, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
+		if ((symptom1 == "yes") && (symptom2 == "yes") && (symptom4 == "yes") && (symptom3 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+			
+		}
+
+		else if ((symptom1 == "yes") && (symptom2 == "yes") && (symptom3 == "yes") && (symptom4 == "no")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "yes") && (symptom2 == "yes") && (symptom3 == "no") && (symptom4 == "no")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "yes") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "no") && (symptom2 == "yes") && (symptom3 == "no") && (symptom4 == "no")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "yes") && (symptom4 == "no")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "no") && (symptom2 == "yes") && (symptom3 == "yes") && (symptom4 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "yes") && (symptom4 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+
+		else if ((symptom1 == "yes") && (symptom2 == "no") && (symptom3 == "yes") && (symptom4 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "yes") && (symptom2 == "yes") && (symptom3 == "no") && (symptom4 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else if ((symptom1 == "yes") && (symptom2 == "no") && (symptom3 == "yes") && (symptom4 == "no")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+
+		}
+		else if ((symptom1 == "yes") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+
+		}
+		else if ((symptom1 == "no") && (symptom2 == "yes") && (symptom3 == "yes") && (symptom4 == "no")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+
+		}
+		else if ((symptom1 == "no") && (symptom2 == "yes") && (symptom3 == "no") && (symptom4 == "yes")) {
+			WritingConsoleInformation(name);
+			diagnosis = " ";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+
+		}
+
+		else if (symptom == "yes") {
+			WritingConsoleInformation(name);
+			diagnosis = "---If you have any other symptoms, please consult a doctor.----";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+
+		else if (symptom == "no") {
+			WritingConsoleInformation(name);
+			diagnosis = "---Please enter true department.----";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
+		else {
+			WritingConsoleInformation(name);
+			diagnosis = "---Please enter only yes/no. Thank you.----";
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
+		}
 	}
 
 
@@ -350,7 +449,7 @@ public:
 
 
 
-	void findEyeDisease(string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findEyeDisease  (string semptomBluredVision, string semptomeyePain, string semptomEyeSwell, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((semptomBluredVision == "yes") && (semptomeyePain == "yes") && (semptomEyeSwell == "yes")) {
 
@@ -473,13 +572,13 @@ public:
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
 
-	void findMouthDisease(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease (string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart)override {
 
 		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----You have tongue cancer----";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Mouth", name, age, gender, activityRate, height, weight);
-			printDiagnosis(diagnosis);
+			
 		}
 
 		else if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (semptomDryness == "yes") && (symptomCankerSores == "no")) {
@@ -626,7 +725,7 @@ public:
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
 
-	void findBrainDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string headache, string seizures, string memoryLoss, string panicAttack, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) override {
 		if ((headache == "yes") && (seizures == "yes") && (memoryLoss == "yes") && (panicAttack == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----You have Epilepsy disease----";
@@ -782,7 +881,7 @@ public:
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
 
-	void findChestDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string chestPainSymptom, string breathSymptom, string coughSymptom, string feverSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) override {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (coughSymptom == "yes") && (feverSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----You have Flu (Influenza)----";
@@ -935,7 +1034,7 @@ public:
 	}
 
 
-	void findHeartDisease(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart)override {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----You have Respiratory Issues----";
@@ -1113,7 +1212,7 @@ public:
 	}
 
 
-	void findAbdominalDisease(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) override {
 
 		if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
 			WritingConsoleInformation(name);
@@ -1270,7 +1369,7 @@ public:
 	}
 
 
-	void findArmDisease(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) override{
 		if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armWeaknessSymptom == "yes") && (armNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----You havePeripheral Artery Disease (PAD)----";
@@ -1429,12 +1528,12 @@ public:
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
 
-	void findHandDisease(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) override {
 		if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handWeaknessSymptom == "yes") && (handNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "You have Carpal Tunnel Syndrome";
 
-			printDiagnosis(diagnosis);
+			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Hand", name, age, gender, activityRate, height, weight);
 		}
 
 		else if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handNumbnessSymptom == "yes") && (handWeaknessSymptom == "no")) {
@@ -1587,7 +1686,7 @@ public:
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
 
-	void findShoulderDisease(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) override{
 		if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderWeaknessSymptom == "yes") && (shoulderNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "You have Rotator Cuff Injury";
@@ -1746,7 +1845,7 @@ public:
 	}
 
 
-	void findFootDisease(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) override {
 		if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footWeaknessSymptom == "yes") && (footNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = " You have Peripheral Neuropathy";
@@ -1914,7 +2013,7 @@ public:
 	}
 
 
-	void findLegDisease(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findDisease(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart)override {
 		if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legWeaknessSymptom == "yes") && (legNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = " You have Peripheral Artery Disease (PAD)";
