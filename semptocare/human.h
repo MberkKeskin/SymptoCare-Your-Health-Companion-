@@ -425,7 +425,7 @@ public:
 
 class mouth : public organ {
 private:
-	string symptomTasteDiasater, symptomBleedingTeeth, symptomForToothLoss, symptomMouthDryness, symptomMouthCankerSores, symptom, diagnosis;
+	string symptomTasteDiasater, symptomBleedingTeeth, symptomMouthDryness, symptomMouthCankerSores, symptom, diagnosis;
 
 public:
 	string getBodyPart() override {
@@ -471,10 +471,6 @@ public:
 	}
 	void writeDiagnosisToFile(const long long int& idNumber, const string& alergic, const string& alcol, const string& sigara, const string& medic, const string& diagnosis, const string& areaName, const string& Username, const int& Userage, const string& UserGender, const int& UserActivite, const int& Userheight, const int& Userweight) {
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
-	}
-	void printDiagnosis(string illness) override {
-		cout << " Mouth illnes:  " << illness << endl;
-
 	}
 
 	void findMouthDisease(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
