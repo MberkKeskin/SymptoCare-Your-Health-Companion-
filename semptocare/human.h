@@ -477,7 +477,7 @@ public:
 
 	}
 
-	void findMouthDisaster(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findMouthDisease(string semptomTasteDisaster, string semptomBleddingTeeth, string semptomDryness, string symptomCankerSores, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((semptomTasteDisaster == "yes") && (semptomBleddingTeeth == "yes") && (symptomCankerSores == "yes") && (semptomDryness == "yes")) {
 			WritingConsoleInformation(name);
@@ -939,7 +939,7 @@ public:
 	}
 
 
-	void findHeartCondition(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findHeartDisease(string chestPainSymptom, string breathSymptom, string palpitationsSymptom, string fatigueSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((chestPainSymptom == "yes") && (breathSymptom == "yes") && (palpitationsSymptom == "yes") && (fatigueSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----You have Respiratory Issues----";
@@ -1117,7 +1117,7 @@ public:
 	}
 
 
-	void findAbdominalCondition(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findAbdominalDisease(string abdominalPainSymptom, string nauseaSymptom, string vomitingSymptom, string bloatingSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 
 		if ((abdominalPainSymptom == "yes") && (nauseaSymptom == "yes") && (vomitingSymptom == "yes") && (bloatingSymptom == "yes")) {
 			WritingConsoleInformation(name);
@@ -1274,7 +1274,7 @@ public:
 	}
 
 
-	void findArmCondition(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findArmDisease(string armPainSymptom, string armSwellingSymptom, string armWeaknessSymptom, string armNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((armPainSymptom == "yes") && (armSwellingSymptom == "yes") && (armWeaknessSymptom == "yes") && (armNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "----You havePeripheral Artery Disease (PAD)----";
@@ -1433,7 +1433,7 @@ public:
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
 
-	void findHandCondition(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findHandDisease(string handPainSymptom, string handSwellingSymptom, string handWeaknessSymptom, string handNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((handPainSymptom == "yes") && (handSwellingSymptom == "yes") && (handWeaknessSymptom == "yes") && (handNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "You have Carpal Tunnel Syndrome";
@@ -1591,7 +1591,7 @@ public:
 		user::writeDiagnosisToFile(idNumber, alergic, alcol, sigara, medic, diagnosis, areaName, Username, Userage, UserGender, UserActivite, Userheight, Userweight);
 	}
 
-	void findShoulderCondition(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findShoulderDisease(string shoulderPainSymptom, string shoulderSwellingSymptom, string shoulderWeaknessSymptom, string shoulderNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((shoulderPainSymptom == "yes") && (shoulderSwellingSymptom == "yes") && (shoulderWeaknessSymptom == "yes") && (shoulderNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = "You have Rotator Cuff Injury";
@@ -1750,7 +1750,7 @@ public:
 	}
 
 
-	void findFootCondition(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findFootDisease(string footPainSymptom, string footSwellingSymptom, string footWeaknessSymptom, string footNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((footPainSymptom == "yes") && (footSwellingSymptom == "yes") && (footWeaknessSymptom == "yes") && (footNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = " You have Peripheral Neuropathy";
@@ -1918,7 +1918,7 @@ public:
 	}
 
 
-	void findLegCondition(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
+	void findLegDisease(string legPainSymptom, string legSwellingSymptom, string legWeaknessSymptom, string legNumbnessSymptom, string symptom, string name, long long int IDKimlik, int age, string gender, int activityRate, float height, float weight, string habitForCigarette, string habitForMedication, string habitForAlcohol, string habitForAllergic, string bodyPart) {
 		if ((legPainSymptom == "yes") && (legSwellingSymptom == "yes") && (legWeaknessSymptom == "yes") && (legNumbnessSymptom == "yes")) {
 			WritingConsoleInformation(name);
 			diagnosis = " You have Peripheral Artery Disease (PAD)";
@@ -2012,7 +2012,7 @@ public:
 			diagnosis = "If you have any other symptoms, please consult a doctor.";
 			writeDiagnosisToFile(IDKimlik, habitForAllergic, habitForAlcohol, habitForCigarette, habitForMedication, diagnosis, "Leg", name, age, gender, activityRate, height, weight);
 		}
-  
+
 		else if (symptom == "no") {
 			WritingConsoleInformation(name);
 			diagnosis = "Please enter true department";
