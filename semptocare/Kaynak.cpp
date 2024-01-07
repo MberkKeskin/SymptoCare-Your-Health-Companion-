@@ -36,7 +36,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
             symptom6 = mouthOrgan->nothingSymptom();
         }
-        mouthOrgan->findMouthDisease(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom7);
+        mouthOrgan->findDisease(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom7);
         delete mouthOrgan;
     }
 
@@ -52,7 +52,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = brainOrgan->nothingSymptom();
         }
-        brainOrgan->findBrainDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        brainOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete brainOrgan;
     }
 
@@ -68,7 +68,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = chestOrgan->nothingSymptom();
         }
-        chestOrgan->findChestDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        chestOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete chestOrgan;
     }
 
@@ -84,7 +84,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = heartOrgan->nothingSymptom();
         }
-        heartOrgan->findHeartDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        heartOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete heartOrgan;
     }
 
@@ -100,7 +100,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = abdomenOrgan->nothingSymptom();
         }
-        abdomenOrgan->findAbdominalDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        abdomenOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete abdomenOrgan;
     }
 
@@ -116,7 +116,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = armOrgan->nothingSymptom();
         }
-        armOrgan->findArmDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        armOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete armOrgan;
     }
 
@@ -132,7 +132,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = handOrgan->nothingSymptom();
         }
-        handOrgan->findHandDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        handOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete handOrgan;
     }
 
@@ -148,7 +148,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = shoulderOrgan->nothingSymptom();
         }
-        shoulderOrgan->findShoulderDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        shoulderOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete shoulderOrgan;
     }
 
@@ -164,7 +164,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = footOrgan->nothingSymptom();
         }
-        footOrgan->findFootDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        footOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete footOrgan;
     }
 
@@ -180,7 +180,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = legOrgan->nothingSymptom();
         }
-        legOrgan->findLegDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        legOrgan->findDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete legOrgan;
     }
 
