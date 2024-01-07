@@ -232,7 +232,7 @@ int main() {
 
 
 
-    cout << "ACİL SERVİS PROTOKOLÜ TANIMLANACAK!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+    
     user user;
 
     string part, isim, habit, gender, sigara, alkol, alergi, ilac;
