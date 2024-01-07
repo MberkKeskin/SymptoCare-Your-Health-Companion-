@@ -20,7 +20,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no")) {
             symptom4 = EyeOrgan->nothingSymptom();
         }
-        EyeOrgan->findEyeDisaster(symptom1, symptom2, symptom3, symptom4, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        EyeOrgan->findEyeDisease(symptom1, symptom2, symptom3, symptom4, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete EyeOrgan;
     }
 
@@ -36,7 +36,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom4 == "no") && (symptom5 == "no")) {
             symptom6 = mouthOrgan->nothingSymptom();
         }
-        mouthOrgan->findMouthDisaster(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom7);
+        mouthOrgan->findMouthDisease(symptom1, symptom2, symptom4, symptom5, symptom6, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom7);
         delete mouthOrgan;
     }
 
@@ -84,7 +84,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = heartOrgan->nothingSymptom();
         }
-        heartOrgan->findHeartCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        heartOrgan->findHeartDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete heartOrgan;
     }
 
@@ -100,7 +100,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = abdomenOrgan->nothingSymptom();
         }
-        abdomenOrgan->findAbdominalCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        abdomenOrgan->findAbdominalDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete abdomenOrgan;
     }
 
@@ -116,7 +116,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = armOrgan->nothingSymptom();
         }
-        armOrgan->findArmCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        armOrgan->findArmDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete armOrgan;
     }
 
@@ -132,7 +132,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = handOrgan->nothingSymptom();
         }
-        handOrgan->findHandCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        handOrgan->findHandDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete handOrgan;
     }
 
@@ -148,7 +148,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = shoulderOrgan->nothingSymptom();
         }
-        shoulderOrgan->findShoulderCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        shoulderOrgan->findShoulderDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete shoulderOrgan;
     }
 
@@ -164,7 +164,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = footOrgan->nothingSymptom();
         }
-        footOrgan->findFootCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        footOrgan->findFootDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete footOrgan;
     }
 
@@ -180,7 +180,7 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
         if ((symptom1 == "no") && (symptom2 == "no") && (symptom3 == "no") && (symptom4 == "no")) {
             symptom5 = legOrgan->nothingSymptom();
         }
-        legOrgan->findLegCondition(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
+        legOrgan->findLegDisease(symptom1, symptom2, symptom3, symptom4, symptom5, name, idNumber, age, gender, activite, height, weight, sigara, alcol, medic, alergic, symptom6);
         delete legOrgan;
     }
 
@@ -195,39 +195,44 @@ void findBodyParts(string part, string name, long long int idNumber, int age, st
 
 int main() {
 
+   /* int xPosition = 0, yPosition = 0;
 
-   /* sf::RenderWindow window;
-    window.create(sf::VideoMode(800, 600), "Symptocare");
-   
-    sf::RectangleShape arı1(sf::Vector2f(100.0f, 50.0f)); 
-    vucut.setPosition(350.0f, 275.0f);
-    vucut.setFillColor(sf::Color::Yellow);
+     sf::Event olay;
+     sf::RenderWindow window;
+     window.create(sf::VideoMode(800, 600), "Symptocare");
+     sf::Texture kaplama;
+     sf::CircleShape daire(30.f);
+     daire.setPosition(350.0f, 275.0f);
 
-    sf::RectangleShape arı2(sf::Vector2f(50.0f, 50.0f)); 
-    kafa.setPosition(450.0f, 250.0f);
-    kafa.setFillColor(sf::Color::Yellow);
+     sf::RectangleShape arı1(sf::Vector2f(100.0f, 50.0f));
+     arı1.setPosition(350.0f, 275.0f);
+     arı1.setFillColor(sf::Color::Yellow);
 
-    sf::CircleShape arı3(10.0f); 
-    goz1.setPosition(465.0f, 275.0f);
-    goz1.setFillColor(sf::Color::Black);
+     sf::RectangleShape arı2(sf::Vector2f(50.0f, 50.0f));
+     arı2.setPosition(450.0f, 250.0f);
+     arı2.setFillColor(sf::Color::Yellow);
 
-    sf::CircleShape arı4(10.0f); 
-    goz2.setPosition(505.0f, 275.0f);
-    goz2.setFillColor(sf::Color::Black); /*
+     sf::CircleShape arı3(10.0f);
+     arı3.setPosition(465.0f, 275.0f);
+     arı3.setFillColor(sf::Color::Black);
 
-  
+     sf::CircleShape arı4(10.0f);
+     arı4.setPosition(505.0f, 275.0f);
+     arı4.setFillColor(sf::Color::Black);
+     
 
-   if (kaplama.loadFromFile("ressim") == false) {
-        cout << "olmadi ";
-    }*/ 
-    //Üst satırlar da kod parçası resim dosyası içindi 
-   
-   
-   
-   
 
-    
-   cout << "ACİL SERVİS PROTOKOLÜ TANIMLANACAK!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+    /*if (kaplama.loadFromFile("ressim") == false) {
+         cout << "olmadi ";
+     }*/
+     //Üst satırlar da kod parçası resim dosyası içindi 
+
+
+
+
+
+
+    cout << "ACİL SERVİS PROTOKOLÜ TANIMLANACAK!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     user user;
 
     string part, isim, habit, gender, sigara, alkol, alergi, ilac;
@@ -295,31 +300,48 @@ int main() {
         }
     }
 
-    /* while (window.isOpen())
+    /*while (window.isOpen())
     {
 
-        sf::Event event;
-        while (window.pollEvent(event))
+        sf::Event olay;
+        while (window.pollEvent(olay))
         {
 
 
-            if (event.type == sf::Event::Closed){
+            if (olay.type == sf::Event::Closed){
                 window.close();
             }
+            if (olay.type == sf::Event::MouseButtonPressed) {
+                if (olay.mouseButton.button == sf::Mouse::Left) {
+                    xPosition = olay.mouseButton.x;
+                    yPosition = olay.mouseButton.y;
+                }
+            }
+            if (olay.type == sf::Event::MouseMoved) {
+                xPosition = olay.mouseMove.x;
+                yPosition = olay.mouseMove.y;
+            }
+
             window.clear(sf::Color::Transparent);
             window.draw(arı1);
             window.draw(arı2);
             window.draw(arı3);
             window.draw(arı4);
+            window.draw(daire);
             
+
             window.display();
-
-
         }
-    } */
+    }
+    */
+         
+
+
+        
+     
 
     cout << " Thank you for choose us :) Get well soon ! ." << endl;
-    
+
 
     return 0;
 }
