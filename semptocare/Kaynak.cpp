@@ -199,11 +199,11 @@ int main() {
    /* sf::RenderWindow window;
     window.create(sf::VideoMode(800, 600), "Symptocare");
    
-    sf::RectangleShape arı1(sf::Vector2f(100.0f, 50.0f)); // Arı vücudu
+    sf::RectangleShape arı1(sf::Vector2f(100.0f, 50.0f)); 
     vucut.setPosition(350.0f, 275.0f);
     vucut.setFillColor(sf::Color::Yellow);
 
-    sf::RectangleShape arı2(sf::Vector2f(50.0f, 50.0f)); // Arı başı
+    sf::RectangleShape arı2(sf::Vector2f(50.0f, 50.0f)); 
     kafa.setPosition(450.0f, 250.0f);
     kafa.setFillColor(sf::Color::Yellow);
 
